@@ -1,0 +1,970 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MosesOptionsForm /> rendered correctly 1`] = `
+<div
+  className="mosesOptionsFormWrapper"
+>
+  <form
+    className="ant-form ant-form-horizontal"
+    onSubmit={[Function]}
+  >
+    <div
+      className="ant-row"
+      style={
+        Object {
+          "marginLeft": -8,
+          "marginRight": -8,
+        }
+      }
+    >
+      <div
+        className="ant-col-6"
+        style={
+          Object {
+            "paddingLeft": 8,
+            "paddingRight": 8,
+          }
+        }
+      >
+        <div
+          className="ant-row ant-form-item"
+        >
+          <div
+            className="ant-form-item-control-wrapper"
+          >
+            <div
+              className="ant-form-item-control"
+            >
+              <span
+                className="ant-form-item-children"
+              >
+                <label
+                  className="ant-checkbox-wrapper"
+                >
+                  <span
+                    className="ant-checkbox ant-checkbox-checked"
+                    style={Object {}}
+                  >
+                    <input
+                      checked={true}
+                      className="ant-checkbox-input"
+                      data-__field={
+                        Object {
+                          "name": "enableFeatureSelection",
+                        }
+                      }
+                      data-__meta={
+                        Object {
+                          "name": "enableFeatureSelection",
+                          "originalProps": Object {
+                            "checked": true,
+                            "children": "Enable Feature Selection",
+                            "indeterminate": false,
+                            "name": "enableFeatureSelection",
+                            "onChange": [Function],
+                            "prefixCls": "ant-checkbox",
+                          },
+                          "ref": null,
+                          "trigger": "onChange",
+                          "validate": Array [],
+                          "valuePropName": "value",
+                        }
+                      }
+                      id="enableFeatureSelection"
+                      name="enableFeatureSelection"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      type="checkbox"
+                    />
+                    <span
+                      className="ant-checkbox-inner"
+                    />
+                  </span>
+                  <span>
+                    Enable Feature Selection
+                  </span>
+                </label>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="ant-col-6"
+        style={
+          Object {
+            "paddingLeft": 8,
+            "paddingRight": 8,
+          }
+        }
+      >
+        <div
+          className="ant-row ant-form-item"
+        >
+          <div
+            className="ant-form-item-control-wrapper"
+          >
+            <div
+              className="ant-form-item-control"
+            >
+              <span
+                className="ant-form-item-children"
+              >
+                <label
+                  className="ant-checkbox-wrapper"
+                >
+                  <span
+                    className="ant-checkbox ant-checkbox-checked"
+                    style={Object {}}
+                  >
+                    <input
+                      checked={true}
+                      className="ant-checkbox-input"
+                      data-__field={
+                        Object {
+                          "name": "hcWidenSearch",
+                        }
+                      }
+                      data-__meta={
+                        Object {
+                          "name": "hcWidenSearch",
+                          "originalProps": Object {
+                            "checked": true,
+                            "children": "hc Widen Search",
+                            "indeterminate": false,
+                            "name": "hcWidenSearch",
+                            "onChange": [Function],
+                            "prefixCls": "ant-checkbox",
+                          },
+                          "ref": null,
+                          "trigger": "onChange",
+                          "validate": Array [],
+                          "valuePropName": "value",
+                        }
+                      }
+                      id="hcWidenSearch"
+                      name="hcWidenSearch"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      type="checkbox"
+                    />
+                    <span
+                      className="ant-checkbox-inner"
+                    />
+                  </span>
+                  <span>
+                    hc Widen Search
+                  </span>
+                </label>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="ant-col-6"
+        style={
+          Object {
+            "paddingLeft": 8,
+            "paddingRight": 8,
+          }
+        }
+      >
+        <div
+          className="ant-row ant-form-item"
+        >
+          <div
+            className="ant-form-item-control-wrapper"
+          >
+            <div
+              className="ant-form-item-control"
+            >
+              <span
+                className="ant-form-item-children"
+              >
+                <label
+                  className="ant-checkbox-wrapper"
+                >
+                  <span
+                    className="ant-checkbox ant-checkbox-checked"
+                    style={Object {}}
+                  >
+                    <input
+                      checked={true}
+                      className="ant-checkbox-input"
+                      data-__field={
+                        Object {
+                          "name": "balance",
+                        }
+                      }
+                      data-__meta={
+                        Object {
+                          "name": "balance",
+                          "originalProps": Object {
+                            "checked": true,
+                            "children": "Balance",
+                            "indeterminate": false,
+                            "name": "balance",
+                            "onChange": [Function],
+                            "prefixCls": "ant-checkbox",
+                          },
+                          "ref": null,
+                          "trigger": "onChange",
+                          "validate": Array [],
+                          "valuePropName": "value",
+                        }
+                      }
+                      id="balance"
+                      name="balance"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      type="checkbox"
+                    />
+                    <span
+                      className="ant-checkbox-inner"
+                    />
+                  </span>
+                  <span>
+                    Balance
+                  </span>
+                </label>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="ant-row"
+      style={
+        Object {
+          "marginLeft": -8,
+          "marginRight": -8,
+        }
+      }
+    >
+      <div
+        className="ant-col-8"
+        style={
+          Object {
+            "paddingLeft": 8,
+            "paddingRight": 8,
+          }
+        }
+      >
+        <div
+          className="ant-row ant-form-item"
+        >
+          <div
+            className="ant-form-item-label"
+          >
+            <label
+              className="ant-form-item-required"
+              htmlFor="maximumEvals"
+              onClick={[Function]}
+              title="Maximum evals"
+            >
+              Maximum evals
+            </label>
+          </div>
+          <div
+            className="ant-col-24 ant-form-item-control-wrapper"
+          >
+            <div
+              className="ant-form-item-control"
+            >
+              <span
+                className="ant-form-item-children"
+              >
+                <input
+                  className="ant-input"
+                  data-__field={
+                    Object {
+                      "name": "maximumEvals",
+                    }
+                  }
+                  data-__meta={
+                    Object {
+                      "initialValue": null,
+                      "name": "maximumEvals",
+                      "originalProps": Object {
+                        "disabled": false,
+                        "name": "maximumEvals",
+                        "onChange": [Function],
+                        "prefixCls": "ant-input",
+                        "type": "text",
+                      },
+                      "ref": null,
+                      "rules": Array [
+                        Object {
+                          "message": "Please input maximum evals!",
+                          "required": true,
+                        },
+                      ],
+                      "trigger": "onChange",
+                      "validate": Array [
+                        Object {
+                          "rules": Array [
+                            Object {
+                              "message": "Please input maximum evals!",
+                              "required": true,
+                            },
+                          ],
+                          "trigger": Array [
+                            "onChange",
+                          ],
+                        },
+                      ],
+                      "valuePropName": "value",
+                    }
+                  }
+                  disabled={false}
+                  id="maximumEvals"
+                  name="maximumEvals"
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  type="text"
+                  value=""
+                />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="ant-col-8"
+        style={
+          Object {
+            "paddingLeft": 8,
+            "paddingRight": 8,
+          }
+        }
+      >
+        <div
+          className="ant-row ant-form-item"
+        >
+          <div
+            className="ant-form-item-label"
+          >
+            <label
+              className="ant-form-item-required"
+              htmlFor="resultCount"
+              onClick={[Function]}
+              title="Result Count"
+            >
+              Result Count
+            </label>
+          </div>
+          <div
+            className="ant-col-24 ant-form-item-control-wrapper"
+          >
+            <div
+              className="ant-form-item-control"
+            >
+              <span
+                className="ant-form-item-children"
+              >
+                <input
+                  className="ant-input"
+                  data-__field={
+                    Object {
+                      "name": "resultCount",
+                    }
+                  }
+                  data-__meta={
+                    Object {
+                      "initialValue": null,
+                      "name": "resultCount",
+                      "originalProps": Object {
+                        "disabled": false,
+                        "name": "resultCount",
+                        "onChange": [Function],
+                        "prefixCls": "ant-input",
+                        "type": "text",
+                      },
+                      "ref": null,
+                      "rules": Array [
+                        Object {
+                          "message": "Please input resultCount!",
+                          "required": true,
+                        },
+                      ],
+                      "trigger": "onChange",
+                      "validate": Array [
+                        Object {
+                          "rules": Array [
+                            Object {
+                              "message": "Please input resultCount!",
+                              "required": true,
+                            },
+                          ],
+                          "trigger": Array [
+                            "onChange",
+                          ],
+                        },
+                      ],
+                      "valuePropName": "value",
+                    }
+                  }
+                  disabled={false}
+                  id="resultCount"
+                  name="resultCount"
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  type="text"
+                  value=""
+                />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="ant-col-8"
+        style={
+          Object {
+            "paddingLeft": 8,
+            "paddingRight": 8,
+          }
+        }
+      >
+        <div
+          className="ant-row ant-form-item"
+        >
+          <div
+            className="ant-form-item-label"
+          >
+            <label
+              className="ant-form-item-required"
+              htmlFor="numberOfThreads"
+              onClick={[Function]}
+              title="Number Of Threads"
+            >
+              Number Of Threads
+            </label>
+          </div>
+          <div
+            className="ant-col-24 ant-form-item-control-wrapper"
+          >
+            <div
+              className="ant-form-item-control"
+            >
+              <span
+                className="ant-form-item-children"
+              >
+                <input
+                  className="ant-input"
+                  data-__field={
+                    Object {
+                      "name": "numberOfThreads",
+                    }
+                  }
+                  data-__meta={
+                    Object {
+                      "initialValue": null,
+                      "name": "numberOfThreads",
+                      "originalProps": Object {
+                        "disabled": false,
+                        "name": "numberOfThreads",
+                        "onChange": [Function],
+                        "prefixCls": "ant-input",
+                        "type": "text",
+                      },
+                      "ref": null,
+                      "rules": Array [
+                        Object {
+                          "message": "Please input numberOfThreads!",
+                          "required": true,
+                        },
+                      ],
+                      "trigger": "onChange",
+                      "validate": Array [
+                        Object {
+                          "rules": Array [
+                            Object {
+                              "message": "Please input numberOfThreads!",
+                              "required": true,
+                            },
+                          ],
+                          "trigger": Array [
+                            "onChange",
+                          ],
+                        },
+                      ],
+                      "valuePropName": "value",
+                    }
+                  }
+                  disabled={false}
+                  id="numberOfThreads"
+                  name="numberOfThreads"
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  type="text"
+                  value=""
+                />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="ant-row"
+      style={
+        Object {
+          "marginLeft": -8,
+          "marginRight": -8,
+        }
+      }
+    >
+      <div
+        className="ant-col-8"
+        style={
+          Object {
+            "paddingLeft": 8,
+            "paddingRight": 8,
+          }
+        }
+      >
+        <div
+          className="ant-row ant-form-item"
+        >
+          <div
+            className="ant-form-item-label"
+          >
+            <label
+              className="ant-form-item-required"
+              htmlFor="reductKnobBuildingEffort"
+              onClick={[Function]}
+              title="Reduct Knob Building Effort"
+            >
+              Reduct Knob Building Effort
+            </label>
+          </div>
+          <div
+            className="ant-col-24 ant-form-item-control-wrapper"
+          >
+            <div
+              className="ant-form-item-control"
+            >
+              <span
+                className="ant-form-item-children"
+              >
+                <div
+                  className="ant-radio-group ant-radio-group-outline"
+                  id="reductKnobBuildingEffort"
+                >
+                  <label
+                    className="ant-radio-button-wrapper"
+                  >
+                    <span
+                      className="ant-radio-button"
+                      style={Object {}}
+                    >
+                      <input
+                        checked={false}
+                        className="ant-radio-button-input"
+                        disabled={false}
+                        name="reductKnobBuildingEffort"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        type="radio"
+                        value={0}
+                      />
+                      <span
+                        className="ant-radio-button-inner"
+                      />
+                    </span>
+                    <span>
+                      0
+                    </span>
+                  </label>
+                  <label
+                    className="ant-radio-button-wrapper"
+                  >
+                    <span
+                      className="ant-radio-button"
+                      style={Object {}}
+                    >
+                      <input
+                        checked={false}
+                        className="ant-radio-button-input"
+                        disabled={false}
+                        name="reductKnobBuildingEffort"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        type="radio"
+                        value={1}
+                      />
+                      <span
+                        className="ant-radio-button-inner"
+                      />
+                    </span>
+                    <span>
+                      1
+                    </span>
+                  </label>
+                  <label
+                    className="ant-radio-button-wrapper"
+                  >
+                    <span
+                      className="ant-radio-button"
+                      style={Object {}}
+                    >
+                      <input
+                        checked={false}
+                        className="ant-radio-button-input"
+                        disabled={false}
+                        name="reductKnobBuildingEffort"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        type="radio"
+                        value={2}
+                      />
+                      <span
+                        className="ant-radio-button-inner"
+                      />
+                    </span>
+                    <span>
+                      2
+                    </span>
+                  </label>
+                  <label
+                    className="ant-radio-button-wrapper"
+                  >
+                    <span
+                      className="ant-radio-button"
+                      style={Object {}}
+                    >
+                      <input
+                        checked={false}
+                        className="ant-radio-button-input"
+                        disabled={false}
+                        name="reductKnobBuildingEffort"
+                        onBlur={[Function]}
+                        onChange={[Function]}
+                        onFocus={[Function]}
+                        type="radio"
+                        value={3}
+                      />
+                      <span
+                        className="ant-radio-button-inner"
+                      />
+                    </span>
+                    <span>
+                      3
+                    </span>
+                  </label>
+                </div>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="ant-col-8"
+        style={
+          Object {
+            "paddingLeft": 8,
+            "paddingRight": 8,
+          }
+        }
+      >
+        <div
+          className="ant-row ant-form-item"
+        >
+          <div
+            className="ant-form-item-label"
+          >
+            <label
+              className="ant-form-item-required"
+              htmlFor="inputCategory"
+              onClick={[Function]}
+              title="Input category"
+            >
+              Input category
+            </label>
+          </div>
+          <div
+            className="ant-col-24 ant-form-item-control-wrapper"
+          >
+            <div
+              className="ant-form-item-control"
+            >
+              <span
+                className="ant-form-item-children"
+              >
+                <input
+                  className="ant-input"
+                  data-__field={
+                    Object {
+                      "name": "inputCategory",
+                    }
+                  }
+                  data-__meta={
+                    Object {
+                      "initialValue": null,
+                      "name": "inputCategory",
+                      "originalProps": Object {
+                        "disabled": false,
+                        "name": "inputCategory",
+                        "onChange": [Function],
+                        "prefixCls": "ant-input",
+                        "type": "text",
+                      },
+                      "ref": null,
+                      "rules": Array [
+                        Object {
+                          "message": "Please input inputCategory!",
+                          "required": true,
+                        },
+                      ],
+                      "trigger": "onChange",
+                      "validate": Array [
+                        Object {
+                          "rules": Array [
+                            Object {
+                              "message": "Please input inputCategory!",
+                              "required": true,
+                            },
+                          ],
+                          "trigger": Array [
+                            "onChange",
+                          ],
+                        },
+                      ],
+                      "valuePropName": "value",
+                    }
+                  }
+                  disabled={false}
+                  id="inputCategory"
+                  name="inputCategory"
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  type="text"
+                  value=""
+                />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <p>
+    Additional parameters
+  </p>
+  <form
+    className="ant-form ant-form-inline"
+    onSubmit={[Function]}
+    style={
+      Object {
+        "marginTop": "10px",
+      }
+    }
+  >
+    <div
+      className="ant-row ant-form-item"
+    >
+      <div
+        className="ant-form-item-control-wrapper"
+      >
+        <div
+          className="ant-form-item-control"
+        >
+          <span
+            className="ant-form-item-children"
+          >
+            <input
+              className="ant-input"
+              data-__field={
+                Object {
+                  "name": "name",
+                }
+              }
+              data-__meta={
+                Object {
+                  "name": "name",
+                  "originalProps": Object {
+                    "disabled": false,
+                    "name": "name",
+                    "placeholder": "Name",
+                    "prefixCls": "ant-input",
+                    "type": "text",
+                  },
+                  "ref": null,
+                  "rules": Array [
+                    Object {
+                      "validator": [Function],
+                    },
+                  ],
+                  "trigger": "onChange",
+                  "validate": Array [
+                    Object {
+                      "rules": Array [
+                        Object {
+                          "validator": [Function],
+                        },
+                      ],
+                      "trigger": Array [
+                        "onChange",
+                      ],
+                    },
+                  ],
+                  "valuePropName": "value",
+                }
+              }
+              disabled={false}
+              id="name"
+              name="name"
+              onChange={[Function]}
+              onKeyDown={[Function]}
+              placeholder="Name"
+              type="text"
+              value=""
+            />
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      className="ant-row ant-form-item"
+    >
+      <div
+        className="ant-form-item-control-wrapper"
+      >
+        <div
+          className="ant-form-item-control"
+        >
+          <span
+            className="ant-form-item-children"
+          >
+            <input
+              className="ant-input"
+              data-__field={
+                Object {
+                  "name": "value",
+                }
+              }
+              data-__meta={
+                Object {
+                  "name": "value",
+                  "originalProps": Object {
+                    "disabled": false,
+                    "name": "value",
+                    "placeholder": "Value",
+                    "prefixCls": "ant-input",
+                    "type": "text",
+                  },
+                  "ref": null,
+                  "trigger": "onChange",
+                  "validate": Array [],
+                  "valuePropName": "value",
+                }
+              }
+              disabled={false}
+              id="value"
+              name="value"
+              onChange={[Function]}
+              onKeyDown={[Function]}
+              placeholder="Value"
+              type="text"
+              value=""
+            />
+          </span>
+        </div>
+      </div>
+    </div>
+    <button
+      className="ant-btn addAdditionalParameter"
+      disabled={true}
+      onClick={[Function]}
+      type="button"
+    >
+      <i
+        className="anticon anticon-plus"
+      >
+        <svg
+          aria-hidden="true"
+          className=""
+          data-icon="plus"
+          fill="currentColor"
+          height="1em"
+          viewBox="64 64 896 896"
+          width="1em"
+        >
+          <path
+            d="M848 474H550V152h-76v322H176c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h298v322h76V550h298c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"
+          />
+        </svg>
+      </i>
+      <span>
+         Add parameter
+      </span>
+    </button>
+  </form>
+  <div
+    className="ant-divider ant-divider-horizontal ant-divider-dashed"
+  />
+  <button
+    className="ant-btn ant-btn-default"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <i
+      className="anticon anticon-left"
+    >
+      <svg
+        aria-hidden="true"
+        className=""
+        data-icon="left"
+        fill="currentColor"
+        height="1em"
+        viewBox="64 64 896 896"
+        width="1em"
+      >
+        <path
+          d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 0 0 0 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"
+        />
+      </svg>
+    </i>
+    <span>
+       Back
+    </span>
+  </button>
+  <button
+    className="ant-btn ant-btn-primary"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <span>
+      Next 
+    </span>
+    <i
+      className="anticon anticon-right"
+    >
+      <svg
+        aria-hidden="true"
+        className=""
+        data-icon="right"
+        fill="currentColor"
+        height="1em"
+        viewBox="64 64 896 896"
+        width="1em"
+      >
+        <path
+          d="M765.7 486.8L314.9 134.7A7.97 7.97 0 0 0 302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 0 0 0-50.4z"
+        />
+      </svg>
+    </i>
+  </button>
+</div>
+`;

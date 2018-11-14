@@ -1,0 +1,356 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CrossValidationOptionsForm /> rendered correctly 1`] = `
+<div
+  className="crossValidationOptionsFormWrapper"
+>
+  <form
+    className="ant-form ant-form-horizontal"
+    onSubmit={[Function]}
+  >
+    <div
+      className="ant-row"
+      style={
+        Object {
+          "marginLeft": -8,
+          "marginRight": -8,
+        }
+      }
+    >
+      <div
+        className="ant-col-8"
+        style={
+          Object {
+            "paddingLeft": 8,
+            "paddingRight": 8,
+          }
+        }
+      >
+        <div
+          className="ant-row ant-form-item"
+        >
+          <div
+            className="ant-form-item-label"
+          >
+            <label
+              className="ant-form-item-required"
+              htmlFor="folds"
+              onClick={[Function]}
+              title="Folds"
+            >
+              Folds
+            </label>
+          </div>
+          <div
+            className="ant-col-24 ant-form-item-control-wrapper"
+          >
+            <div
+              className="ant-form-item-control"
+            >
+              <span
+                className="ant-form-item-children"
+              >
+                <input
+                  className="ant-input"
+                  data-__field={
+                    Object {
+                      "name": "folds",
+                    }
+                  }
+                  data-__meta={
+                    Object {
+                      "initialValue": null,
+                      "name": "folds",
+                      "originalProps": Object {
+                        "disabled": false,
+                        "name": "folds",
+                        "onChange": [Function],
+                        "prefixCls": "ant-input",
+                        "type": "text",
+                      },
+                      "ref": null,
+                      "rules": Array [
+                        Object {
+                          "message": "Please input folds!",
+                          "required": true,
+                        },
+                        Object {
+                          "validator": [Function],
+                        },
+                      ],
+                      "trigger": "onChange",
+                      "validate": Array [
+                        Object {
+                          "rules": Array [
+                            Object {
+                              "message": "Please input folds!",
+                              "required": true,
+                            },
+                            Object {
+                              "validator": [Function],
+                            },
+                          ],
+                          "trigger": Array [
+                            "onChange",
+                          ],
+                        },
+                      ],
+                      "valuePropName": "value",
+                    }
+                  }
+                  disabled={false}
+                  id="folds"
+                  name="folds"
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  type="text"
+                  value=""
+                />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="ant-col-8"
+        style={
+          Object {
+            "paddingLeft": 8,
+            "paddingRight": 8,
+          }
+        }
+      >
+        <div
+          className="ant-row ant-form-item"
+        >
+          <div
+            className="ant-form-item-label"
+          >
+            <label
+              className="ant-form-item-required"
+              htmlFor="randomSeed"
+              onClick={[Function]}
+              title="Random seed"
+            >
+              Random seed
+            </label>
+          </div>
+          <div
+            className="ant-col-24 ant-form-item-control-wrapper"
+          >
+            <div
+              className="ant-form-item-control"
+            >
+              <span
+                className="ant-form-item-children"
+              >
+                <input
+                  className="ant-input"
+                  data-__field={
+                    Object {
+                      "name": "randomSeed",
+                    }
+                  }
+                  data-__meta={
+                    Object {
+                      "initialValue": null,
+                      "name": "randomSeed",
+                      "originalProps": Object {
+                        "disabled": false,
+                        "name": "randomSeed",
+                        "onChange": [Function],
+                        "prefixCls": "ant-input",
+                        "type": "text",
+                      },
+                      "ref": null,
+                      "rules": Array [
+                        Object {
+                          "message": "Please input random seed!",
+                          "required": true,
+                        },
+                      ],
+                      "trigger": "onChange",
+                      "validate": Array [
+                        Object {
+                          "rules": Array [
+                            Object {
+                              "message": "Please input random seed!",
+                              "required": true,
+                            },
+                          ],
+                          "trigger": Array [
+                            "onChange",
+                          ],
+                        },
+                      ],
+                      "valuePropName": "value",
+                    }
+                  }
+                  disabled={false}
+                  id="randomSeed"
+                  name="randomSeed"
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  type="text"
+                  value=""
+                />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="ant-col-8"
+        style={
+          Object {
+            "paddingLeft": 8,
+            "paddingRight": 8,
+          }
+        }
+      >
+        <div
+          className="ant-row ant-form-item"
+        >
+          <div
+            className="ant-form-item-label"
+          >
+            <label
+              className="ant-form-item-required"
+              htmlFor="testSize"
+              onClick={[Function]}
+              title="Test size"
+            >
+              Test size
+            </label>
+          </div>
+          <div
+            className="ant-col-24 ant-form-item-control-wrapper"
+          >
+            <div
+              className="ant-form-item-control"
+            >
+              <span
+                className="ant-form-item-children"
+              >
+                <input
+                  className="ant-input"
+                  data-__field={
+                    Object {
+                      "name": "testSize",
+                    }
+                  }
+                  data-__meta={
+                    Object {
+                      "initialValue": null,
+                      "name": "testSize",
+                      "originalProps": Object {
+                        "disabled": false,
+                        "name": "testSize",
+                        "onChange": [Function],
+                        "prefixCls": "ant-input",
+                        "type": "text",
+                      },
+                      "ref": null,
+                      "rules": Array [
+                        Object {
+                          "message": "Please input test size!",
+                          "required": true,
+                        },
+                        Object {
+                          "validator": [Function],
+                        },
+                      ],
+                      "trigger": "onChange",
+                      "validate": Array [
+                        Object {
+                          "rules": Array [
+                            Object {
+                              "message": "Please input test size!",
+                              "required": true,
+                            },
+                            Object {
+                              "validator": [Function],
+                            },
+                          ],
+                          "trigger": Array [
+                            "onChange",
+                          ],
+                        },
+                      ],
+                      "valuePropName": "value",
+                    }
+                  }
+                  disabled={false}
+                  id="testSize"
+                  name="testSize"
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  type="text"
+                  value=""
+                />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div
+    className="ant-divider ant-divider-horizontal"
+  />
+  <button
+    className="ant-btn ant-btn-default"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <i
+      className="anticon anticon-left"
+    >
+      <svg
+        aria-hidden="true"
+        className=""
+        data-icon="left"
+        fill="currentColor"
+        height="1em"
+        viewBox="64 64 896 896"
+        width="1em"
+      >
+        <path
+          d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 0 0 0 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"
+        />
+      </svg>
+    </i>
+    <span>
+       Back
+    </span>
+  </button>
+  <button
+    className="ant-btn ant-btn-primary"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <i
+      className="anticon anticon-check"
+    >
+      <svg
+        aria-hidden="true"
+        className=""
+        data-icon="check"
+        fill="currentColor"
+        height="1em"
+        viewBox="64 64 896 896"
+        width="1em"
+      >
+        <path
+          d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"
+        />
+      </svg>
+    </i>
+    <span>
+       Submit
+    </span>
+  </button>
+</div>
+`;
