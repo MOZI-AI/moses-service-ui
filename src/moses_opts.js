@@ -16,13 +16,20 @@ export class MosesOptions extends React.Component {
 
   isValid() {
     const fieldsError = this.props.form.getFieldsError();
-    return !Object.keys(fieldsError).some(field => fieldsError[field]);
+    return !Object.keys(fieldsError).some(field => fieldsError[field])
+      && !this.conditionallyRequired(this.props.defaults.enableFeatureSelection, this.props.defaults.featureSelectionTargetSize)
+      && !this.conditionallyRequired(this.props.defaults.hcWidenSearch, this.props.defaults.hcCrossoverMinNeighbors)
+      && !this.conditionallyRequired(this.props.defaults.hcWidenSearch, this.props.defaults.hcCrossoverPopSize)
   }
 
   parseAdditionalParameters() {
     if (!this.props.additionalParameters) return [];
     return Object.keys(this.props.additionalParameters).map(key => { return { name: key, value: this.props.additionalParameters[key] } }
     )
+  }
+
+  conditionallyRequired(isRequired, value) {
+    return isRequired && !value ? { validateStatus: 'error', help: 'This is required' } : null
   }
 
   render() {
@@ -39,7 +46,7 @@ export class MosesOptions extends React.Component {
                 {getFieldDecorator("enableFeatureSelection", {
                 })(
                   <Checkbox
-                    checked={this.props.defaults ? this.props.defaults.enableFeatureSelection : true}
+                    checked={this.props.defaults.enableFeatureSelection}
                     name="enableFeatureSelection"
                     onChange={e => this.props.changeInput(e)}
                   >
@@ -53,7 +60,7 @@ export class MosesOptions extends React.Component {
                 {getFieldDecorator("hcWidenSearch", {
                 })(
                   <Checkbox
-                    checked={this.props.defaults ? this.props.defaults.hcWidenSearch : true}
+                    checked={this.props.defaults.hcWidenSearch}
                     name="hcWidenSearch"
                     onChange={e => this.props.changeInput(e)}
                   >
@@ -67,7 +74,7 @@ export class MosesOptions extends React.Component {
                 {getFieldDecorator("balance", {
                 })(
                   <Checkbox
-                    checked={this.props.defaults ? this.props.defaults.balance : true}
+                    checked={this.props.defaults.balance}
                     name="balance"
                     onChange={e => this.props.changeInput(e)}
                   >
@@ -77,7 +84,7 @@ export class MosesOptions extends React.Component {
               </Form.Item>
             </Col>
           </Row>
-          {!this.props.defaults || this.props.defaults.enableFeatureSelection && (
+          {this.props.defaults.enableFeatureSelection && (
             <Row gutter={16}>
               <Col span={8}>
                 <Form.Item
@@ -85,7 +92,7 @@ export class MosesOptions extends React.Component {
                   wrapperCol={{ span: 24 }}
                 >
                   {getFieldDecorator("featureSelectionAlgorithm", {
-                    initialValue: this.props.defaults ? this.props.defaults.featureSelectionAlgorithm : null,
+                    initialValue: this.props.defaults.featureSelectionAlgorithm,
                     rules: [
                       {
                         required: true,
@@ -106,18 +113,12 @@ export class MosesOptions extends React.Component {
                 </Form.Item>
               </Col>
               <Col span={8}>
-                <Form.Item
+                <Form.Item {... this.conditionallyRequired(this.props.defaults.enableFeatureSelection, this.props.defaults.featureSelectionTargetSize)}
                   label="Feature Selection Target Size"
                   wrapperCol={{ span: 24 }}
                 >
                   {getFieldDecorator("featureSelectionTargetSize", {
-                    initialValue: this.props.defaults ? this.props.defaults.featureSelectionTargetSize : null,
-                    rules: [
-                      {
-                        required: this.props.defaults.enableFeatureSelection,
-                        message: "Please input featureSelectionTargetSize!"
-                      }
-                    ]
+                    initialValue: this.props.defaults.featureSelectionTargetSize,
                   })(
                     <Input
                       name="featureSelectionTargetSize"
@@ -128,21 +129,16 @@ export class MosesOptions extends React.Component {
               </Col>
             </Row>
           )}
-          {!this.props.defaults || this.props.defaults.hcWidenSearch && (
+          {this.props.defaults.hcWidenSearch && (
             <Row gutter={16}>
               <Col span={8}>
-                <Form.Item
+                <Form.Item {... this.conditionallyRequired(this.props.defaults.hcWidenSearch, this.props.defaults.hcCrossoverMinNeighbors)}
                   label="hc Crossover Min Neighbors"
                   wrapperCol={{ span: 24 }}
                 >
                   {getFieldDecorator("hcCrossoverMinNeighbors", {
-                    initialValue: this.props.defaults ? this.props.defaults.hcCrossoverMinNeighbors : null,
-                    rules: [
-                      {
-                        required: true,
-                        message: "Please input hc Crossover Min Neighbors!"
-                      }
-                    ]
+                    initialValue: this.props.defaults.hcCrossoverMinNeighbors,
+
                   })(
                     <Input
                       name="hcCrossoverMinNeighbors"
@@ -152,18 +148,13 @@ export class MosesOptions extends React.Component {
                 </Form.Item>
               </Col>
               <Col span={8}>
-                <Form.Item
+                <Form.Item {... this.conditionallyRequired(this.props.defaults.hcWidenSearch, this.props.defaults.hcCrossoverPopSize)}
                   label="hc Crossover Pop Size"
                   wrapperCol={{ span: 24 }}
                 >
                   {getFieldDecorator("hcCrossoverPopSize", {
-                    initialValue: this.props.defaults ? this.props.defaults.hcCrossoverPopSize : null,
-                    rules: [
-                      {
-                        required: true,
-                        message: "Please input hc Crossover Pop Size!"
-                      }
-                    ]
+                    initialValue: this.props.defaults.hcCrossoverPopSize,
+
                   })(
                     <Input
                       name="hcCrossoverPopSize"
@@ -178,7 +169,7 @@ export class MosesOptions extends React.Component {
             <Col span={8}>
               <Form.Item label="Maximum evals" wrapperCol={{ span: 24 }}>
                 {getFieldDecorator("maximumEvals", {
-                  initialValue: this.props.defaults ? this.props.defaults.maximumEvals : null,
+                  initialValue: this.props.defaults.maximumEvals,
                   rules: [
                     { required: true, message: "Please input maximum evals!" }
                   ]
@@ -193,7 +184,7 @@ export class MosesOptions extends React.Component {
             <Col span={8}>
               <Form.Item label="Result Count" wrapperCol={{ span: 24 }}>
                 {getFieldDecorator("resultCount", {
-                  initialValue: this.props.defaults ? this.props.defaults.resultCount : null,
+                  initialValue: this.props.defaults.resultCount,
                   rules: [
                     { required: true, message: "Please input resultCount!" }
                   ]
@@ -208,7 +199,7 @@ export class MosesOptions extends React.Component {
             <Col span={8}>
               <Form.Item label="Number Of Threads" wrapperCol={{ span: 24 }}>
                 {getFieldDecorator("numberOfThreads", {
-                  initialValue: this.props.defaults ? this.props.defaults.numberOfThreads : null,
+                  initialValue: this.props.defaults.numberOfThreads,
                   rules: [
                     { required: true, message: "Please input numberOfThreads!" }
                   ]
@@ -228,7 +219,7 @@ export class MosesOptions extends React.Component {
                 wrapperCol={{ span: 24 }}
               >
                 {getFieldDecorator("reductKnobBuildingEffort", {
-                  initialValue: this.props.defaults ? this.props.defaults.reductKnobBuildingEffort : null,
+                  initialValue: this.props.defaults.reductKnobBuildingEffort,
                   rules: [
                     {
                       required: true,
@@ -251,7 +242,7 @@ export class MosesOptions extends React.Component {
             <Col span={8}>
               <Form.Item label="Input category" wrapperCol={{ span: 24 }}>
                 {getFieldDecorator("inputCategory", {
-                  initialValue: this.props.defaults ? this.props.defaults.inputCategory : null,
+                  initialValue: this.props.defaults.inputCategory,
                   rules: [
                     { required: true, message: "Please input inputCategory!" }
                   ]

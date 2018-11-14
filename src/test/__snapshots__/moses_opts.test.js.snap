@@ -42,11 +42,11 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                   className="ant-checkbox-wrapper"
                 >
                   <span
-                    className="ant-checkbox ant-checkbox-checked"
+                    className="ant-checkbox"
                     style={Object {}}
                   >
                     <input
-                      checked={true}
+                      checked={false}
                       className="ant-checkbox-input"
                       data-__field={
                         Object {
@@ -57,7 +57,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                         Object {
                           "name": "enableFeatureSelection",
                           "originalProps": Object {
-                            "checked": true,
+                            "checked": false,
                             "children": "Enable Feature Selection",
                             "indeterminate": false,
                             "name": "enableFeatureSelection",
@@ -115,11 +115,11 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                   className="ant-checkbox-wrapper"
                 >
                   <span
-                    className="ant-checkbox ant-checkbox-checked"
+                    className="ant-checkbox"
                     style={Object {}}
                   >
                     <input
-                      checked={true}
+                      checked={false}
                       className="ant-checkbox-input"
                       data-__field={
                         Object {
@@ -130,7 +130,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                         Object {
                           "name": "hcWidenSearch",
                           "originalProps": Object {
-                            "checked": true,
+                            "checked": false,
                             "children": "hc Widen Search",
                             "indeterminate": false,
                             "name": "hcWidenSearch",
@@ -274,7 +274,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
             className="ant-col-24 ant-form-item-control-wrapper"
           >
             <div
-              className="ant-form-item-control"
+              className="ant-form-item-control has-success"
             >
               <span
                 className="ant-form-item-children"
@@ -288,7 +288,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                   }
                   data-__meta={
                     Object {
-                      "initialValue": null,
+                      "initialValue": 1000,
                       "name": "maximumEvals",
                       "originalProps": Object {
                         "disabled": false,
@@ -327,7 +327,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                   onChange={[Function]}
                   onKeyDown={[Function]}
                   type="text"
-                  value=""
+                  value={1000}
                 />
               </span>
             </div>
@@ -362,7 +362,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
             className="ant-col-24 ant-form-item-control-wrapper"
           >
             <div
-              className="ant-form-item-control"
+              className="ant-form-item-control has-success"
             >
               <span
                 className="ant-form-item-children"
@@ -376,7 +376,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                   }
                   data-__meta={
                     Object {
-                      "initialValue": null,
+                      "initialValue": 100,
                       "name": "resultCount",
                       "originalProps": Object {
                         "disabled": false,
@@ -415,7 +415,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                   onChange={[Function]}
                   onKeyDown={[Function]}
                   type="text"
-                  value=""
+                  value={100}
                 />
               </span>
             </div>
@@ -450,7 +450,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
             className="ant-col-24 ant-form-item-control-wrapper"
           >
             <div
-              className="ant-form-item-control"
+              className="ant-form-item-control has-success"
             >
               <span
                 className="ant-form-item-children"
@@ -464,7 +464,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                   }
                   data-__meta={
                     Object {
-                      "initialValue": null,
+                      "initialValue": 8,
                       "name": "numberOfThreads",
                       "originalProps": Object {
                         "disabled": false,
@@ -503,7 +503,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                   onChange={[Function]}
                   onKeyDown={[Function]}
                   type="text"
-                  value=""
+                  value={8}
                 />
               </span>
             </div>
@@ -548,7 +548,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
             className="ant-col-24 ant-form-item-control-wrapper"
           >
             <div
-              className="ant-form-item-control"
+              className="ant-form-item-control has-success"
             >
               <span
                 className="ant-form-item-children"
@@ -558,14 +558,14 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                   id="reductKnobBuildingEffort"
                 >
                   <label
-                    className="ant-radio-button-wrapper"
+                    className="ant-radio-button-wrapper ant-radio-button-wrapper-checked"
                   >
                     <span
-                      className="ant-radio-button"
+                      className="ant-radio-button ant-radio-button-checked"
                       style={Object {}}
                     >
                       <input
-                        checked={false}
+                        checked={true}
                         className="ant-radio-button-input"
                         disabled={false}
                         name="reductKnobBuildingEffort"
@@ -695,7 +695,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
             className="ant-col-24 ant-form-item-control-wrapper"
           >
             <div
-              className="ant-form-item-control"
+              className="ant-form-item-control has-success"
             >
               <span
                 className="ant-form-item-children"
@@ -709,7 +709,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                   }
                   data-__meta={
                     Object {
-                      "initialValue": null,
+                      "initialValue": "older-than",
                       "name": "inputCategory",
                       "originalProps": Object {
                         "disabled": false,
@@ -748,7 +748,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                   onChange={[Function]}
                   onKeyDown={[Function]}
                   type="text"
-                  value=""
+                  value="older-than"
                 />
               </span>
             </div>

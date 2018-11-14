@@ -17,7 +17,7 @@ export class CrossValidationOptions extends React.Component {
             <Col span={8}>
               <Form.Item label="Folds" wrapperCol={{ span: 24 }}>
                 {getFieldDecorator("folds", {
-                  initialValue: this.props.defaults ? this.props.defaults.folds : null,
+                  initialValue: this.props.defaults.folds,
                   rules: [{ required: true, message: "Please input folds!" },
                   {
                     validator: (rule, value, callback) => {
@@ -40,7 +40,7 @@ export class CrossValidationOptions extends React.Component {
             <Col span={8}>
               <Form.Item label="Random seed" wrapperCol={{ span: 24 }}>
                 {getFieldDecorator("randomSeed", {
-                  initialValue: this.props.defaults ? this.props.defaults.randomSeed : null,
+                  initialValue: this.props.defaults.randomSeed,
                   rules: [
                     { required: true, message: "Please input random seed!" },
 
@@ -58,7 +58,7 @@ export class CrossValidationOptions extends React.Component {
             <Col span={8}>
               <Form.Item label="Test size" wrapperCol={{ span: 24 }}>
                 {getFieldDecorator("testSize", {
-                  initialValue: this.props.defaults ? this.props.defaults.testSize : null,
+                  initialValue: this.props.defaults.testSize,
                   rules: [
                     { required: true, message: "Please input test size!" },
                     {

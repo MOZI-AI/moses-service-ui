@@ -45,7 +45,7 @@ exports[`<CrossValidationOptionsForm /> rendered correctly 1`] = `
             className="ant-col-24 ant-form-item-control-wrapper"
           >
             <div
-              className="ant-form-item-control"
+              className="ant-form-item-control has-success"
             >
               <span
                 className="ant-form-item-children"
@@ -59,7 +59,7 @@ exports[`<CrossValidationOptionsForm /> rendered correctly 1`] = `
                   }
                   data-__meta={
                     Object {
-                      "initialValue": null,
+                      "initialValue": 0,
                       "name": "folds",
                       "originalProps": Object {
                         "disabled": false,
@@ -104,7 +104,7 @@ exports[`<CrossValidationOptionsForm /> rendered correctly 1`] = `
                   onChange={[Function]}
                   onKeyDown={[Function]}
                   type="text"
-                  value=""
+                  value={0}
                 />
               </span>
             </div>
@@ -139,7 +139,7 @@ exports[`<CrossValidationOptionsForm /> rendered correctly 1`] = `
             className="ant-col-24 ant-form-item-control-wrapper"
           >
             <div
-              className="ant-form-item-control"
+              className="ant-form-item-control has-success"
             >
               <span
                 className="ant-form-item-children"
@@ -153,7 +153,7 @@ exports[`<CrossValidationOptionsForm /> rendered correctly 1`] = `
                   }
                   data-__meta={
                     Object {
-                      "initialValue": null,
+                      "initialValue": 5,
                       "name": "randomSeed",
                       "originalProps": Object {
                         "disabled": false,
@@ -192,7 +192,7 @@ exports[`<CrossValidationOptionsForm /> rendered correctly 1`] = `
                   onChange={[Function]}
                   onKeyDown={[Function]}
                   type="text"
-                  value=""
+                  value={5}
                 />
               </span>
             </div>
@@ -227,7 +227,7 @@ exports[`<CrossValidationOptionsForm /> rendered correctly 1`] = `
             className="ant-col-24 ant-form-item-control-wrapper"
           >
             <div
-              className="ant-form-item-control"
+              className="ant-form-item-control has-success"
             >
               <span
                 className="ant-form-item-children"
@@ -241,7 +241,7 @@ exports[`<CrossValidationOptionsForm /> rendered correctly 1`] = `
                   }
                   data-__meta={
                     Object {
-                      "initialValue": null,
+                      "initialValue": 3,
                       "name": "testSize",
                       "originalProps": Object {
                         "disabled": false,
@@ -286,7 +286,7 @@ exports[`<CrossValidationOptionsForm /> rendered correctly 1`] = `
                   onChange={[Function]}
                   onKeyDown={[Function]}
                   type="text"
-                  value=""
+                  value={3}
                 />
               </span>
             </div>
