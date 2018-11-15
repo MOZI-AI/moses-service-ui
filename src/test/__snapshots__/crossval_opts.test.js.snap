@@ -296,61 +296,74 @@ exports[`<CrossValidationOptionsForm /> rendered correctly 1`] = `
     </div>
   </form>
   <div
-    className="ant-divider ant-divider-horizontal"
+    className="ant-divider ant-divider-horizontal ant-divider-dashed"
   />
-  <button
-    className="ant-btn ant-btn-default"
-    disabled={false}
-    onClick={[Function]}
-    type="button"
+  <div
+    className="ant-row-flex ant-row-flex-end"
   >
-    <i
-      className="anticon anticon-left"
+    <div
+      className=""
     >
-      <svg
-        aria-hidden="true"
-        className=""
-        data-icon="left"
-        fill="currentColor"
-        height="1em"
-        viewBox="64 64 896 896"
-        width="1em"
+      <button
+        className="ant-btn ant-btn-default"
+        disabled={false}
+        onClick={[Function]}
+        style={
+          Object {
+            "marginRight": "15px",
+          }
+        }
+        type="button"
       >
-        <path
-          d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 0 0 0 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"
-        />
-      </svg>
-    </i>
-    <span>
-       Back
-    </span>
-  </button>
-  <button
-    className="ant-btn ant-btn-primary"
-    disabled={false}
-    onClick={[Function]}
-    type="button"
-  >
-    <i
-      className="anticon anticon-check"
-    >
-      <svg
-        aria-hidden="true"
-        className=""
-        data-icon="check"
-        fill="currentColor"
-        height="1em"
-        viewBox="64 64 896 896"
-        width="1em"
+        <i
+          className="anticon anticon-left"
+        >
+          <svg
+            aria-hidden="true"
+            className=""
+            data-icon="left"
+            fill="currentColor"
+            height="1em"
+            viewBox="64 64 896 896"
+            width="1em"
+          >
+            <path
+              d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 0 0 0 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"
+            />
+          </svg>
+        </i>
+        <span>
+           Back
+        </span>
+      </button>
+      <button
+        className="ant-btn ant-btn-primary"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
       >
-        <path
-          d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"
-        />
-      </svg>
-    </i>
-    <span>
-       Submit
-    </span>
-  </button>
+        <i
+          className="anticon anticon-check"
+        >
+          <svg
+            aria-hidden="true"
+            className=""
+            data-icon="check"
+            fill="currentColor"
+            height="1em"
+            viewBox="64 64 896 896"
+            width="1em"
+          >
+            <path
+              d="M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 0 0-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z"
+            />
+          </svg>
+        </i>
+        <span>
+           Submit
+        </span>
+      </button>
+    </div>
+  </div>
 </div>
 `;
