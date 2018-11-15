@@ -82,21 +82,28 @@ export class CrossValidationOptions extends React.Component {
             </Col>
           </Row>
         </Form>
-        <Divider />
-        <Button
-          type="default"
-          disabled={!this.isValid()}
-          onClick={e => this.props.back()}
-        >
-          <Icon type="left" /> Back
+        <Divider dashed />
+
+        <Row type="flex" justify="end">
+          <Col>
+            <Button
+              style={{ marginRight: '15px' }}
+              type="default"
+              disabled={!this.isValid()}
+              onClick={e => this.props.back()}
+            >
+              <Icon type="left" /> Back
         </Button>
-        <Button
-          type="primary"
-          disabled={!this.isValid()}
-          onClick={e => this.props.submit()}
-        >
-          <Icon type="check" /> Submit
+            <Button
+              type="primary"
+              disabled={!this.isValid()}
+              onClick={e => this.props.submit()}
+            >
+              <Icon type="check" /> Submit
         </Button>
+          </Col>
+        </Row>
+
       </div>
     );
   }

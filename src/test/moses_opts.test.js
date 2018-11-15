@@ -26,7 +26,6 @@ describe('<MosesOptionsForm />', () => {
         expect(tree).toMatchSnapshot()
     });
 
-
     it('shows error when attempting to add duplicate additional parameter', () => {
         const wrapper = mount(<MosesOptionsForm defaults={mosesOpts} additionalParameters={additionalParameters} show='true' />)
         const name = wrapper.find('Input[name="name"]').first()

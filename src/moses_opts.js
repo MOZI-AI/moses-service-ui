@@ -308,20 +308,28 @@ export class MosesOptions extends React.Component {
           </Button>
         </Form>
         <Divider dashed />
-        <Button
-          type="default"
-          disabled={!this.isValid()}
-          onClick={e => this.props.back()}
-        >
-          <Icon type="left" /> Back
+
+
+        <Row type="flex" justify="end">
+          <Col>
+            <Button
+              style={{ marginRight: '15px' }}
+              type="default"
+              disabled={!this.isValid()}
+              onClick={e => this.props.back()}
+            >
+              <Icon type="left" /> Back
         </Button>
-        <Button
-          type="primary"
-          disabled={!this.isValid()}
-          onClick={e => this.props.next()}
-        >
-          Next <Icon type="right" />
-        </Button>
+            <Button
+              type="primary"
+              disabled={!this.isValid()}
+              onClick={e => this.props.next()}
+            >
+              Next <Icon type="right" />
+            </Button>
+          </Col>
+        </Row>
+
       </div>
     );
   }

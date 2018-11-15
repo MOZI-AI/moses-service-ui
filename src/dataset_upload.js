@@ -1,5 +1,5 @@
 import React from "react";
-import { Upload, Icon, Alert, Button, Divider, message } from "antd";
+import { Upload, Icon, Alert, Button, Divider, message, Row, Col } from "antd";
 
 export class DatasetUpload extends React.Component {
   componentDidMount() {
@@ -42,14 +42,23 @@ export class DatasetUpload extends React.Component {
           />
         )}
         <Divider dashed />
-        <Button
-          type="primary"
-          className="nextButton"
-          disabled={!this.props.uploadedFile}
-          onClick={e => this.props.next()}
-        >
-          Next <Icon type="right" />
-        </Button>
+
+        <Row type="flex" justify="end">
+          <Col>
+
+            <Button
+              type="primary"
+              className="nextButton"
+              disabled={!this.props.uploadedFile}
+              onClick={e => this.props.next()}
+            >
+              Next <Icon type="right" />
+            </Button>
+
+          </Col>
+        </Row>
+
+
       </div>
     );
   }

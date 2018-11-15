@@ -108,13 +108,14 @@ export class MoziService extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <React.Fragment >
         <Steps progressDot size="small" current={this.state.currentStep}>
           <Steps.Step title="Select Dataset" />
           <Steps.Step title="Moses Options" />
           <Steps.Step title="Cross Validation Options" />
         </Steps>
         <Divider dashed />
+
         <DatasetUpload
           uploadedFile={this.state.datasetFile}
           handleFileUpload={this.handleFileUpload}
