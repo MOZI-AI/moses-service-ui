@@ -21,7 +21,7 @@ export class MoziService extends React.Component {
         balance: true,
         hcCrossoverMinNeighbors: 5000,
         hcCrossoverPopSize: 1000,
-        inputCategory: "older-than"
+        // inputCategory: "older-than"
       },
       additionalParameters: {},
       crossValOptions: {

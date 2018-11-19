@@ -9,7 +9,8 @@ import {
   Row,
   Col,
   Radio,
-  Tag
+  Tag,
+  Tooltip
 } from "antd";
 
 export class MosesOptions extends React.Component {
@@ -50,27 +51,41 @@ export class MosesOptions extends React.Component {
                     name="enableFeatureSelection"
                     onChange={e => this.props.changeInput(e)}
                   >
-                    Enable Feature Selection
                   </Checkbox>
                 )}
+                <Tooltip title="Enable integrated feature selection.  Feature selection is performed immediately before knob building (representation building), when creating a new deme.">
+                  Enable Feature Selection&nbsp;
+              </Tooltip>
+
               </Form.Item>
             </Col>
             <Col span={6}>
               <Form.Item>
+
+
+
                 {getFieldDecorator("hcWidenSearch", {
+
                 })(
+
                   <Checkbox
                     checked={this.props.defaults.hcWidenSearch}
                     name="hcWidenSearch"
                     onChange={e => this.props.changeInput(e)}
                   >
-                    hc Widen Search
+
                   </Checkbox>
                 )}
+                <Tooltip title="Hillclimbing parameter (hc). If false, then deme search terminates when a local hilltop is found. If true, then the search radius is progressively widened, until another termination condition is met. ">
+                  hc Widen Search&nbsp;
+              </Tooltip>
               </Form.Item>
             </Col>
             <Col span={6}>
               <Form.Item>
+
+
+
                 {getFieldDecorator("balance", {
                 })(
                   <Checkbox
@@ -78,9 +93,11 @@ export class MosesOptions extends React.Component {
                     name="balance"
                     onChange={e => this.props.changeInput(e)}
                   >
-                    Balance
                   </Checkbox>
                 )}
+                <Tooltip title="If the table has discrete output type (like bool or enum), balance the resulting ctable so all classes have the same weight.">
+                  Balance&nbsp;
+              </Tooltip>
               </Form.Item>
             </Col>
           </Row>
@@ -88,10 +105,24 @@ export class MosesOptions extends React.Component {
             <Row gutter={16}>
               <Col span={8}>
                 <Form.Item
-                  label="Feature Selection Algorithm"
+                  label={(
+                    <Tooltip title="Feature selection algorithm. Supported algorithms are:
+                      simple, for a fast maximun mutual 
+                    information algo.
+                      inc, for incremental max-relevency, 
+                    min-redundancy.
+                      smd, for stochastic mutual 
+                    dependency,
+                      random, for uniform random 
+                    dependency,
+                    hc for moses-hillclimbing.">
+                      Feature Selection Algorithm&nbsp;
+                      </Tooltip>
+                  )}
                   wrapperCol={{ span: 24 }}
                 >
                   {getFieldDecorator("featureSelectionAlgorithm", {
+
                     initialValue: this.props.defaults.featureSelectionAlgorithm,
                     rules: [
                       {
@@ -114,7 +145,11 @@ export class MosesOptions extends React.Component {
               </Col>
               <Col span={8}>
                 <Form.Item {... this.conditionallyRequired(this.props.defaults.enableFeatureSelection, this.props.defaults.featureSelectionTargetSize)}
-                  label="Feature Selection Target Size"
+                  label={(
+                    <Tooltip title="What do you want others to call you?">
+                      Feature Selection Target Size&nbsp;
+                      </Tooltip>
+                  )}
                   wrapperCol={{ span: 24 }}
                 >
                   {getFieldDecorator("featureSelectionTargetSize", {
@@ -133,7 +168,11 @@ export class MosesOptions extends React.Component {
             <Row gutter={16}>
               <Col span={8}>
                 <Form.Item {... this.conditionallyRequired(this.props.defaults.hcWidenSearch, this.props.defaults.hcCrossoverMinNeighbors)}
-                  label="hc Crossover Min Neighbors"
+                  label={(
+                    <Tooltip title="It allows to control when crossover occurs instead of exhaustive search. If the neighborhood to explore has more than the given number (and at least 2 iterations has passed) then crossover kicks in.">
+                      hc Crossover Min Neighbors&nbsp;
+                      </Tooltip>
+                  )}
                   wrapperCol={{ span: 24 }}
                 >
                   {getFieldDecorator("hcCrossoverMinNeighbors", {
@@ -149,7 +188,12 @@ export class MosesOptions extends React.Component {
               </Col>
               <Col span={8}>
                 <Form.Item {... this.conditionallyRequired(this.props.defaults.hcWidenSearch, this.props.defaults.hcCrossoverPopSize)}
-                  label="hc Crossover Pop Size"
+                  label={(
+                    <Tooltip title="Number of new candidates created by crossover during each iteration of hillclimbing.">
+                      hc Crossover Pop Size&nbsp;
+                      </Tooltip>
+                  )}
+
                   wrapperCol={{ span: 24 }}
                 >
                   {getFieldDecorator("hcCrossoverPopSize", {
@@ -167,7 +211,14 @@ export class MosesOptions extends React.Component {
           )}
           <Row gutter={16}>
             <Col span={8}>
-              <Form.Item label="Maximum evals" wrapperCol={{ span: 24 }}>
+              <Form.Item
+                label={(
+                  <Tooltip title="Maximum number of fitness function evaluations.">
+                    Maximum evals&nbsp;
+                    </Tooltip>
+                )}
+
+                wrapperCol={{ span: 24 }}>
                 {getFieldDecorator("maximumEvals", {
                   initialValue: this.props.defaults.maximumEvals,
                   rules: [
@@ -182,7 +233,13 @@ export class MosesOptions extends React.Component {
               </Form.Item>
             </Col>
             <Col span={8}>
-              <Form.Item label="Result Count" wrapperCol={{ span: 24 }}>
+              <Form.Item
+                label={(
+                  <Tooltip title="The number of results to return, ordered according to a linear  combination of score and complexity. If negative, then return all results.">
+                    Result Count&nbsp;
+                  </Tooltip>
+                )}
+                wrapperCol={{ span: 24 }}>
                 {getFieldDecorator("resultCount", {
                   initialValue: this.props.defaults.resultCount,
                   rules: [
@@ -197,7 +254,14 @@ export class MosesOptions extends React.Component {
               </Form.Item>
             </Col>
             <Col span={8}>
-              <Form.Item label="Number Of Threads" wrapperCol={{ span: 24 }}>
+              <Form.Item
+                label={(
+                  <Tooltip title="Number of jobs allocated for deme optimization.">
+                    Number Of Threads&nbsp;
+                    </Tooltip>
+                )}
+
+                wrapperCol={{ span: 24 }}>
                 {getFieldDecorator("numberOfThreads", {
                   initialValue: this.props.defaults.numberOfThreads,
                   rules: [
@@ -215,7 +279,12 @@ export class MosesOptions extends React.Component {
           <Row gutter={16}>
             <Col span={8}>
               <Form.Item
-                label="Reduct Knob Building Effort"
+                label={(
+                  <Tooltip title="Effort allocated for reduction during knob building, 0-3, 0 means minimum effort, 3 means maximum effort. The bigger the effort the lower the dimension of the deme.">
+                    Reduct Knob Building Effort&nbsp;
+                    </Tooltip>
+                )}
+
                 wrapperCol={{ span: 24 }}
               >
                 {getFieldDecorator("reductKnobBuildingEffort", {
@@ -240,7 +309,13 @@ export class MosesOptions extends React.Component {
               </Form.Item>
             </Col>
             <Col span={8}>
-              <Form.Item label="Input category" wrapperCol={{ span: 24 }}>
+              {/* <Form.Item
+                label={(
+                  <Tooltip title="What do you want others to call you?">
+                    Input category&nbsp;
+                    </Tooltip>
+                )}
+                wrapperCol={{ span: 24 }}>
                 {getFieldDecorator("inputCategory", {
                   initialValue: this.props.defaults.inputCategory,
                   rules: [
@@ -252,7 +327,7 @@ export class MosesOptions extends React.Component {
                     onChange={e => this.props.changeInput(e)}
                   />
                 )}
-              </Form.Item>
+              </Form.Item> */}
             </Col>
           </Row>
         </Form>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Input, Button, Icon, Divider, Row, Col } from "antd";
+import { Form, Input, Button, Icon, Divider, Row, Col, Tooltip } from "antd";
 
 export class CrossValidationOptions extends React.Component {
   isValid() {
@@ -15,7 +15,13 @@ export class CrossValidationOptions extends React.Component {
         <Form>
           <Row gutter={16}>
             <Col span={8}>
-              <Form.Item label="Folds" wrapperCol={{ span: 24 }}>
+              <Form.Item
+                label={(
+                  <Tooltip title="Number of folds for cross-validation">
+                    Folds&nbsp;
+                  </Tooltip>
+                )}
+                wrapperCol={{ span: 24 }}>
                 {getFieldDecorator("folds", {
                   initialValue: this.props.defaults.folds,
                   rules: [{ required: true, message: "Please input folds!" },
@@ -38,7 +44,9 @@ export class CrossValidationOptions extends React.Component {
               </Form.Item>
             </Col>
             <Col span={8}>
-              <Form.Item label="Random seed" wrapperCol={{ span: 24 }}>
+              <Form.Item
+                label="Random seed"
+                wrapperCol={{ span: 24 }}>
                 {getFieldDecorator("randomSeed", {
                   initialValue: this.props.defaults.randomSeed,
                   rules: [
@@ -56,7 +64,13 @@ export class CrossValidationOptions extends React.Component {
               </Form.Item>
             </Col>
             <Col span={8}>
-              <Form.Item label="Test size" wrapperCol={{ span: 24 }}>
+              <Form.Item
+                label={(
+                  <Tooltip title="The proportion of the dataset that should be included in the test splie">
+                    Test size&nbsp;
+                  </Tooltip>
+                )}
+                wrapperCol={{ span: 24 }}>
                 {getFieldDecorator("testSize", {
                   initialValue: this.props.defaults.testSize,
                   rules: [

@@ -1,5 +1,6 @@
 import React from "react";
 import { Upload, Icon, Alert, Button, Divider, message, Row, Col } from "antd";
+import { relative } from "path";
 
 export class DatasetUpload extends React.Component {
   componentDidMount() {
@@ -36,8 +37,8 @@ export class DatasetUpload extends React.Component {
         </Upload.Dragger>
         {this.props.uploadedFile && (
           <Alert className="fileDetails"
-            style={{ borderRadius: 0, borderTop: "none" }}
-            message={this.props.uploadedFile.name}
+            style={{ borderRadius: 0, borderTop: "none", position: relative, bottom: '2px' }}
+            message={this.props.uploadedFile.name + ' ( ' + this.props.uploadedFile.size / 1000000 + ' MB )'}
             type="info"
           />
         )}

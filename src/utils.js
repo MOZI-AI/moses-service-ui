@@ -27,29 +27,33 @@ export function parseMosesOptions(options) {
   };
 }
 
+// convert moses options and additional parameters objects to an option string
 export function stringifyMosesOptions(mosesOptions, additionalParameters) {
   const options = Object.assign({}, mosesOptions);
-
+  // if enable feature selection is disabled, remove options related to it
   if (!options.enableFeatureSelection) {
     delete options.featureSelectionAlgorithm;
     delete options.featureSelectionTargetSize;
   }
+  // if hcWidenSearch is disabled, remove options related to it
   if (!options.hcWidenSearch) {
     delete options.hcCrossoverMinNeighbors;
     delete options.hcCrossoverPopSize;
   }
-
+  // We skip over inputCategory as it needs to be a separate parameter on its on
   let optionsString = Object.keys(options)
-    .filter(k => k !== "inputCategory")
+    // .filter(k => k !== "inputCategory")
     .reduce((accumulator, key) => {
-      accumulator += ` ${
+      return accumulator += ` ${
         MosesOptionsMapping.find(mapping => mapping[0] === key)[1]
         } ${options[key]}`;
     }, '');
+
+
   additionalParameters &&
     (
       optionsString = Object.keys(additionalParameters).reduce((accumulator, key) => {
-        accumulator += ` ${key} ${additionalParameters[key]}`;
+        return accumulator += ` ${key} ${additionalParameters[key]}`;
       }, optionsString)
     );
 
@@ -63,7 +67,7 @@ export const MosesOptionsMapping = [
   ["numberOfThreads", "-j"],
   ["reductKnobBuildingEffort", "--reduct-knob-building-effort"],
   ["featureSelectionAlgorithm", "--fs-algo"],
-  ["inputCategory", "-ic"],
+  // ["inputCategory", "-ic"],
   ["complexityRatio", "--complexity-ratio"],
   ["enableFeatureSelection", "--enable-fs"],
   ["hcWidenSearch", "--hc-widen-search"],
