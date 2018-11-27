@@ -11,7 +11,6 @@ export class DatasetUpload extends React.Component {
       name: "dataset",
       multiple: false,
       beforeUpload: file => {
-        console.log('file ', file);
         if (file.type === 'text/csv') {
           this.props.handleFileUpload(file);
         } else {

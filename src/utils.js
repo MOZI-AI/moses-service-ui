@@ -40,9 +40,8 @@ export function stringifyMosesOptions(mosesOptions, additionalParameters) {
     delete options.hcCrossoverMinNeighbors;
     delete options.hcCrossoverPopSize;
   }
-  // We skip over inputCategory as it needs to be a separate parameter on its on
+
   let optionsString = Object.keys(options)
-    // .filter(k => k !== "inputCategory")
     .reduce((accumulator, key) => {
       return accumulator += ` ${
         MosesOptionsMapping.find(mapping => mapping[0] === key)[1]
@@ -67,11 +66,10 @@ export const MosesOptionsMapping = [
   ["numberOfThreads", "-j"],
   ["reductKnobBuildingEffort", "--reduct-knob-building-effort"],
   ["featureSelectionAlgorithm", "--fs-algo"],
-  // ["inputCategory", "-ic"],
   ["complexityRatio", "--complexity-ratio"],
   ["enableFeatureSelection", "--enable-fs"],
   ["hcWidenSearch", "--hc-widen-search"],
   ["balance", "--balance"],
   ["hcCrossoverMinNeighbors", "hc-crossover-min-neighbors"],
-  ["hcCrossoverPopSize", "hc-crossover-pop-size"]
+  ["hcCrossoverPopSize", "hc-crossover-pop-size"],
 ];

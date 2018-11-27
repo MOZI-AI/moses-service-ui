@@ -11,7 +11,7 @@ Array [
       style={
         Object {
           "marginRight": -1,
-          "width": "50%",
+          "width": "33.333333333333336%",
         }
       }
     >
@@ -44,7 +44,7 @@ Array [
       style={
         Object {
           "marginRight": -1,
-          "width": "50%",
+          "width": "33.333333333333336%",
         }
       }
     >
@@ -74,7 +74,12 @@ Array [
     </div>
     <div
       className="ant-steps-item ant-steps-item-wait"
-      style={Object {}}
+      style={
+        Object {
+          "marginRight": -1,
+          "width": "33.333333333333336%",
+        }
+      }
     >
       <div
         className="ant-steps-item-tail"
@@ -97,6 +102,34 @@ Array [
           className="ant-steps-item-title"
         >
           Cross Validation Options
+        </div>
+      </div>
+    </div>
+    <div
+      className="ant-steps-item ant-steps-item-wait"
+      style={Object {}}
+    >
+      <div
+        className="ant-steps-item-tail"
+      />
+      <div
+        className="ant-steps-item-icon"
+      >
+        <span
+          className="ant-steps-icon"
+        >
+          <span
+            className="ant-steps-icon-dot"
+          />
+        </span>
+      </div>
+      <div
+        className="ant-steps-item-content"
+      >
+        <div
+          className="ant-steps-item-title"
+        >
+          Target feature
         </div>
       </div>
     </div>

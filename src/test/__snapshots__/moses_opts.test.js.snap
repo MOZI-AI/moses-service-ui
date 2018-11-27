@@ -58,7 +58,6 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                           "name": "enableFeatureSelection",
                           "originalProps": Object {
                             "checked": false,
-                            "children": "Enable Feature Selection",
                             "indeterminate": false,
                             "name": "enableFeatureSelection",
                             "onChange": [Function],
@@ -81,10 +80,13 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                       className="ant-checkbox-inner"
                     />
                   </span>
-                  <span>
-                    Enable Feature Selection
-                  </span>
                 </label>
+                <span
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  Enable Feature Selection 
+                </span>
               </span>
             </div>
           </div>
@@ -131,7 +133,6 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                           "name": "hcWidenSearch",
                           "originalProps": Object {
                             "checked": false,
-                            "children": "hc Widen Search",
                             "indeterminate": false,
                             "name": "hcWidenSearch",
                             "onChange": [Function],
@@ -154,10 +155,13 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                       className="ant-checkbox-inner"
                     />
                   </span>
-                  <span>
-                    hc Widen Search
-                  </span>
                 </label>
+                <span
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  hc Widen Search 
+                </span>
               </span>
             </div>
           </div>
@@ -204,7 +208,6 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                           "name": "balance",
                           "originalProps": Object {
                             "checked": true,
-                            "children": "Balance",
                             "indeterminate": false,
                             "name": "balance",
                             "onChange": [Function],
@@ -227,10 +230,13 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                       className="ant-checkbox-inner"
                     />
                   </span>
-                  <span>
-                    Balance
-                  </span>
                 </label>
+                <span
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  Balance 
+                </span>
               </span>
             </div>
           </div>
@@ -265,9 +271,14 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
               className="ant-form-item-required"
               htmlFor="maximumEvals"
               onClick={[Function]}
-              title="Maximum evals"
+              title=""
             >
-              Maximum evals
+              <span
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                Maximum evals 
+              </span>
             </label>
           </div>
           <div
@@ -353,9 +364,14 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
               className="ant-form-item-required"
               htmlFor="resultCount"
               onClick={[Function]}
-              title="Result Count"
+              title=""
             >
-              Result Count
+              <span
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                Result Count 
+              </span>
             </label>
           </div>
           <div
@@ -441,9 +457,14 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
               className="ant-form-item-required"
               htmlFor="numberOfThreads"
               onClick={[Function]}
-              title="Number Of Threads"
+              title=""
             >
-              Number Of Threads
+              <span
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                Number Of Threads 
+              </span>
             </label>
           </div>
           <div
@@ -539,9 +560,14 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
               className="ant-form-item-required"
               htmlFor="reductKnobBuildingEffort"
               onClick={[Function]}
-              title="Reduct Knob Building Effort"
+              title=""
             >
-              Reduct Knob Building Effort
+              <span
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+              >
+                Reduct Knob Building Effort 
+              </span>
             </label>
           </div>
           <div
@@ -675,86 +701,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
             "paddingRight": 8,
           }
         }
-      >
-        <div
-          className="ant-row ant-form-item"
-        >
-          <div
-            className="ant-form-item-label"
-          >
-            <label
-              className="ant-form-item-required"
-              htmlFor="inputCategory"
-              onClick={[Function]}
-              title="Input category"
-            >
-              Input category
-            </label>
-          </div>
-          <div
-            className="ant-col-24 ant-form-item-control-wrapper"
-          >
-            <div
-              className="ant-form-item-control has-success"
-            >
-              <span
-                className="ant-form-item-children"
-              >
-                <input
-                  className="ant-input"
-                  data-__field={
-                    Object {
-                      "name": "inputCategory",
-                    }
-                  }
-                  data-__meta={
-                    Object {
-                      "initialValue": "older-than",
-                      "name": "inputCategory",
-                      "originalProps": Object {
-                        "disabled": false,
-                        "name": "inputCategory",
-                        "onChange": [Function],
-                        "prefixCls": "ant-input",
-                        "type": "text",
-                      },
-                      "ref": null,
-                      "rules": Array [
-                        Object {
-                          "message": "Please input inputCategory!",
-                          "required": true,
-                        },
-                      ],
-                      "trigger": "onChange",
-                      "validate": Array [
-                        Object {
-                          "rules": Array [
-                            Object {
-                              "message": "Please input inputCategory!",
-                              "required": true,
-                            },
-                          ],
-                          "trigger": Array [
-                            "onChange",
-                          ],
-                        },
-                      ],
-                      "valuePropName": "value",
-                    }
-                  }
-                  disabled={false}
-                  id="inputCategory"
-                  name="inputCategory"
-                  onChange={[Function]}
-                  onKeyDown={[Function]}
-                  type="text"
-                  value="older-than"
-                />
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
+      />
     </div>
   </form>
   <p>
