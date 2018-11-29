@@ -41,7 +41,7 @@ export class MosesOptions extends React.Component {
   }
 
   conditionallyRequired(isRequired, value) {
-    return isRequired && !value
+    return isRequired && value === ''
       ? { validateStatus: 'error', help: 'This is required' }
       : null;
   }
@@ -235,7 +235,10 @@ export class MosesOptions extends React.Component {
                   {getFieldDecorator('maximumEvals', {
                     initialValue: this.props.defaults.maximumEvals,
                     rules: [
-                      { required: true, message: 'Please input maximum evals!' }
+                      {
+                        required: true,
+                        message: 'Please input maximum evals!'
+                      }
                     ]
                   })(
                     <Input
@@ -257,7 +260,10 @@ export class MosesOptions extends React.Component {
                   {getFieldDecorator('resultCount', {
                     initialValue: this.props.defaults.resultCount,
                     rules: [
-                      { required: true, message: 'Please input resultCount!' }
+                      {
+                        required: true,
+                        message: 'Please input resultCount!'
+                      }
                     ]
                   })(
                     <Input

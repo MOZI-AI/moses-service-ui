@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Tooltip, Input, Button, Icon, Row, Col } from 'antd';
+import { Form, Tooltip, Input, Button, Icon, Row, Col, Divider } from 'antd';
 
 class TargetFeature extends React.Component {
   isValid() {
@@ -14,30 +14,36 @@ class TargetFeature extends React.Component {
       this.props.show && (
         <React.Fragment>
           <Form>
-            <Form.Item
-              label={
-                <Tooltip title="The name of the target feature column in the dataset">
-                  Target feature&nbsp;
-                </Tooltip>
-              }
-              required
-            >
-              {getFieldDecorator('targetFeature', {
-                initialValue: this.props.defaults.targetFeature,
-                rules: [
-                  {
-                    required: true,
-                    message: 'Please input target feature!'
+            <Row gutter={16}>
+              <Col>
+                <Form.Item
+                  label={
+                    <Tooltip title="The name of the target feature column in the dataset">
+                      Target feature&nbsp;
+                    </Tooltip>
                   }
-                ]
-              })(
-                <Input
-                  name="targetFeature"
-                  onChange={e => this.props.changeInput(e)}
-                />
-              )}
-            </Form.Item>
+                  required
+                >
+                  {getFieldDecorator('targetFeature', {
+                    initialValue: this.props.defaults.targetFeature,
+                    rules: [
+                      {
+                        required: true,
+                        message: 'Please input target feature!'
+                      }
+                    ]
+                  })(
+                    <Input
+                      name="targetFeature"
+                      onChange={e => this.props.changeInput(e)}
+                    />
+                  )}
+                </Form.Item>
+              </Col>
+            </Row>
           </Form>
+          <Divider dashed />
+
           <Row type="flex" justify="end">
             <Col>
               <Button

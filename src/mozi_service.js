@@ -6,6 +6,10 @@ import { Steps, Divider } from 'antd';
 import { stringifyMosesOptions } from './utils';
 import { TargetFeatureForm } from './target_feature';
 
+import { MosesService } from './proto/moses_service_pb_service';
+import { AnalysisParameters, CrossValOptions } from './proto/moses_service_pb';
+import { grpc } from 'grpc-web-client';
+
 export class MoziService extends React.Component {
   constructor(props) {
     super(props);
@@ -99,6 +103,7 @@ export class MoziService extends React.Component {
   }
 
   parseValue(target) {
+    if (target.value === '') return '';
     let parsedValue =
       target.type === 'checkbox'
         ? !!+target.checked
@@ -109,21 +114,33 @@ export class MoziService extends React.Component {
   }
 
   handleSubmit() {
-    const analysisParameters = {
-      mosesOpts: stringifyMosesOptions(
+    const crossValOptions = new CrossValOptions();
+    crossValOptions.setFolds(this.state.crossValOptions.folds);
+    crossValOptions.setRandomseed(this.state.crossValOptions.randomSeed);
+    crossValOptions.setTestsize(this.state.crossValOptions.testSize);
+
+    const analysisParameters = new AnalysisParameters();
+    analysisParameters.setMosesopts(
+      stringifyMosesOptions(
         this.state.mosesOpts,
         this.state.additionalParameters
-      ),
-      crossValOpts: this.state.crossValOptions,
-      targetFeature: this.state.targetFeature,
-      dataset: this.state.dataset
-    };
-
-    console.log(
-      'Analysis Parameters',
-      JSON.stringify(analysisParameters, null, 4)
+      )
     );
-    // TODO: send the request
+    analysisParameters.setDataset(this.state.dataset);
+    analysisParameters.setTargetFeature(this.state.targetFeature);
+    analysisParameters.setCrossvalopts(crossValOptions);
+
+    grpc.unary(MosesService.StartAnalysis, {
+      request: analysisParameters,
+      host: 'http://localhost:5003',
+      onEnd: (code, msg, trailers) => {
+        if (code === grpc.Code.OK) {
+          console.log('all ok', msg);
+        } else {
+          console.log('hit an error', code, msg, trailers);
+        }
+      }
+    });
   }
 
   render() {
