@@ -55,7 +55,7 @@ export class MosesOptions extends React.Component {
         <div className="mosesOptionsFormWrapper">
           <Form>
             <Row gutter={16}>
-              <Col span={6}>
+              <Col md={24} lg={12} xl={6}>
                 <Form.Item>
                   {getFieldDecorator('enableFeatureSelection', {})(
                     <Checkbox
@@ -69,7 +69,7 @@ export class MosesOptions extends React.Component {
                   </Tooltip>
                 </Form.Item>
               </Col>
-              <Col span={6}>
+              <Col md={24} lg={12} xl={6}>
                 <Form.Item>
                   {getFieldDecorator('hcWidenSearch', {})(
                     <Checkbox
@@ -83,7 +83,7 @@ export class MosesOptions extends React.Component {
                   </Tooltip>
                 </Form.Item>
               </Col>
-              <Col span={6}>
+              <Col md={24} lg={12} xl={6}>
                 <Form.Item>
                   {getFieldDecorator('balance', {})(
                     <Checkbox
@@ -100,7 +100,7 @@ export class MosesOptions extends React.Component {
             </Row>
             {this.props.defaults.enableFeatureSelection && (
               <Row gutter={16}>
-                <Col span={8}>
+                <Col md={24} lg={12} xl={8}>
                   <Form.Item
                     label={
                       <Tooltip
@@ -142,7 +142,7 @@ export class MosesOptions extends React.Component {
                     )}
                   </Form.Item>
                 </Col>
-                <Col span={8}>
+                <Col md={24} lg={12} xl={8}>
                   <Form.Item
                     {...this.conditionallyRequired(
                       this.props.defaults.enableFeatureSelection,
@@ -174,7 +174,7 @@ export class MosesOptions extends React.Component {
             )}
             {this.props.defaults.hcWidenSearch && (
               <Row gutter={16}>
-                <Col span={8}>
+                <Col md={24} lg={12} xl={8}>
                   <Form.Item
                     {...this.conditionallyRequired(
                       this.props.defaults.hcWidenSearch,
@@ -197,7 +197,7 @@ export class MosesOptions extends React.Component {
                     )}
                   </Form.Item>
                 </Col>
-                <Col span={8}>
+                <Col md={24} lg={12} xl={8}>
                   <Form.Item
                     {...this.conditionallyRequired(
                       this.props.defaults.hcWidenSearch,
@@ -223,7 +223,7 @@ export class MosesOptions extends React.Component {
               </Row>
             )}
             <Row gutter={16}>
-              <Col span={8}>
+              <Col md={24} lg={12} xl={8}>
                 <Form.Item
                   label={
                     <Tooltip title="Maximum number of fitness function evaluations.">
@@ -248,7 +248,7 @@ export class MosesOptions extends React.Component {
                   )}
                 </Form.Item>
               </Col>
-              <Col span={8}>
+              <Col md={24} lg={12} xl={8}>
                 <Form.Item
                   label={
                     <Tooltip title="The number of results to return, ordered according to a linear  combination of score and complexity. If negative, then return all results.">
@@ -273,7 +273,7 @@ export class MosesOptions extends React.Component {
                   )}
                 </Form.Item>
               </Col>
-              <Col span={8}>
+              <Col md={24} lg={12} xl={8}>
                 <Form.Item
                   label={
                     <Tooltip title="Number of jobs allocated for deme optimization.">
@@ -300,7 +300,7 @@ export class MosesOptions extends React.Component {
               </Col>
             </Row>
             <Row gutter={16}>
-              <Col span={8}>
+              <Col md={24} lg={12} xl={8}>
                 <Form.Item
                   label={
                     <Tooltip title="Effort allocated for reduction during knob building, 0-3, 0 means minimum effort, 3 means maximum effort. The bigger the effort the lower the dimension of the deme.">
@@ -330,7 +330,6 @@ export class MosesOptions extends React.Component {
                   )}
                 </Form.Item>
               </Col>
-              <Col span={8} />
             </Row>
           </Form>
 

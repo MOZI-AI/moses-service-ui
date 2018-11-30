@@ -4,7 +4,7 @@ import '../node_modules/antd/dist/antd.min.css';
 import MoziService from './mozi_service';
 
 ReactDOM.render(
-  <div style={{ padding: '100px 300px' }}>
+  <div style={{ padding: '100px 100px' }}>
     <MoziService />
   </div>,
   document.getElementById('react-root')

@@ -36,7 +36,7 @@ export class MoziService extends React.Component {
       dataset: undefined,
       targetFeature: 'case',
       datasetFile: undefined,
-      currentStep: Options.DATASET
+      currentStep: Options.MOSES_OPTIONS
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);

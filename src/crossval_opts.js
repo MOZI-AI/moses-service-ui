@@ -15,7 +15,7 @@ class CrossValidationOptions extends React.Component {
         <div className="crossValidationOptionsFormWrapper">
           <Form>
             <Row gutter={16}>
-              <Col span={8}>
+              <Col md={24} lg={12} xl={8}>
                 <Form.Item
                   label={
                     <Tooltip title="Number of folds for cross-validation">
@@ -45,7 +45,7 @@ class CrossValidationOptions extends React.Component {
                   )}
                 </Form.Item>
               </Col>
-              <Col span={8}>
+              <Col md={24} lg={12} xl={8}>
                 <Form.Item
                   label={
                     <Tooltip title="Specifies how many times to run MOSES with a random seed valuee">
@@ -67,7 +67,7 @@ class CrossValidationOptions extends React.Component {
                   )}
                 </Form.Item>
               </Col>
-              <Col span={8}>
+              <Col md={24} lg={12} xl={8}>
                 <Form.Item
                   label={
                     <Tooltip title="The proportion of the dataset that should be included in the test splie">
