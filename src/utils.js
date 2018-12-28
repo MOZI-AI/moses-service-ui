@@ -1,6 +1,9 @@
+export const SERVER_ADDRESS =
+  process.env.SERVICE_ADDR || 'http://localhost:5000/';
+
 // Parse moses options from options string to JSON
 export function parseMosesOptions(options) {
-  const splitString = options.split(" ");
+  const splitString = options.split(' ');
   const mosesOptions = {};
   const additionalParameters = {};
 
@@ -13,7 +16,7 @@ export function parseMosesOptions(options) {
       : +splitString[i + 1];
     // check if the string is a boolean value and if so convert it to boolean
     // if not, assign the original value
-    value = value === "true" || (value === "false" ? false : value);
+    value = value === 'true' || (value === 'false' ? false : value);
     // check if the option is included in moses options, if so use the long moses option name, if not add it to additional parameters
     if (mapping) {
       mosesOptions[mapping[0]] = value;
@@ -41,35 +44,35 @@ export function stringifyMosesOptions(mosesOptions, additionalParameters) {
     delete options.hcCrossoverPopSize;
   }
 
-  let optionsString = Object.keys(options)
-    .reduce((accumulator, key) => {
-      return accumulator += ` ${
-        MosesOptionsMapping.find(mapping => mapping[0] === key)[1]
-        } ${options[key]}`;
-    }, '');
-
+  let optionsString = Object.keys(options).reduce((accumulator, key) => {
+    return (accumulator += ` ${
+      MosesOptionsMapping.find(mapping => mapping[0] === key)[1]
+    } ${options[key]}`);
+  }, '');
 
   additionalParameters &&
-    (
-      optionsString = Object.keys(additionalParameters).reduce((accumulator, key) => {
-        return accumulator += ` ${key} ${additionalParameters[key]}`;
-      }, optionsString)
-    );
+    (optionsString = Object.keys(additionalParameters).reduce(
+      (accumulator, key) => {
+        return (accumulator += ` ${key} ${additionalParameters[key]}`);
+      },
+      optionsString
+    ));
 
+  console.log(optionsString.trim());
   return optionsString.trim();
 }
 
 export const MosesOptionsMapping = [
-  ["maximumEvals", "-m"],
-  ["resultCount", "--result-count"],
-  ["featureSelectionTargetSize", "--fs-target-size"],
-  ["numberOfThreads", "-j"],
-  ["reductKnobBuildingEffort", "--reduct-knob-building-effort"],
-  ["featureSelectionAlgorithm", "--fs-algo"],
-  ["complexityRatio", "--complexity-ratio"],
-  ["enableFeatureSelection", "--enable-fs"],
-  ["hcWidenSearch", "--hc-widen-search"],
-  ["balance", "--balance"],
-  ["hcCrossoverMinNeighbors", "hc-crossover-min-neighbors"],
-  ["hcCrossoverPopSize", "hc-crossover-pop-size"],
+  ['maximumEvals', '-m'],
+  ['resultCount', '--result-count'],
+  ['featureSelectionTargetSize', '--fs-target-size'],
+  ['numberOfThreads', '-j'],
+  ['reductKnobBuildingEffort', '--reduct-knob-building-effort'],
+  ['featureSelectionAlgorithm', '--fs-algo'],
+  ['complexityRatio', '--complexity-ratio'],
+  ['enableFeatureSelection', '--enable-fs'],
+  ['hcWidenSearch', '--hc-widen-search'],
+  ['balance', '--balance'],
+  ['hcCrossoverMinNeighbors', 'hc-crossover-min-neighbors'],
+  ['hcCrossoverPopSize', 'hc-crossover-pop-size']
 ];

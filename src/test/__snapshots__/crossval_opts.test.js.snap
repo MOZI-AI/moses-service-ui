@@ -18,7 +18,7 @@ exports[`<CrossValidationOptionsForm /> rendered correctly 1`] = `
       }
     >
       <div
-        className="ant-col-8"
+        className="ant-col-md-24 ant-col-lg-12 ant-col-xl-8"
         style={
           Object {
             "paddingLeft": 8,
@@ -117,7 +117,7 @@ exports[`<CrossValidationOptionsForm /> rendered correctly 1`] = `
         </div>
       </div>
       <div
-        className="ant-col-8"
+        className="ant-col-md-24 ant-col-lg-12 ant-col-xl-8"
         style={
           Object {
             "paddingLeft": 8,
@@ -210,7 +210,7 @@ exports[`<CrossValidationOptionsForm /> rendered correctly 1`] = `
         </div>
       </div>
       <div
-        className="ant-col-8"
+        className="ant-col-md-24 ant-col-lg-12 ant-col-xl-8"
         style={
           Object {
             "paddingLeft": 8,

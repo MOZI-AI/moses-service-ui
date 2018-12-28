@@ -1,0 +1,260 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MoziServiceForm /> renders correctly 1`] = `
+Array [
+  <div
+    className="ant-steps ant-steps-horizontal ant-steps-small ant-steps-label-vertical ant-steps-dot"
+    style={Object {}}
+  >
+    <div
+      className="ant-steps-item ant-steps-item-process"
+      style={
+        Object {
+          "marginRight": -1,
+          "width": "33.333333333333336%",
+        }
+      }
+    >
+      <div
+        className="ant-steps-item-tail"
+      />
+      <div
+        className="ant-steps-item-icon"
+      >
+        <span
+          className="ant-steps-icon"
+        >
+          <span
+            className="ant-steps-icon-dot"
+          />
+        </span>
+      </div>
+      <div
+        className="ant-steps-item-content"
+      >
+        <div
+          className="ant-steps-item-title"
+        >
+          Select Dataset
+        </div>
+      </div>
+    </div>
+    <div
+      className="ant-steps-item ant-steps-item-wait"
+      style={
+        Object {
+          "marginRight": -1,
+          "width": "33.333333333333336%",
+        }
+      }
+    >
+      <div
+        className="ant-steps-item-tail"
+      />
+      <div
+        className="ant-steps-item-icon"
+      >
+        <span
+          className="ant-steps-icon"
+        >
+          <span
+            className="ant-steps-icon-dot"
+          />
+        </span>
+      </div>
+      <div
+        className="ant-steps-item-content"
+      >
+        <div
+          className="ant-steps-item-title"
+        >
+          Moses Options
+        </div>
+      </div>
+    </div>
+    <div
+      className="ant-steps-item ant-steps-item-wait"
+      style={
+        Object {
+          "marginRight": -1,
+          "width": "33.333333333333336%",
+        }
+      }
+    >
+      <div
+        className="ant-steps-item-tail"
+      />
+      <div
+        className="ant-steps-item-icon"
+      >
+        <span
+          className="ant-steps-icon"
+        >
+          <span
+            className="ant-steps-icon-dot"
+          />
+        </span>
+      </div>
+      <div
+        className="ant-steps-item-content"
+      >
+        <div
+          className="ant-steps-item-title"
+        >
+          Cross Validation Options
+        </div>
+      </div>
+    </div>
+    <div
+      className="ant-steps-item ant-steps-item-wait"
+      style={Object {}}
+    >
+      <div
+        className="ant-steps-item-tail"
+      />
+      <div
+        className="ant-steps-item-icon"
+      >
+        <span
+          className="ant-steps-icon"
+        >
+          <span
+            className="ant-steps-icon-dot"
+          />
+        </span>
+      </div>
+      <div
+        className="ant-steps-item-content"
+      >
+        <div
+          className="ant-steps-item-title"
+        >
+          Target feature
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="ant-divider ant-divider-horizontal ant-divider-dashed"
+  />,
+  <div
+    className="datasetUploadWrapper"
+  >
+    <span
+      className=""
+    >
+      <div
+        className="ant-upload ant-upload-drag"
+        onDragLeave={[Function]}
+        onDragOver={[Function]}
+        onDrop={[Function]}
+      >
+        <span
+          className="ant-upload ant-upload-btn"
+          onClick={[Function]}
+          onDragOver={[Function]}
+          onDrop={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          style={
+            Object {
+              "height": undefined,
+            }
+          }
+          tabIndex="0"
+        >
+          <input
+            accept=""
+            directory={null}
+            multiple={false}
+            onChange={[Function]}
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+            type="file"
+            webkitdirectory={null}
+          />
+          <div
+            className="ant-upload-drag-container"
+          >
+            <p
+              className="ant-upload-drag-icon"
+            >
+              <i
+                className="anticon anticon-upload"
+              >
+                <svg
+                  aria-hidden="true"
+                  className=""
+                  data-icon="upload"
+                  fill="currentColor"
+                  height="1em"
+                  viewBox="64 64 896 896"
+                  width="1em"
+                >
+                  <path
+                    d="M400 317.7h73.9V656c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V317.7H624c6.7 0 10.4-7.7 6.3-12.9L518.3 163a8 8 0 0 0-12.6 0l-112 141.7c-4.1 5.3-.4 13 6.3 13zM878 626h-60c-4.4 0-8 3.6-8 8v154H214V634c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v198c0 17.7 14.3 32 32 32h684c17.7 0 32-14.3 32-32V634c0-4.4-3.6-8-8-8z"
+                  />
+                </svg>
+              </i>
+            </p>
+            <p
+              className="ant-upload-text"
+            >
+              Click or drag dataset file to this area to upload
+            </p>
+            <p
+              className="ant-upload-hint"
+            >
+              Please make sure the dataset file is in .csv format.
+            </p>
+          </div>
+        </span>
+      </div>
+      <div
+        className="ant-upload-list ant-upload-list-text"
+      />
+    </span>
+    <div
+      className="ant-divider ant-divider-horizontal ant-divider-dashed"
+    />
+    <div
+      className="ant-row-flex ant-row-flex-end"
+    >
+      <div
+        className=""
+      >
+        <button
+          className="ant-btn nextButton ant-btn-primary"
+          disabled={true}
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            Next 
+          </span>
+          <i
+            className="anticon anticon-right"
+          >
+            <svg
+              aria-hidden="true"
+              className=""
+              data-icon="right"
+              fill="currentColor"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M765.7 486.8L314.9 134.7A7.97 7.97 0 0 0 302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 0 0 0-50.4z"
+              />
+            </svg>
+          </i>
+        </button>
+      </div>
+    </div>
+  </div>,
+]
+`;
