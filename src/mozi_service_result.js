@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check } from '@material-ui/icons';
+import { CheckCircle } from '@material-ui/icons';
 import { Grid, Card, CardContent } from '@material-ui/core';
 import green from '@material-ui/core/colors/green';
 import { withStyles } from '@material-ui/core/styles';
@@ -14,12 +14,12 @@ export class MoziServiceResult extends React.Component {
     return (
       <React.Fragment>
         <Grid container>
-          <Grid xs={4} />
+          <Grid xs={4} item />
           <Grid xs={4} item style={{ textAlign: 'center', paddingTop: '10%' }}>
             <Card>
               <CardContent>
                 <h2>
-                  <Check style={{ fontSize: '48px', color: '#54C21F' }} />
+                  <CheckCircle style={{ fontSize: '48px', color: '#54C21F' }} />
                   <br />
                   Anlaysis started!
                 </h2>
@@ -28,7 +28,11 @@ export class MoziServiceResult extends React.Component {
                 </p>
                 <p
                   style={{
-                    marginTop: '15px'
+                    marginTop: '15px',
+                    backgroundColor: '#cdffcd',
+                    border: '5px',
+                    padding: '10px',
+                    borderRadius: '5px'
                   }}
                 >
                   <a href={this.props.resultLink}>{this.props.resultLink}</a>

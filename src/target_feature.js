@@ -88,10 +88,10 @@ export class TargetFeatureForm extends React.Component {
                 </Tooltip>
               </Grid>
             </Grid>
-            <Grid container spacing={8} style={{ paddingTop: '30px' }}>
-              <FormLabel component="legend" style={{ margin: '0 0 10px 5px' }}>
-                Filter
-              </FormLabel>
+            <FormLabel component="p" style={{ margin: '15px 0 10px 5px' }}>
+              Filter
+            </FormLabel>
+            <Grid container spacing={8}>
               <Grid item>
                 <Tooltip title="" placement="top-start">
                   <FormControl variant="outlined">

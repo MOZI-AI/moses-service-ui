@@ -9,7 +9,7 @@ export class MoziService extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      resultLink: 'http://bing.com?id=ad123d',
+      resultLink: null,
       busy: false,
       error: null,
       notification: null
@@ -32,7 +32,7 @@ export class MoziService extends React.Component {
             resultLink: res.message.array[0],
             busy: false,
             error: null,
-            notification: { message: 'Analysis has started', busy: false }
+            notification: null
           }));
         } else {
           this.setState({

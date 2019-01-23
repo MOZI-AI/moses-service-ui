@@ -27,7 +27,7 @@ export class DatasetUpload extends React.Component {
         } else {
           this.setState({
             notification: {
-              message: 'The file you uploaded is not a valid dataset',
+              message: 'The file you selected is not a valid dataset',
               busy: false
             },
             fileError: true
