@@ -1,129 +1,140 @@
 import React from 'react';
-import { Form, Input, Button, Icon, Divider, Row, Col, Tooltip } from 'antd';
+import { TextField, Divider, Grid, Button, Tooltip } from '@material-ui/core';
+import {
+  ChevronRight,
+  ChevronLeft
+} from '@material-ui/icons';
+import { checkRequired, checkMin, checkBetween } from './utils';
 
-class CrossValidationOptions extends React.Component {
+export class CrossValidationOptionsForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      validationErrors: {
+        folds: null,
+        randomSeed: null,
+        testSize: null
+      }
+    };
+  }
+
   isValid() {
-    const fieldsError = this.props.form.getFieldsError();
-    return !Object.keys(fieldsError).some(field => fieldsError[field]);
+    return (
+      Object.values(this.state.validationErrors).filter(v => v).length === 0
+    );
+  }
+
+  validateForm(oldValues, newValues) {
+    const validationErrors = Object.assign({}, this.state.validationErrors);
+    let valuesChanged = false;
+    if (newValues.folds !== oldValues.folds) {
+      validationErrors.folds =
+        checkRequired(newValues.folds) || checkMin(newValues.folds, 1);
+      valuesChanged = true;
+    }
+    if (newValues.randomSeed !== oldValues.randomSeed) {
+      validationErrors.randomSeed = checkRequired(newValues.randomSeed);
+      valuesChanged = true;
+    }
+    if (newValues.testSize !== oldValues.testSize) {
+      validationErrors.testSize =
+        checkRequired(newValues.testSize) ||
+        checkBetween(newValues.testSize, 0, 1);
+      valuesChanged = true;
+    }
+    return valuesChanged
+      ? this.setState({ validationErrors: validationErrors })
+      : null;
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    this.validateForm(prevProps.defaults, this.props.defaults);
   }
 
   render() {
-    const { getFieldDecorator } = this.props.form;
-
     return (
       this.props.show && (
         <div className="crossValidationOptionsFormWrapper">
-          <Form>
-            <Row gutter={16}>
-              <Col md={24} lg={12} xl={8}>
-                <Form.Item
-                  label={
-                    <Tooltip title="Number of folds for cross-validation">
-                      Folds&nbsp;
-                    </Tooltip>
-                  }
-                  wrapperCol={{ span: 24 }}
-                >
-                  {getFieldDecorator('folds', {
-                    initialValue: this.props.defaults.folds,
-                    rules: [
-                      { required: true, message: 'Please input folds!' },
-                      {
-                        validator: (rule, value, callback) => {
-                          if (value < 1) {
-                            callback('Number of folds must be one or greater.');
-                          }
-                          callback();
-                        }
-                      }
-                    ]
-                  })(
-                    <Input
-                      name="folds"
-                      onChange={e => this.props.changeInput(e)}
-                    />
-                  )}
-                </Form.Item>
-              </Col>
-              <Col md={24} lg={12} xl={8}>
-                <Form.Item
-                  label={
-                    <Tooltip title="Specifies how many times to run MOSES with a random seed valuee">
-                      Random Seed&nbsp;
-                    </Tooltip>
-                  }
-                  wrapperCol={{ span: 24 }}
-                >
-                  {getFieldDecorator('randomSeed', {
-                    initialValue: this.props.defaults.randomSeed,
-                    rules: [
-                      { required: true, message: 'Please input random seed!' }
-                    ]
-                  })(
-                    <Input
-                      name="randomSeed"
-                      onChange={e => this.props.changeInput(e)}
-                    />
-                  )}
-                </Form.Item>
-              </Col>
-              <Col md={24} lg={12} xl={8}>
-                <Form.Item
-                  label={
-                    <Tooltip title="The proportion of the dataset that should be included in the test splie">
-                      Test size&nbsp;
-                    </Tooltip>
-                  }
-                  wrapperCol={{ span: 24 }}
-                >
-                  {getFieldDecorator('testSize', {
-                    initialValue: this.props.defaults.testSize,
-                    rules: [
-                      { required: true, message: 'Please input test size!' },
-                      {
-                        validator: (rule, value, callback) => {
-                          if (value < 0 || value > 1) {
-                            callback('Test size must be between zero and one.');
-                          }
-                          callback();
-                        }
-                      }
-                    ]
-                  })(
-                    <Input
-                      name="testSize"
-                      onChange={e => this.props.changeInput(e)}
-                    />
-                  )}
-                </Form.Item>
-              </Col>
-            </Row>
-          </Form>
-          <Divider dashed />
+          <form>
+            <Grid container spacing={24}>
+              <Grid item xs={4}>
+              <Tooltip title="Number of folds for cross-validation"  placement="top-start">
+              
+                              <TextField
+                                label="Folds"
+                                placeholder="Folds"
+                                margin="dense"
+                                variant="outlined"
+                                name="folds"
+                                fullWidth
+                                defaultValue={this.props.defaults.folds}
+                                onChange={e => this.props.changeInput(e)}
+                                {...this.state.validationErrors.folds}
+                              />
+              
+              </Tooltip>
+              </Grid>
+              <Grid item xs={4}>
+              <Tooltip title="Specifies how many times to run MOSES with a random seed value"  placement="top-start">
+                <TextField
+                  label="Number of seeds"
+                  placeholder="Number of seeds"
+                  margin="dense"
+                  variant="outlined"
+                  name="randomSeed"
+                  fullWidth
+                  defaultValue={this.props.defaults.randomSeed}
+                  onChange={e => this.props.changeInput(e)}
+                  {...this.state.validationErrors.randomSeed}
+                />
 
-          <Row type="flex" justify="end">
-            <Col>
+              </Tooltip>
+              </Grid>
+
+              <Grid item xs={4}>
+              <Tooltip title="The proportion of the dataset that should be included in the test splie"  placement="top-start">
+                <TextField
+                  label="Test size"
+                  placeholder="Test size"
+                  margin="dense"
+                  variant="outlined"
+                  name="testSize"
+                  fullWidth
+                  defaultValue={this.props.defaults.testSize}
+                  onChange={e => this.props.changeInput(e)}
+                  {...this.state.validationErrors.testSize}
+                />
+
+</Tooltip>
+              </Grid>
+            </Grid>
+          </form>
+          <Divider style={{ margin: '15px 0' }} />
+
+          <Grid container spacing={24}>
+            <Grid item xs={12}>
               <Button
-                style={{ marginRight: '15px' }}
-                type="default"
-                disabled={!this.isValid()}
+                variant="contained"
                 onClick={e => this.props.back()}
+                disabled={!this.isValid()}
               >
-                <Icon type="left" /> Back
+                <ChevronLeft />
+                Back
               </Button>
               <Button
-                type="primary"
-                disabled={!this.isValid()}
+                variant="contained"
+                color="primary"
                 onClick={e => this.props.next()}
+                disabled={!this.isValid()}
+                style={{ marginLeft: '5px' }}
               >
-                Next <Icon type="right" />
+                Next
+                <ChevronRight />
               </Button>
-            </Col>
-          </Row>
+            </Grid>
+          </Grid>
         </div>
       )
     );
   }
 }
-
-export const CrossValidationOptionsForm = Form.create()(CrossValidationOptions);

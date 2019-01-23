@@ -1,5 +1,12 @@
+import React from 'react';
+import { Snackbar, SnackbarContent, CircularProgress } from '@material-ui/core';
+import { withStyles } from '@material-ui/core/styles';
+import red from '@material-ui/core/colors/red';
+
 export const SERVER_ADDRESS =
-  process.env.SERVICE_ADDR || 'http://localhost:5000/';
+  'http://157cb181.ngrok.io' ||
+  process.env.SERVICE_ADDR ||
+  'http://192.168.1.39:8080/';
 
 // Parse moses options from options string to JSON
 export function parseMosesOptions(options) {
@@ -58,9 +65,90 @@ export function stringifyMosesOptions(mosesOptions, additionalParameters) {
       optionsString
     ));
 
-  console.log(optionsString.trim());
   return optionsString.trim();
 }
+
+export const checkRequired = value => {
+  return value !== ''
+    ? null
+    : {
+        error: true,
+        helperText: 'This field is required.'
+      };
+};
+
+export const checkMin = (value, min) => {
+  return value >= min
+    ? null
+    : {
+        error: true,
+        helperText: `The value must be ${min} or greater.`
+      };
+};
+
+export const checkMax = (value, max) => {
+  return value <= max
+    ? null
+    : {
+        error: true,
+        helperText: `The value must be ${max} or smaller.`
+      };
+};
+
+export const checkBetween = (value, min, max) => {
+  return min <= value && value <= max
+    ? null
+    : {
+        error: true,
+        helperText: `The value must be between ${min} and ${max}.`
+      };
+};
+
+export const checkDuplicate = (value, array) => {
+  return array.includes(value)
+    ? {
+        error: true,
+        helperText: `"${value}" already exists.`
+      }
+    : null;
+};
+
+const ErrorSnackbarContent = withStyles({
+  root: { background: red[600] },
+  message: { color: '#fff' }
+})(SnackbarContent);
+
+export const showNotification = ({ message, busy }, callBack) => {
+  return (
+    <Snackbar
+      anchorOrigin={{
+        vertical: 'bottom',
+        horizontal: 'right'
+      }}
+      style={{ margin: '15px' }}
+      open
+      autoHideDuration={busy ? null : 5000}
+      onClose={callBack}
+    >
+      {busy ? (
+        <SnackbarContent
+          message={
+            <span style={{ display: 'flex', alignItems: 'center' }}>
+              <CircularProgress
+                size={24}
+                color="secondary"
+                style={{ marginRight: '15px' }}
+              />
+              {message}
+            </span>
+          }
+        />
+      ) : (
+        <ErrorSnackbarContent message={<span>{message}</span>} />
+      )}
+    </Snackbar>
+  );
+};
 
 export const MosesOptionsMapping = [
   ['maximumEvals', '-m'],

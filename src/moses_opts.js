@@ -1,36 +1,107 @@
 import React from 'react';
 import {
-  Form,
-  Input,
-  Checkbox,
-  Button,
-  Icon,
+  TextField,
   Divider,
-  Row,
-  Col,
+  Grid,
+  Button,
+  Checkbox,
+  FormControlLabel,
+  RadioGroup,
   Radio,
-  Tag,
+  FormLabel,
+  Chip,
   Tooltip
-} from 'antd';
+} from '@material-ui/core';
+import { ChevronRight, ChevronLeft, Add } from '@material-ui/icons';
+import { checkRequired, checkMin, checkDuplicate } from './utils';
 
-export class MosesOptions extends React.Component {
+export class MosesOptionsForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      additionalParameterName: '',
+      additionalParameterValue: '',
+      validationErrors: {
+        maximumEvals: null,
+        featureSelectionTargetSize: null,
+        resultCount: null,
+        numberOfThreads: null,
+        hcCrossoverMinNeighbors: null,
+        hcCrossoverPopSize: null,
+        additionalParameterName: null
+      }
+    };
+    this.name = React.createRef();
+  }
+
   isValid() {
-    const fieldsError = this.props.form.getFieldsError();
-    return (
-      !Object.keys(fieldsError).some(field => fieldsError[field]) &&
-      !this.conditionallyRequired(
-        this.props.defaults.enableFeatureSelection,
-        this.props.defaults.featureSelectionTargetSize
-      ) &&
-      !this.conditionallyRequired(
-        this.props.defaults.hcWidenSearch,
-        this.props.defaults.hcCrossoverMinNeighbors
-      ) &&
-      !this.conditionallyRequired(
-        this.props.defaults.hcWidenSearch,
-        this.props.defaults.hcCrossoverPopSize
-      )
-    );
+    let validationErrors = Object.assign({}, this.state.validationErrors);
+    if (!this.props.defaults.enableFeatureSelection) {
+      delete validationErrors.featureSelectionTargetSize;
+    }
+    if (!this.props.defaults.hcWidenSearch) {
+      delete validationErrors.hcCrossoverMinNeighbors;
+      delete validationErrors.hcCrossoverPopSize;
+    }
+    return Object.values(validationErrors).filter(v => v).length === 0;
+  }
+
+  validateForm(oldValues, newValues) {
+    const validationErrors = Object.assign({}, this.state.validationErrors);
+    let valuesChanged = false;
+    // maximumEvals
+    if (newValues.maximumEvals !== oldValues.maximumEvals) {
+      validationErrors.maximumEvals = checkRequired(newValues.maximumEvals);
+      valuesChanged = true;
+    }
+    // featureSelectionTargetSize
+    if (
+      newValues.featureSelectionTargetSize !==
+      oldValues.featureSelectionTargetSize
+    ) {
+      validationErrors.featureSelectionTargetSize = checkRequired(
+        newValues.featureSelectionTargetSize
+      );
+      valuesChanged = true;
+    }
+    // resultCount
+    if (newValues.resultCount !== oldValues.resultCount) {
+      validationErrors.resultCount =
+        checkRequired(newValues.resultCount) ||
+        checkMin(newValues.numberOfThreads, 1);
+      valuesChanged = true;
+    }
+    // numberOfThreads
+    if (newValues.numberOfThreads !== oldValues.numberOfThreads) {
+      validationErrors.numberOfThreads =
+        checkRequired(newValues.numberOfThreads) ||
+        checkMin(newValues.numberOfThreads, 1);
+      valuesChanged = true;
+    }
+    // hcCrossoverMinNeighbors
+    if (
+      newValues.hcCrossoverMinNeighbors !== oldValues.hcCrossoverMinNeighbors
+    ) {
+      validationErrors.hcCrossoverMinNeighbors = checkRequired(
+        newValues.hcCrossoverMinNeighbors
+      );
+      valuesChanged = true;
+    }
+    // hcCrossoverPopSize
+    if (newValues.hcCrossoverPopSize !== oldValues.hcCrossoverPopSize) {
+      validationErrors.hcCrossoverPopSize = checkRequired(
+        newValues.hcCrossoverPopSize
+      );
+      valuesChanged = true;
+    }
+
+    return valuesChanged
+      ? this.setState({ validationErrors: validationErrors })
+      : null;
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    this.validateForm(prevProps.defaults, this.props.defaults);
   }
 
   parseAdditionalParameters() {
@@ -47,374 +118,370 @@ export class MosesOptions extends React.Component {
   }
 
   render() {
-    const { getFieldDecorator } = this.props.form;
     const additionalParameters = this.parseAdditionalParameters();
 
     return (
       this.props.show && (
         <div className="mosesOptionsFormWrapper">
-          <Form>
-            <Row gutter={16}>
-              <Col md={24} lg={12} xl={6}>
-                <Form.Item>
-                  {getFieldDecorator('enableFeatureSelection', {})(
-                    <Checkbox
-                      checked={this.props.defaults.enableFeatureSelection}
-                      name="enableFeatureSelection"
-                      onChange={e => this.props.changeInput(e)}
-                    />
-                  )}
-                  <Tooltip title="Enable integrated feature selection.  Feature selection is performed immediately before knob building (representation building), when creating a new deme.">
-                    Enable Feature Selection&nbsp;
-                  </Tooltip>
-                </Form.Item>
-              </Col>
-              <Col md={24} lg={12} xl={6}>
-                <Form.Item>
-                  {getFieldDecorator('hcWidenSearch', {})(
-                    <Checkbox
-                      checked={this.props.defaults.hcWidenSearch}
-                      name="hcWidenSearch"
-                      onChange={e => this.props.changeInput(e)}
-                    />
-                  )}
-                  <Tooltip title="Hillclimbing parameter (hc). If false, then deme search terminates when a local hilltop is found. If true, then the search radius is progressively widened, until another termination condition is met. ">
-                    hc Widen Search&nbsp;
-                  </Tooltip>
-                </Form.Item>
-              </Col>
-              <Col md={24} lg={12} xl={6}>
-                <Form.Item>
-                  {getFieldDecorator('balance', {})(
-                    <Checkbox
-                      checked={this.props.defaults.balance}
-                      name="balance"
-                      onChange={e => this.props.changeInput(e)}
-                    />
-                  )}
-                  <Tooltip title="If the table has discrete output type (like bool or enum), balance the resulting ctable so all classes have the same weight.">
-                    Balance&nbsp;
-                  </Tooltip>
-                </Form.Item>
-              </Col>
-            </Row>
-            {this.props.defaults.enableFeatureSelection && (
-              <Row gutter={16}>
-                <Col md={24} lg={12} xl={8}>
-                  <Form.Item
-                    label={
-                      <Tooltip
-                        title="Feature selection algorithm. Supported algorithms are:
-                      simple, for a fast maximun mutual 
-                    information algo.
-                      inc, for incremental max-relevency, 
-                    min-redundancy.
-                      smd, for stochastic mutual 
-                    dependency,
-                      random, for uniform random 
-                    dependency,
-                    hc for moses-hillclimbing."
-                      >
-                        Feature Selection Algorithm&nbsp;
-                      </Tooltip>
-                    }
-                    wrapperCol={{ span: 24 }}
-                  >
-                    {getFieldDecorator('featureSelectionAlgorithm', {
-                      initialValue: this.props.defaults
-                        .featureSelectionAlgorithm,
-                      rules: [
-                        {
-                          required: true,
-                          message: 'Please input featureSelectionAlgorithm!'
+          <form>
+            <Grid container spacing={16}>
+              <Grid item xs={12} xm={6} md={4}>
+                <Tooltip
+                  title="Enable integrated feature selection.  Feature selection is performed immediately before knob building (representation building), when creating a new deme."
+                  placement="top-start"
+                >
+                  <FormControlLabel
+                    value="0"
+                    control={
+                      <Checkbox
+                        defaultChecked={
+                          this.props.defaults.enableFeatureSelection
                         }
-                      ]
-                    })(
-                      <Radio.Group
-                        onChange={e => this.props.changeInput(e)}
-                        name="featureSelectionAlgorithm"
-                      >
-                        <Radio.Button value="simple">simple</Radio.Button>
-                        <Radio.Button value="inc">inc</Radio.Button>
-                        <Radio.Button value="smd">smd</Radio.Button>
-                        <Radio.Button value="hc">hc</Radio.Button>
-                      </Radio.Group>
-                    )}
-                  </Form.Item>
-                </Col>
-                <Col md={24} lg={12} xl={8}>
-                  <Form.Item
-                    {...this.conditionallyRequired(
-                      this.props.defaults.enableFeatureSelection,
-                      this.props.defaults.featureSelectionTargetSize
-                    )}
-                    label={
-                      <Tooltip
-                        title="This option specifies the number of features to be
-                        selected out of the dataset. A value of 0 disables
-                        feature selection."
-                      >
-                        Feature Selection Target Size&nbsp;
-                      </Tooltip>
-                    }
-                    wrapperCol={{ span: 24 }}
-                  >
-                    {getFieldDecorator('featureSelectionTargetSize', {
-                      initialValue: this.props.defaults
-                        .featureSelectionTargetSize
-                    })(
-                      <Input
-                        name="featureSelectionTargetSize"
+                        name="enableFeatureSelection"
                         onChange={e => this.props.changeInput(e)}
                       />
-                    )}
-                  </Form.Item>
-                </Col>
-              </Row>
+                    }
+                    label="Enable feature selection"
+                  />
+                </Tooltip>
+              </Grid>
+              <Grid item xs={12} xm={6} md={4}>
+                <Tooltip
+                  title="Hillclimbing parameter (hc). If false,then deme search terminates when a local hilltop is found. If true, then the search radius is progressively widened, until another termination condition is met. "
+                  placement="top-start"
+                >
+                  <FormControlLabel
+                    value="0"
+                    control={
+                      <Checkbox
+                        defaultChecked={this.props.defaults.hcWidenSearch}
+                        name="hcWidenSearch"
+                        onChange={e => this.props.changeInput(e)}
+                      />
+                    }
+                    label="hc Widen Search"
+                  />
+                </Tooltip>
+              </Grid>
+              <Grid item xs={12} xm={6} md={4}>
+                <Tooltip
+                  title="If the table has discrete output type (like bool or enum), balance the resulting ctable so all classes have the same weight."
+                  placement="top-start"
+                >
+                  <FormControlLabel
+                    value="0"
+                    control={
+                      <Checkbox
+                        defaultChecked={this.props.defaults.balance}
+                        name="balance"
+                        onChange={e => this.props.changeInput(e)}
+                      />
+                    }
+                    label="Balance"
+                  />
+                </Tooltip>
+              </Grid>
+            </Grid>
+            {this.props.defaults.enableFeatureSelection && (
+              <Grid container spacing={24}>
+                <Grid item xs={12} xm={6} md={4}>
+                  <Tooltip
+                    title="Feature selection algorithm. Supported are:
+                                        simple, for a fast maximun mutual information algo.
+                                        inc, for incremental max-relevency, min-redundancy.
+                                        smd, for stochastic mutual dependency,
+                                        random, for uniform random dependency,
+                                        hc for moses-hillclimbing."
+                    placement="top-start"
+                  >
+                    <FormLabel component="legend">
+                      Feature selection algorithm
+                    </FormLabel>
+                  </Tooltip>
+
+                  <RadioGroup
+                    onChange={e => this.props.changeInput(e)}
+                    name="featureSelectionAlgorithm"
+                    style={{ display: 'flex', flexDirection: 'row' }}
+                    defaultValue={this.props.defaults.featureSelectionAlgorithm}
+                  >
+                    <FormControlLabel
+                      value="simple"
+                      control={<Radio />}
+                      label="simple"
+                    />
+                    <FormControlLabel
+                      value="inc"
+                      control={<Radio />}
+                      label="inc"
+                    />
+                    <FormControlLabel
+                      value="smd"
+                      control={<Radio />}
+                      label="smd"
+                    />
+                    <FormControlLabel
+                      value="hc"
+                      control={<Radio />}
+                      label="hc"
+                    />
+                  </RadioGroup>
+                </Grid>
+                <Grid item xs={12} xm={6} md={4}>
+                  <Tooltip
+                    title="This option specifies the number of features to be selected out of the dataset.  A value of 0 disables feature selection"
+                    placement="top-start"
+                  >
+                    <TextField
+                      label="Feature Selection Target Size"
+                      placeholder="Feature Selection Target Size"
+                      margin="dense"
+                      variant="outlined"
+                      name="featureSelectionTargetSize"
+                      fullWidth
+                      onChange={e => this.props.changeInput(e)}
+                      defaultValue={
+                        this.props.defaults.featureSelectionTargetSize
+                      }
+                      {...this.state.validationErrors
+                        .featureSelectionTargetSize}
+                    />
+                  </Tooltip>
+                </Grid>
+              </Grid>
             )}
             {this.props.defaults.hcWidenSearch && (
-              <Row gutter={16}>
-                <Col md={24} lg={12} xl={8}>
-                  <Form.Item
-                    {...this.conditionallyRequired(
-                      this.props.defaults.hcWidenSearch,
-                      this.props.defaults.hcCrossoverMinNeighbors
-                    )}
-                    label={
-                      <Tooltip title="It allows to control when crossover occurs instead of exhaustive search. If the neighborhood to explore has more than the given number (and at least 2 iterations has passed) then crossover kicks in.">
-                        hc Crossover Min Neighbors&nbsp;
-                      </Tooltip>
-                    }
-                    wrapperCol={{ span: 24 }}
+              <Grid container spacing={24}>
+                <Grid item xs={12} xm={6} md={4}>
+                  <Tooltip
+                    title="It also allows to control when crossover occurs instead of exhaustive search. If the neighborhood to explore has more than the given number (and at least 2 iterations has passed) then  crossover kicks in."
+                    placement="top-start"
                   >
-                    {getFieldDecorator('hcCrossoverMinNeighbors', {
-                      initialValue: this.props.defaults.hcCrossoverMinNeighbors
-                    })(
-                      <Input
-                        name="hcCrossoverMinNeighbors"
-                        onChange={e => this.props.changeInput(e)}
-                      />
-                    )}
-                  </Form.Item>
-                </Col>
-                <Col md={24} lg={12} xl={8}>
-                  <Form.Item
-                    {...this.conditionallyRequired(
-                      this.props.defaults.hcWidenSearch,
-                      this.props.defaults.hcCrossoverPopSize
-                    )}
-                    label={
-                      <Tooltip title="Number of new candidates created by crossover during each iteration of hillclimbing.">
-                        hc Crossover Pop Size&nbsp;
-                      </Tooltip>
-                    }
-                    wrapperCol={{ span: 24 }}
+                    <TextField
+                      label="hc Crossover Min Neighbors"
+                      placeholder="hc Crossover Min Neighbors"
+                      margin="dense"
+                      variant="outlined"
+                      name="hcCrossoverMinNeighbors"
+                      fullWidth
+                      onChange={e => this.props.changeInput(e)}
+                      defaultValue={this.props.defaults.hcCrossoverMinNeighbors}
+                      {...this.state.validationErrors.hcCrossoverMinNeighbors}
+                    />
+                  </Tooltip>
+                </Grid>
+                <Grid item xs={12} xm={6} md={4}>
+                  <Tooltip
+                    title="Number of new candidates created by crossover during each iteration of hillclimbing."
+                    placement="top-start"
                   >
-                    {getFieldDecorator('hcCrossoverPopSize', {
-                      initialValue: this.props.defaults.hcCrossoverPopSize
-                    })(
-                      <Input
-                        name="hcCrossoverPopSize"
-                        onChange={e => this.props.changeInput(e)}
-                      />
-                    )}
-                  </Form.Item>
-                </Col>
-              </Row>
+                    <TextField
+                      label="hc Crossover Pop Size"
+                      placeholder="hc Crossover Pop Size"
+                      margin="dense"
+                      variant="outlined"
+                      name="hcCrossoverPopSize"
+                      fullWidth
+                      onChange={e => this.props.changeInput(e)}
+                      defaultValue={this.props.defaults.hcCrossoverPopSize}
+                      {...this.state.validationErrors.hcCrossoverPopSize}
+                    />
+                  </Tooltip>
+                </Grid>
+              </Grid>
             )}
-            <Row gutter={16}>
-              <Col md={24} lg={12} xl={8}>
-                <Form.Item
-                  label={
-                    <Tooltip title="Maximum number of fitness function evaluations.">
-                      Maximum evals&nbsp;
-                    </Tooltip>
-                  }
-                  wrapperCol={{ span: 24 }}
+            <Grid container spacing={24}>
+              <Grid item xs={12} xm={6} md={4}>
+                <Tooltip
+                  title="Maximum number of fitness function evaluations."
+                  placement="top-start"
                 >
-                  {getFieldDecorator('maximumEvals', {
-                    initialValue: this.props.defaults.maximumEvals,
-                    rules: [
-                      {
-                        required: true,
-                        message: 'Please input maximum evals!'
-                      }
-                    ]
-                  })(
-                    <Input
-                      name="maximumEvals"
-                      onChange={e => this.props.changeInput(e)}
-                    />
-                  )}
-                </Form.Item>
-              </Col>
-              <Col md={24} lg={12} xl={8}>
-                <Form.Item
-                  label={
-                    <Tooltip title="The number of results to return, ordered according to a linear  combination of score and complexity. If negative, then return all results.">
-                      Result Count&nbsp;
-                    </Tooltip>
-                  }
-                  wrapperCol={{ span: 24 }}
+                  <TextField
+                    label="Maximum evals"
+                    placeholder="Maximum evals"
+                    margin="dense"
+                    variant="outlined"
+                    name="maximumEvals"
+                    fullWidth
+                    onChange={e => this.props.changeInput(e)}
+                    defaultValue={this.props.defaults.maximumEvals}
+                    {...this.state.validationErrors.maximumEvals}
+                  />
+                </Tooltip>
+              </Grid>
+              <Grid item xs={12} xm={6} md={4}>
+                <Tooltip
+                  title="The number of results to return,ordered according to a linear combination of score and complexity. If negative, then return all results."
+                  placement="top-start"
                 >
-                  {getFieldDecorator('resultCount', {
-                    initialValue: this.props.defaults.resultCount,
-                    rules: [
-                      {
-                        required: true,
-                        message: 'Please input resultCount!'
-                      }
-                    ]
-                  })(
-                    <Input
-                      name="resultCount"
-                      onChange={e => this.props.changeInput(e)}
-                    />
-                  )}
-                </Form.Item>
-              </Col>
-              <Col md={24} lg={12} xl={8}>
-                <Form.Item
-                  label={
-                    <Tooltip title="Number of jobs allocated for deme optimization.">
-                      Number Of Threads&nbsp;
-                    </Tooltip>
-                  }
-                  wrapperCol={{ span: 24 }}
+                  <TextField
+                    label="Result Count"
+                    placeholder="Result Count"
+                    margin="dense"
+                    variant="outlined"
+                    name="resultCount"
+                    fullWidth
+                    onChange={e => this.props.changeInput(e)}
+                    defaultValue={this.props.defaults.resultCount}
+                    {...this.state.validationErrors.resultCount}
+                  />
+                </Tooltip>
+              </Grid>
+              <Grid item xs={12} xm={6} md={4}>
+                <Tooltip
+                  title="Number of jobs allocated for deme optimization."
+                  placement="top-start"
                 >
-                  {getFieldDecorator('numberOfThreads', {
-                    initialValue: this.props.defaults.numberOfThreads,
-                    rules: [
-                      {
-                        required: true,
-                        message: 'Please input numberOfThreads!'
-                      }
-                    ]
-                  })(
-                    <Input
-                      name="numberOfThreads"
-                      onChange={e => this.props.changeInput(e)}
-                    />
-                  )}
-                </Form.Item>
-              </Col>
-            </Row>
-            <Row gutter={16}>
-              <Col md={24} lg={12} xl={8}>
-                <Form.Item
-                  label={
-                    <Tooltip title="Effort allocated for reduction during knob building, 0-3, 0 means minimum effort, 3 means maximum effort. The bigger the effort the lower the dimension of the deme.">
-                      Reduct Knob Building Effort&nbsp;
-                    </Tooltip>
-                  }
-                  wrapperCol={{ span: 24 }}
+                  <TextField
+                    label="Number Of Threads"
+                    placeholder="Number Of Threads"
+                    margin="dense"
+                    variant="outlined"
+                    name="numberOfThreads"
+                    fullWidth
+                    onChange={e => this.props.changeInput(e)}
+                    defaultValue={this.props.defaults.numberOfThreads}
+                    {...this.state.validationErrors.numberOfThreads}
+                  />
+                </Tooltip>
+              </Grid>
+            </Grid>
+            <Grid spacing={24} container>
+              <Grid item xs={12} xm={6} md={4}>
+                <Tooltip
+                  title="Effort allocated for reduction during knob building, 0-3, 0 means minimum effort, 3 means maximum effort. Thebigger the effort the lower the dimension of the deme."
+                  placement="top-start"
                 >
-                  {getFieldDecorator('reductKnobBuildingEffort', {
-                    initialValue: this.props.defaults.reductKnobBuildingEffort,
-                    rules: [
-                      {
-                        required: true,
-                        message: 'Please input reductKnobBuildingEffort!'
-                      }
-                    ]
-                  })(
-                    <Radio.Group
-                      onChange={e => this.props.changeInput(e)}
-                      name="reductKnobBuildingEffort"
-                    >
-                      <Radio.Button value={0}>0</Radio.Button>
-                      <Radio.Button value={1}>1</Radio.Button>
-                      <Radio.Button value={2}>2</Radio.Button>
-                      <Radio.Button value={3}>3</Radio.Button>
-                    </Radio.Group>
-                  )}
-                </Form.Item>
-              </Col>
-            </Row>
-          </Form>
+                  <FormLabel component="legend">
+                    Reduct Knob Building Effort
+                  </FormLabel>
+                </Tooltip>
+                <RadioGroup
+                  onChange={e => this.props.changeInput(e)}
+                  name="reductKnobBuildingEffort"
+                  style={{ display: 'flex', flexDirection: 'row' }}
+                  defaultValue={this.props.defaults.reductKnobBuildingEffort}
+                >
+                  <FormControlLabel value={'0'} control={<Radio />} label="0" />
+                  <FormControlLabel value={'1'} control={<Radio />} label="1" />
+                  <FormControlLabel value={'2'} control={<Radio />} label="2" />
+                  <FormControlLabel value={'3'} control={<Radio />} label="3" />
+                </RadioGroup>
+              </Grid>
+            </Grid>
+          </form>
 
-          <p>Additional parameters</p>
-          {additionalParameters.map(item => {
-            return (
-              <Tag
-                key={item.name}
-                onClose={e => this.props.removeAdditionalParameter(item.name)}
-                closable
-                color="blue"
-                className="additionalParameter"
-              >
-                <b>{item.name}</b> {item.value}
-              </Tag>
-            );
-          })}
-
-          <Form layout="inline" style={{ marginTop: '10px' }}>
-            <Form.Item>
-              {getFieldDecorator('name', {
-                rules: [
-                  {
-                    validator: (rule, value, callback) => {
-                      if (
-                        this.props.additionalParameters &&
-                        this.props.additionalParameters[value]
-                      ) {
-                        callback('The parameter is already added.');
+          <form layout="inline" style={{ marginTop: '10px' }}>
+            <Grid container spacing={24}>
+              <Grid item xs={12}>
+                <FormLabel component="legend">Additional parameters</FormLabel>
+                {additionalParameters.map(item => {
+                  return (
+                    <Chip
+                      key={item.name}
+                      style={{ marginRight: '5px' }}
+                      label={
+                        <span>
+                          <b>{item.name}</b> {item.value}
+                        </span>
                       }
-                      callback();
-                    }
-                  }
-                ]
-              })(<Input name="name" placeholder="Name" />)}
-            </Form.Item>
-            <Form.Item>
-              {getFieldDecorator('value', {})(
-                <Input name="value" placeholder="Value" />
-              )}
-            </Form.Item>
-            <Button
-              className="addAdditionalParameter"
-              disabled={
-                this.props.form.getFieldError('name') ||
-                !this.props.form.getFieldValue('name') ||
-                !this.props.form.getFieldValue('value')
-              }
-              onClick={e => {
-                this.props.addAdditionalParameter(
-                  this.props.form.getFieldValue('name'),
-                  this.props.form.getFieldValue('value')
-                );
-                this.props.form.setFieldsValue({ name: '' });
-                this.props.form.setFieldsValue({ value: '' });
-              }}
-            >
-              <Icon type="plus" /> Add parameter
-            </Button>
-          </Form>
-          <Divider dashed />
+                      onDelete={e =>
+                        this.props.removeAdditionalParameter(item.name)
+                      }
+                      color="primary"
+                    />
+                  );
+                })}
+                {additionalParameters.length > 0 && <br />}
+                <TextField
+                  {...this.state.validationErrors.additionalParameterName}
+                  label="Name"
+                  placeholder="Name"
+                  margin="dense"
+                  variant="outlined"
+                  name="name"
+                  value={this.state.additionalParameterName}
+                  onChange={e => {
+                    let validationErrors = Object.assign(
+                      {},
+                      this.state.validationErrors
+                    );
 
-          <Row type="flex" justify="end">
-            <Col>
+                    validationErrors.additionalParameterName = checkDuplicate(
+                      e.target.value.trim(),
+                      Object.keys(this.props.additionalParameters)
+                    );
+                    this.setState({
+                      validationErrors: validationErrors,
+                      additionalParameterName: e.target.value.trim()
+                    });
+                  }}
+                  style={{ marginRight: '5px' }}
+                />
+                <TextField
+                  label="Value"
+                  placeholder="Value"
+                  margin="dense"
+                  variant="outlined"
+                  name="value"
+                  value={this.state.additionalParameterValue}
+                  onChange={e =>
+                    this.setState({
+                      additionalParameterValue: e.target.value
+                    })
+                  }
+                  style={{ marginRight: '5px' }}
+                />
+                <Button
+                  className="addAdditionalParameter"
+                  variant="contained"
+                  size="large"
+                  style={{ marginTop: '10px' }}
+                  onClick={e => {
+                    this.props.addAdditionalParameter(
+                      this.state.additionalParameterName,
+                      this.state.additionalParameterValue
+                    );
+                    this.setState({
+                      additionalParameterName: '',
+                      additionalParameterValue: ''
+                    });
+                  }}
+                  disabled={
+                    !this.state.additionalParameterName ||
+                    !this.state.additionalParameterValue
+                  }
+                >
+                  <Add /> Add parameter
+                </Button>
+              </Grid>
+            </Grid>
+          </form>
+          <Divider style={{ margin: '15px 0' }} />
+          <Grid container spacing={24}>
+            <Grid item xs={12}>
               <Button
-                style={{ marginRight: '15px' }}
-                type="default"
-                disabled={!this.isValid()}
+                variant="contained"
                 onClick={e => this.props.back()}
+                disabled={!this.isValid()}
               >
-                <Icon type="left" /> Back
+                <ChevronLeft />
+                Back
               </Button>
               <Button
-                type="primary"
-                disabled={!this.isValid()}
+                variant="contained"
+                color="primary"
                 onClick={e => this.props.next()}
+                disabled={!this.isValid()}
+                style={{ marginLeft: '5px' }}
               >
-                Next <Icon type="right" />
+                Next
+                <ChevronRight />
               </Button>
-            </Col>
-          </Row>
+            </Grid>
+          </Grid>
         </div>
       )
     );
   }
 }
-
-export const MosesOptionsForm = Form.create()(MosesOptions);

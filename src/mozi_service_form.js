@@ -2,10 +2,21 @@ import React from 'react';
 import { MosesOptionsForm } from './moses_opts';
 import { CrossValidationOptionsForm } from './crossval_opts';
 import { DatasetUpload } from './dataset_upload';
-import { Steps, Divider } from 'antd';
 import { stringifyMosesOptions } from './utils';
 import { TargetFeatureForm } from './target_feature';
-import { AnalysisParameters, CrossValOptions } from './proto/moses_service_pb';
+import {
+  AnalysisParameters,
+  CrossValOptions,
+  Filter
+} from './proto/moses_service_pb';
+import { Stepper, Step, StepLabel, Divider } from '@material-ui/core';
+
+const Options = {
+  DATASET: 0,
+  MOSES_OPTIONS: 1,
+  CROSS_VALIDATION_OPTIONS: 2,
+  TARGET_FEATURE: 3
+};
 
 export class MoziServiceForm extends React.Component {
   constructor(props) {
@@ -14,7 +25,7 @@ export class MoziServiceForm extends React.Component {
       mosesOpts: {
         maximumEvals: 1000,
         featureSelectionTargetSize: 4,
-        reductKnobBuildingEffort: 0,
+        reductKnobBuildingEffort: '0',
         resultCount: 100,
         numberOfThreads: 8,
         featureSelectionAlgorithm: 'simple',
@@ -24,7 +35,7 @@ export class MoziServiceForm extends React.Component {
         hcCrossoverMinNeighbors: 5000,
         hcCrossoverPopSize: 1000
       },
-      additionalParameters: {},
+      additionalParameters: [],
       crossValOptions: {
         folds: 1,
         testSize: 0.3,
@@ -32,6 +43,7 @@ export class MoziServiceForm extends React.Component {
       },
       dataset: undefined,
       targetFeature: 'case',
+      filter: { name: '', value: '' },
       datasetFile: undefined,
       currentStep: Options.DATASET
     };
@@ -46,6 +58,7 @@ export class MoziServiceForm extends React.Component {
     this.handleFileUpload = this.handleFileUpload.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.changeStep = this.changeStep.bind(this);
+    this.handleFilterChange = this.handleFilterChange.bind(this);
   }
 
   changeStep(step) {
@@ -59,7 +72,6 @@ export class MoziServiceForm extends React.Component {
       let encoded = fileReader.result.replace(/^data:(.*;base64,)?/, '');
       encoded.length % 4 > 0 &&
         (encoded += '='.repeat(4 - (encoded.length % 4)));
-      console.log(encoded);
       this.setState({ dataset: encoded, datasetFile: file });
     };
   }
@@ -82,6 +94,12 @@ export class MoziServiceForm extends React.Component {
       }
     });
     event.preventDefault();
+  }
+
+  handleFilterChange(update) {
+    this.setState(state => ({
+      filter: Object.assign({}, state.filter, update)
+    }));
   }
 
   handleAdditionalParametersAdded(name, value) {
@@ -128,9 +146,15 @@ export class MoziServiceForm extends React.Component {
         this.state.additionalParameters
       )
     );
+
+    const filter = new Filter();
+    filter.setScore(this.state.filter.name);
+    filter.setValue(this.state.filter.value);
+
     analysisParameters.setDataset(this.state.dataset);
     analysisParameters.setTargetFeature(this.state.targetFeature);
     analysisParameters.setCrossvalopts(crossValOptions);
+    analysisParameters.setFilter(filter);
 
     this.props.handleSubmit(analysisParameters);
   }
@@ -138,14 +162,34 @@ export class MoziServiceForm extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Steps progressDot size="small" current={this.state.currentStep}>
-          <Steps.Step title="Select Dataset" />
-          <Steps.Step title="Moses Options" />
-          <Steps.Step title="Cross Validation Options" />
-          <Steps.Step title="Target feature" />
-        </Steps>
-        <Divider dashed />
+        <Stepper activeStep={this.state.currentStep} style={{ color: 'red' }}>
+          <Step key={1}>
+            <StepLabel>Select dataset</StepLabel>
+          </Step>
+          <Step key={1}>
+            <StepLabel>Moses Options</StepLabel>
+          </Step>
+          <Step key={1}>
+            <StepLabel>Cross Validation Options</StepLabel>
+          </Step>
+          <Step key={1}>
+            <StepLabel>Target feature</StepLabel>
+          </Step>
+        </Stepper>
 
+        {this.props.error && (
+          <div
+            style={{
+              padding: '15px',
+              border: 'solid 1px #ff0000',
+              backgroundColor: '#ffe3d6',
+              borderRadius: '5px'
+            }}
+          >
+            <p>{this.props.error}</p>
+          </div>
+        )}
+        <Divider style={{ marginBottom: '30px' }} />
         <DatasetUpload
           show={this.state.currentStep === Options.DATASET}
           uploadedFile={this.state.datasetFile}
@@ -175,21 +219,18 @@ export class MoziServiceForm extends React.Component {
         />
         <TargetFeatureForm
           show={this.state.currentStep === Options.TARGET_FEATURE}
-          defaults={{ targetFeature: this.state.targetFeature }}
+          defaults={{
+            targetFeature: this.state.targetFeature,
+            filter: this.state.filter
+          }}
           changeInput={event =>
             this.handleInputChange(Options.TARGET_FEATURE, event)
           }
           back={() => this.changeStep(Options.CROSS_VALIDATION_OPTIONS)}
           submit={this.handleSubmit}
+          handleFilterChange={this.handleFilterChange}
         />
       </React.Fragment>
     );
   }
 }
-
-const Options = {
-  DATASET: 0,
-  MOSES_OPTIONS: 1,
-  CROSS_VALIDATION_OPTIONS: 2,
-  TARGET_FEATURE: 3
-};

@@ -1,7 +1,7 @@
 // package:
 // file: src/proto/moses_service.proto
 
-var src_proto_moses_service_pb = require('../../src/proto/moses_service_pb');
+var src_proto_moses_service_pb = require('./moses_service_pb');
 var grpc = require('grpc-web-client').grpc;
 
 var MosesService = (function() {
