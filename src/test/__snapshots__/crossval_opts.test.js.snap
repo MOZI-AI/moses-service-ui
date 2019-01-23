@@ -4,379 +4,306 @@ exports[`<CrossValidationOptionsForm /> rendered correctly 1`] = `
 <div
   className="crossValidationOptionsFormWrapper"
 >
-  <form
-    className="ant-form ant-form-horizontal"
-    onSubmit={[Function]}
-  >
+  <form>
     <div
-      className="ant-row"
-      style={
-        Object {
-          "marginLeft": -8,
-          "marginRight": -8,
-        }
-      }
+      className="MuiGrid-container-1 MuiGrid-spacing-xs-24-25"
     >
       <div
-        className="ant-col-md-24 ant-col-lg-12 ant-col-xl-8"
-        style={
-          Object {
-            "paddingLeft": 8,
-            "paddingRight": 8,
-          }
-        }
+        className="MuiGrid-item-2 MuiGrid-grid-xs-4-33"
       >
         <div
-          className="ant-row ant-form-item"
+          aria-describedby={null}
+          className="MuiFormControl-root-106 MuiFormControl-marginDense-108 MuiFormControl-fullWidth-109"
+          onMouseLeave={[Function]}
+          onMouseOver={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+          title="Number of folds for cross-validation"
         >
-          <div
-            className="ant-form-item-label"
+          <label
+            className="MuiFormLabel-root-121 MuiInputLabel-root-110 MuiInputLabel-formControl-115 MuiInputLabel-animated-118 MuiInputLabel-marginDense-116 MuiInputLabel-outlined-120"
+            data-shrink={false}
           >
-            <label
-              className="ant-form-item-required"
-              htmlFor="folds"
-              onClick={[Function]}
-              title=""
-            >
-              <span
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
-              >
-                Folds 
-              </span>
-            </label>
-          </div>
+            Folds
+          </label>
           <div
-            className="ant-col-24 ant-form-item-control-wrapper"
+            className="MuiInputBase-root-141 MuiOutlinedInput-root-128 MuiInputBase-fullWidth-150 MuiInputBase-formControl-142 MuiInputBase-marginDense-148"
+            onClick={[Function]}
           >
-            <div
-              className="ant-form-item-control has-success"
+            <fieldset
+              aria-hidden={true}
+              className="MuiPrivateNotchedOutline-root-158 MuiOutlinedInput-notchedOutline-135"
+              style={
+                Object {
+                  "paddingLeft": 8,
+                }
+              }
             >
-              <span
-                className="ant-form-item-children"
+              <legend
+                className="MuiPrivateNotchedOutline-legend-159"
+                style={
+                  Object {
+                    "width": 0.01,
+                  }
+                }
               >
-                <input
-                  className="ant-input"
-                  data-__field={
+                <span
+                  dangerouslySetInnerHTML={
                     Object {
-                      "name": "folds",
+                      "__html": "&#8203;",
                     }
                   }
-                  data-__meta={
-                    Object {
-                      "initialValue": 0,
-                      "name": "folds",
-                      "originalProps": Object {
-                        "disabled": false,
-                        "name": "folds",
-                        "onChange": [Function],
-                        "prefixCls": "ant-input",
-                        "type": "text",
-                      },
-                      "ref": null,
-                      "rules": Array [
-                        Object {
-                          "message": "Please input folds!",
-                          "required": true,
-                        },
-                        Object {
-                          "validator": [Function],
-                        },
-                      ],
-                      "trigger": "onChange",
-                      "validate": Array [
-                        Object {
-                          "rules": Array [
-                            Object {
-                              "message": "Please input folds!",
-                              "required": true,
-                            },
-                            Object {
-                              "validator": [Function],
-                            },
-                          ],
-                          "trigger": Array [
-                            "onChange",
-                          ],
-                        },
-                      ],
-                      "valuePropName": "value",
-                    }
-                  }
-                  disabled={false}
-                  id="folds"
-                  name="folds"
-                  onChange={[Function]}
-                  onKeyDown={[Function]}
-                  type="text"
-                  value={0}
                 />
-              </span>
-            </div>
+              </legend>
+            </fieldset>
+            <input
+              aria-invalid={false}
+              className="MuiInputBase-input-151 MuiOutlinedInput-input-136 MuiInputBase-inputMarginDense-152 MuiOutlinedInput-inputMarginDense-137"
+              defaultValue={0}
+              disabled={false}
+              name="folds"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder="Folds"
+              required={false}
+              type="text"
+            />
           </div>
         </div>
       </div>
       <div
-        className="ant-col-md-24 ant-col-lg-12 ant-col-xl-8"
-        style={
-          Object {
-            "paddingLeft": 8,
-            "paddingRight": 8,
-          }
-        }
+        className="MuiGrid-item-2 MuiGrid-grid-xs-4-33"
       >
         <div
-          className="ant-row ant-form-item"
+          aria-describedby={null}
+          className="MuiFormControl-root-106 MuiFormControl-marginDense-108 MuiFormControl-fullWidth-109"
+          onMouseLeave={[Function]}
+          onMouseOver={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+          title="Specifies how many times to run MOSES with a random seed value"
         >
-          <div
-            className="ant-form-item-label"
+          <label
+            className="MuiFormLabel-root-121 MuiInputLabel-root-110 MuiInputLabel-formControl-115 MuiInputLabel-animated-118 MuiInputLabel-marginDense-116 MuiInputLabel-outlined-120"
+            data-shrink={false}
           >
-            <label
-              className="ant-form-item-required"
-              htmlFor="randomSeed"
-              onClick={[Function]}
-              title=""
-            >
-              <span
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
-              >
-                Random Seed 
-              </span>
-            </label>
-          </div>
+            Number of seeds
+          </label>
           <div
-            className="ant-col-24 ant-form-item-control-wrapper"
+            className="MuiInputBase-root-141 MuiOutlinedInput-root-128 MuiInputBase-fullWidth-150 MuiInputBase-formControl-142 MuiInputBase-marginDense-148"
+            onClick={[Function]}
           >
-            <div
-              className="ant-form-item-control has-success"
+            <fieldset
+              aria-hidden={true}
+              className="MuiPrivateNotchedOutline-root-158 MuiOutlinedInput-notchedOutline-135"
+              style={
+                Object {
+                  "paddingLeft": 8,
+                }
+              }
             >
-              <span
-                className="ant-form-item-children"
+              <legend
+                className="MuiPrivateNotchedOutline-legend-159"
+                style={
+                  Object {
+                    "width": 0.01,
+                  }
+                }
               >
-                <input
-                  className="ant-input"
-                  data-__field={
+                <span
+                  dangerouslySetInnerHTML={
                     Object {
-                      "name": "randomSeed",
+                      "__html": "&#8203;",
                     }
                   }
-                  data-__meta={
-                    Object {
-                      "initialValue": 5,
-                      "name": "randomSeed",
-                      "originalProps": Object {
-                        "disabled": false,
-                        "name": "randomSeed",
-                        "onChange": [Function],
-                        "prefixCls": "ant-input",
-                        "type": "text",
-                      },
-                      "ref": null,
-                      "rules": Array [
-                        Object {
-                          "message": "Please input random seed!",
-                          "required": true,
-                        },
-                      ],
-                      "trigger": "onChange",
-                      "validate": Array [
-                        Object {
-                          "rules": Array [
-                            Object {
-                              "message": "Please input random seed!",
-                              "required": true,
-                            },
-                          ],
-                          "trigger": Array [
-                            "onChange",
-                          ],
-                        },
-                      ],
-                      "valuePropName": "value",
-                    }
-                  }
-                  disabled={false}
-                  id="randomSeed"
-                  name="randomSeed"
-                  onChange={[Function]}
-                  onKeyDown={[Function]}
-                  type="text"
-                  value={5}
                 />
-              </span>
-            </div>
+              </legend>
+            </fieldset>
+            <input
+              aria-invalid={false}
+              className="MuiInputBase-input-151 MuiOutlinedInput-input-136 MuiInputBase-inputMarginDense-152 MuiOutlinedInput-inputMarginDense-137"
+              defaultValue={5}
+              disabled={false}
+              name="randomSeed"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder="Number of seeds"
+              required={false}
+              type="text"
+            />
           </div>
         </div>
       </div>
       <div
-        className="ant-col-md-24 ant-col-lg-12 ant-col-xl-8"
-        style={
-          Object {
-            "paddingLeft": 8,
-            "paddingRight": 8,
-          }
-        }
+        className="MuiGrid-item-2 MuiGrid-grid-xs-4-33"
       >
         <div
-          className="ant-row ant-form-item"
+          aria-describedby={null}
+          className="MuiFormControl-root-106 MuiFormControl-marginDense-108 MuiFormControl-fullWidth-109"
+          onMouseLeave={[Function]}
+          onMouseOver={[Function]}
+          onTouchEnd={[Function]}
+          onTouchStart={[Function]}
+          title="The proportion of the dataset that should be included in the test splie"
         >
-          <div
-            className="ant-form-item-label"
+          <label
+            className="MuiFormLabel-root-121 MuiInputLabel-root-110 MuiInputLabel-formControl-115 MuiInputLabel-animated-118 MuiInputLabel-marginDense-116 MuiInputLabel-outlined-120"
+            data-shrink={false}
           >
-            <label
-              className="ant-form-item-required"
-              htmlFor="testSize"
-              onClick={[Function]}
-              title=""
-            >
-              <span
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
-              >
-                Test size 
-              </span>
-            </label>
-          </div>
+            Test size
+          </label>
           <div
-            className="ant-col-24 ant-form-item-control-wrapper"
+            className="MuiInputBase-root-141 MuiOutlinedInput-root-128 MuiInputBase-fullWidth-150 MuiInputBase-formControl-142 MuiInputBase-marginDense-148"
+            onClick={[Function]}
           >
-            <div
-              className="ant-form-item-control has-success"
+            <fieldset
+              aria-hidden={true}
+              className="MuiPrivateNotchedOutline-root-158 MuiOutlinedInput-notchedOutline-135"
+              style={
+                Object {
+                  "paddingLeft": 8,
+                }
+              }
             >
-              <span
-                className="ant-form-item-children"
+              <legend
+                className="MuiPrivateNotchedOutline-legend-159"
+                style={
+                  Object {
+                    "width": 0.01,
+                  }
+                }
               >
-                <input
-                  className="ant-input"
-                  data-__field={
+                <span
+                  dangerouslySetInnerHTML={
                     Object {
-                      "name": "testSize",
+                      "__html": "&#8203;",
                     }
                   }
-                  data-__meta={
-                    Object {
-                      "initialValue": 3,
-                      "name": "testSize",
-                      "originalProps": Object {
-                        "disabled": false,
-                        "name": "testSize",
-                        "onChange": [Function],
-                        "prefixCls": "ant-input",
-                        "type": "text",
-                      },
-                      "ref": null,
-                      "rules": Array [
-                        Object {
-                          "message": "Please input test size!",
-                          "required": true,
-                        },
-                        Object {
-                          "validator": [Function],
-                        },
-                      ],
-                      "trigger": "onChange",
-                      "validate": Array [
-                        Object {
-                          "rules": Array [
-                            Object {
-                              "message": "Please input test size!",
-                              "required": true,
-                            },
-                            Object {
-                              "validator": [Function],
-                            },
-                          ],
-                          "trigger": Array [
-                            "onChange",
-                          ],
-                        },
-                      ],
-                      "valuePropName": "value",
-                    }
-                  }
-                  disabled={false}
-                  id="testSize"
-                  name="testSize"
-                  onChange={[Function]}
-                  onKeyDown={[Function]}
-                  type="text"
-                  value={3}
                 />
-              </span>
-            </div>
+              </legend>
+            </fieldset>
+            <input
+              aria-invalid={false}
+              className="MuiInputBase-input-151 MuiOutlinedInput-input-136 MuiInputBase-inputMarginDense-152 MuiOutlinedInput-inputMarginDense-137"
+              defaultValue={3}
+              disabled={false}
+              name="testSize"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder="Test size"
+              required={false}
+              type="text"
+            />
           </div>
         </div>
       </div>
     </div>
   </form>
-  <div
-    className="ant-divider ant-divider-horizontal ant-divider-dashed"
+  <hr
+    className="MuiDivider-root-160"
+    style={
+      Object {
+        "margin": "15px 0",
+      }
+    }
   />
   <div
-    className="ant-row-flex ant-row-flex-end"
+    className="MuiGrid-container-1 MuiGrid-spacing-xs-24-25"
   >
     <div
-      className=""
+      className="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
     >
       <button
-        className="ant-btn ant-btn-default"
+        className="MuiButtonBase-root-191 MuiButton-root-165 MuiButton-contained-176 MuiButton-raised-179"
         disabled={false}
+        onBlur={[Function]}
         onClick={[Function]}
-        style={
-          Object {
-            "marginRight": "15px",
-          }
-        }
+        onContextMenu={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex="0"
         type="button"
       >
-        <i
-          className="anticon anticon-left"
+        <span
+          className="MuiButton-label-166"
         >
           <svg
             aria-hidden="true"
-            className=""
-            data-icon="left"
-            fill="currentColor"
-            height="1em"
-            viewBox="64 64 896 896"
-            width="1em"
+            className="MuiSvgIcon-root-194"
+            focusable="false"
+            role="presentation"
+            viewBox="0 0 24 24"
           >
             <path
-              d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 0 0 0 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"
+              d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
             />
           </svg>
-        </i>
-        <span>
-           Back
+          Back
         </span>
+        <span
+          className="MuiTouchRipple-root-203"
+        />
       </button>
       <button
-        className="ant-btn ant-btn-primary"
+        className="MuiButtonBase-root-191 MuiButton-root-165 MuiButton-contained-176 MuiButton-containedPrimary-177 MuiButton-raised-179 MuiButton-raisedPrimary-180"
         disabled={false}
+        onBlur={[Function]}
         onClick={[Function]}
+        onContextMenu={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        style={
+          Object {
+            "marginLeft": "5px",
+          }
+        }
+        tabIndex="0"
         type="button"
       >
-        <span>
-          Next 
-        </span>
-        <i
-          className="anticon anticon-right"
+        <span
+          className="MuiButton-label-166"
         >
+          Next
           <svg
             aria-hidden="true"
-            className=""
-            data-icon="right"
-            fill="currentColor"
-            height="1em"
-            viewBox="64 64 896 896"
-            width="1em"
+            className="MuiSvgIcon-root-194"
+            focusable="false"
+            role="presentation"
+            viewBox="0 0 24 24"
           >
             <path
-              d="M765.7 486.8L314.9 134.7A7.97 7.97 0 0 0 302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 0 0 0-50.4z"
+              d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
             />
           </svg>
-        </i>
+        </span>
+        <span
+          className="MuiTouchRipple-root-203"
+        />
       </button>
     </div>
   </div>

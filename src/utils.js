@@ -3,7 +3,8 @@ import { Snackbar, SnackbarContent, CircularProgress } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import red from '@material-ui/core/colors/red';
 
-export const SERVER_ADDRESS = 'http://localhost:8080/';
+export const SERVER_ADDRESS =
+  'https://f90f95eb.ngrok.io' || 'http://localhost:8080/';
 
 // Parse moses options from options string to JSON
 export function parseMosesOptions(options) {

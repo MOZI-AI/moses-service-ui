@@ -22,7 +22,7 @@ export class MoziService extends React.Component {
       busy: true,
       notification: { message: 'Attempting to start analysis ...', busy: true }
     });
-
+    console.log('request', analysisParameters);
     grpc.unary(MosesService.StartAnalysis, {
       request: analysisParameters,
       host: SERVER_ADDRESS,

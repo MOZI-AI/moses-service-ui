@@ -28,7 +28,8 @@ export class MosesOptionsForm extends React.Component {
         numberOfThreads: null,
         hcCrossoverMinNeighbors: null,
         hcCrossoverPopSize: null,
-        additionalParameterName: null
+        additionalParameterName: null,
+        complexityRatio: null
       }
     };
     this.name = React.createRef();
@@ -91,6 +92,13 @@ export class MosesOptionsForm extends React.Component {
     if (newValues.hcCrossoverPopSize !== oldValues.hcCrossoverPopSize) {
       validationErrors.hcCrossoverPopSize = checkRequired(
         newValues.hcCrossoverPopSize
+      );
+      valuesChanged = true;
+    }
+
+    if (newValues.complexityRatio !== oldValues.complexityRatio) {
+      validationErrors.complexityRatio = checkRequired(
+        newValues.complexityRatio
       );
       valuesChanged = true;
     }
@@ -368,6 +376,24 @@ export class MosesOptionsForm extends React.Component {
                   <FormControlLabel value={'3'} control={<Radio />} label="3" />
                 </RadioGroup>
               </Grid>
+              <Grid item xs={12} xm={6} md={4}>
+                <Tooltip
+                  title="Fix the ratio of the score to complexity, to be used as a penalty, when ranking the metapopulation for fitness. ."
+                  placement="top-start"
+                >
+                  <TextField
+                    label="Complexity ratio"
+                    placeholder="Complexity ratio"
+                    margin="dense"
+                    variant="outlined"
+                    name="complexityRatio"
+                    fullWidth
+                    onChange={e => this.props.changeInput(e)}
+                    defaultValue={this.props.defaults.complexityRatio}
+                    {...this.state.validationErrors.complexityRatio}
+                  />
+                </Tooltip>
+              </Grid>
             </Grid>
           </form>
 
@@ -397,9 +423,9 @@ export class MosesOptionsForm extends React.Component {
                   {...this.state.validationErrors.additionalParameterName}
                   label="Name"
                   placeholder="Name"
+                  name="additionalParameterName"
                   margin="dense"
                   variant="outlined"
-                  name="name"
                   value={this.state.additionalParameterName}
                   onChange={e => {
                     let validationErrors = Object.assign(
@@ -423,7 +449,6 @@ export class MosesOptionsForm extends React.Component {
                   placeholder="Value"
                   margin="dense"
                   variant="outlined"
-                  name="value"
                   value={this.state.additionalParameterValue}
                   onChange={e =>
                     this.setState({

@@ -33,7 +33,8 @@ export class MoziServiceForm extends React.Component {
         hcWidenSearch: true,
         balance: true,
         hcCrossoverMinNeighbors: 5000,
-        hcCrossoverPopSize: 1000
+        hcCrossoverPopSize: 1000,
+        complexityRatio: 3
       },
       additionalParameters: [],
       crossValOptions: {
@@ -181,8 +182,8 @@ export class MoziServiceForm extends React.Component {
           <div
             style={{
               padding: '15px',
-              border: 'solid 1px #ff0000',
-              backgroundColor: '#ffe3d6',
+              border: 'solid 1px #FFA19D',
+              backgroundColor: '#FFF0EF',
               borderRadius: '5px'
             }}
           >

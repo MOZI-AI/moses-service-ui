@@ -79,7 +79,7 @@ export class DatasetUpload extends React.Component {
           </Dropzone>
           {this.props.uploadedFile && (
             <div
-              className="fileDetails"
+              id="fileDetails"
               style={{
                 borderRadius: 0,
                 position: relative,
@@ -104,6 +104,7 @@ export class DatasetUpload extends React.Component {
           >
             <Grid item xs={12}>
               <Button
+                id="nextButton"
                 variant="contained"
                 color="primary"
                 onClick={e => this.props.next()}
