@@ -59,7 +59,7 @@ exports[`<CrossValidationOptionsForm /> rendered correctly 1`] = `
             <input
               aria-invalid={false}
               className="MuiInputBase-input-151 MuiOutlinedInput-input-136 MuiInputBase-inputMarginDense-152 MuiOutlinedInput-inputMarginDense-137"
-              defaultValue={0}
+              defaultValue={1}
               disabled={false}
               name="folds"
               onBlur={[Function]}
@@ -187,7 +187,7 @@ exports[`<CrossValidationOptionsForm /> rendered correctly 1`] = `
             <input
               aria-invalid={false}
               className="MuiInputBase-input-151 MuiOutlinedInput-input-136 MuiInputBase-inputMarginDense-152 MuiOutlinedInput-inputMarginDense-137"
-              defaultValue={3}
+              defaultValue={0.3}
               disabled={false}
               name="testSize"
               onBlur={[Function]}

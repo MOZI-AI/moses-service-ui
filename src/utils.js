@@ -125,7 +125,7 @@ export const showNotification = ({ message, busy }, callBack) => {
       }}
       style={{ margin: '15px' }}
       open
-      autoHideDuration={busy ? null : 5000}
+      autoHideDuration={null}
       onClose={callBack}
     >
       {busy ? (

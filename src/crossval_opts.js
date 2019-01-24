@@ -1,9 +1,6 @@
 import React from 'react';
 import { TextField, Divider, Grid, Button, Tooltip } from '@material-ui/core';
-import {
-  ChevronRight,
-  ChevronLeft
-} from '@material-ui/icons';
+import { ChevronRight, ChevronLeft } from '@material-ui/icons';
 import { checkRequired, checkMin, checkBetween } from './utils';
 
 export class CrossValidationOptionsForm extends React.Component {
@@ -58,54 +55,59 @@ export class CrossValidationOptionsForm extends React.Component {
           <form>
             <Grid container spacing={24}>
               <Grid item xs={4}>
-              <Tooltip title="Number of folds for cross-validation"  placement="top-start">
-              
-                              <TextField
-                                label="Folds"
-                                placeholder="Folds"
-                                margin="dense"
-                                variant="outlined"
-                                name="folds"
-                                fullWidth
-                                defaultValue={this.props.defaults.folds}
-                                onChange={e => this.props.changeInput(e)}
-                                {...this.state.validationErrors.folds}
-                              />
-              
-              </Tooltip>
+                <Tooltip
+                  title="Number of folds for cross-validation"
+                  placement="top-start"
+                >
+                  <TextField
+                    label="Folds"
+                    placeholder="Folds"
+                    margin="dense"
+                    variant="outlined"
+                    name="folds"
+                    fullWidth
+                    defaultValue={this.props.defaults.folds}
+                    onChange={e => this.props.changeInput(e)}
+                    {...this.state.validationErrors.folds}
+                  />
+                </Tooltip>
               </Grid>
               <Grid item xs={4}>
-              <Tooltip title="Specifies how many times to run MOSES with a random seed value"  placement="top-start">
-                <TextField
-                  label="Number of seeds"
-                  placeholder="Number of seeds"
-                  margin="dense"
-                  variant="outlined"
-                  name="randomSeed"
-                  fullWidth
-                  defaultValue={this.props.defaults.randomSeed}
-                  onChange={e => this.props.changeInput(e)}
-                  {...this.state.validationErrors.randomSeed}
-                />
-
-              </Tooltip>
+                <Tooltip
+                  title="Specifies how many times to run MOSES with a random seed value"
+                  placement="top-start"
+                >
+                  <TextField
+                    label="Number of seeds"
+                    placeholder="Number of seeds"
+                    margin="dense"
+                    variant="outlined"
+                    name="randomSeed"
+                    fullWidth
+                    defaultValue={this.props.defaults.randomSeed}
+                    onChange={e => this.props.changeInput(e)}
+                    {...this.state.validationErrors.randomSeed}
+                  />
+                </Tooltip>
               </Grid>
 
               <Grid item xs={4}>
-              <Tooltip title="The proportion of the dataset that should be included in the test splie"  placement="top-start">
-                <TextField
-                  label="Test size"
-                  placeholder="Test size"
-                  margin="dense"
-                  variant="outlined"
-                  name="testSize"
-                  fullWidth
-                  defaultValue={this.props.defaults.testSize}
-                  onChange={e => this.props.changeInput(e)}
-                  {...this.state.validationErrors.testSize}
-                />
-
-</Tooltip>
+                <Tooltip
+                  title="The proportion of the dataset that should be included in the test splie"
+                  placement="top-start"
+                >
+                  <TextField
+                    label="Test size"
+                    placeholder="Test size"
+                    margin="dense"
+                    variant="outlined"
+                    name="testSize"
+                    fullWidth
+                    defaultValue={this.props.defaults.testSize}
+                    onChange={e => this.props.changeInput(e)}
+                    {...this.state.validationErrors.testSize}
+                  />
+                </Tooltip>
               </Grid>
             </Grid>
           </form>

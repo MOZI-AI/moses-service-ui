@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import { MosesOptionsForm } from '../moses_opts';
 import renderer from 'react-test-renderer';
 
@@ -29,7 +29,7 @@ describe('<MosesOptionsForm />', () => {
   });
 
   it('shows error when attempting to add duplicate additional parameter', () => {
-    const wrapper = mount(
+    const wrapper = shallow(
       <MosesOptionsForm
         defaults={mosesOpts}
         additionalParameters={additionalParameters}
@@ -39,17 +39,17 @@ describe('<MosesOptionsForm />', () => {
     const name = wrapper
       .find('TextField[name="additionalParameterName"]')
       .first();
-
     name.simulate('change', { target: { value: 'a' } });
     expect(
       wrapper
+        .update()
         .find('TextField[name="additionalParameterName"]')
-        .prop('helperText')
+        .prop('error')
     ).toBeTruthy();
   });
 
   it('hides feature selection options when feature selection is disabled', () => {
-    const wrapper = mount(
+    const wrapper = shallow(
       <MosesOptionsForm defaults={mosesOpts} show="true" />
     );
     expect(wrapper.find('div#featureSelectionAlgorithm').exists()).toBeFalsy();
@@ -59,7 +59,7 @@ describe('<MosesOptionsForm />', () => {
   });
 
   it('hides hcWidenSearch options when hcWidenSearch is off', () => {
-    const wrapper = mount(
+    const wrapper = shallow(
       <MosesOptionsForm defaults={mosesOpts} show="true" />
     );
     expect(

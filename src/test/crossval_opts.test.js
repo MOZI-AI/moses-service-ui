@@ -1,11 +1,11 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import { CrossValidationOptionsForm } from '../crossval_opts';
 import renderer from 'react-test-renderer';
 
 const crossValOptions = {
-  folds: 0,
-  testSize: 3,
+  folds: 1,
+  testSize: 0.3,
   randomSeed: 5
 };
 
@@ -20,34 +20,52 @@ describe('<CrossValidationOptionsForm />', () => {
   });
 
   it('shows error when test size is not between zero and one', () => {
-    const wrapper = mount(
+    const wrapper = shallow(
       <CrossValidationOptionsForm
         defaults={crossValOptions}
         changeInput={() => {}}
         show="true"
       />
     );
-    wrapper
-      .find('input[name="testSize"]')
-      .simulate('change', { target: { value: 5 } });
     expect(
-      wrapper.find('.has-error input[name="testSize"]').exists()
+      wrapper
+        .update()
+        .find('TextField[name="testSize"]')
+        .prop('error')
+    ).toBeFalsy();
+    wrapper.setProps({
+      defaults: Object.assign({}, crossValOptions, { testSize: 2 })
+    });
+    expect(
+      wrapper
+        .update()
+        .find('TextField[name="testSize"]')
+        .prop('error')
     ).toBeTruthy();
   });
 
   it('shows error when number of folds is less than one', () => {
-    const wrapper = mount(
+    const wrapper = shallow(
       <CrossValidationOptionsForm
         defaults={crossValOptions}
         changeInput={() => {}}
         show="true"
       />
     );
-    wrapper
-      .find('input[name="folds"]')
-      .simulate('change', { target: { value: 0 } });
     expect(
-      wrapper.find('.has-error input[name="folds"]').exists()
+      wrapper
+        .update()
+        .find('TextField[name="folds"]')
+        .prop('error')
+    ).toBeFalsy();
+    wrapper.setProps({
+      defaults: Object.assign({}, crossValOptions, { folds: 0 })
+    });
+    expect(
+      wrapper
+        .update()
+        .find('TextField[name="folds"]')
+        .prop('error')
     ).toBeTruthy();
   });
 });

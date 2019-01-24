@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import { DatasetUpload } from '../dataset_upload';
 import renderer from 'react-test-renderer';
 
@@ -10,12 +10,12 @@ describe('<DatasetUpload />', () => {
   });
 
   it('starts without an uploaded file', () => {
-    const wrapper = mount(<DatasetUpload show="true" />);
+    const wrapper = shallow(<DatasetUpload show="true" />);
     expect(wrapper.find('div#fileDetails').exists()).toBeFalsy();
   });
 
   it('starts with the next button disabled', () => {
-    const wrapper = mount(<DatasetUpload show="true" />);
+    const wrapper = shallow(<DatasetUpload show="true" />);
     expect(wrapper.find('#nextButton').prop('disabled')).toBeTruthy();
   });
 });
