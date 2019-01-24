@@ -4,13 +4,13 @@ import {
   Divider,
   Grid,
   Button,
-  Checkbox,
   FormControlLabel,
   RadioGroup,
   Radio,
   FormLabel,
   Chip,
-  Tooltip
+  Tooltip,
+  Switch
 } from '@material-ui/core';
 import { ChevronRight, ChevronLeft, Add } from '@material-ui/icons';
 import { checkRequired, checkMin, checkDuplicate } from './utils';
@@ -141,7 +141,7 @@ export class MosesOptionsForm extends React.Component {
                   <FormControlLabel
                     value="0"
                     control={
-                      <Checkbox
+                      <Switch
                         defaultChecked={
                           this.props.defaults.enableFeatureSelection
                         }
@@ -161,7 +161,7 @@ export class MosesOptionsForm extends React.Component {
                   <FormControlLabel
                     value="0"
                     control={
-                      <Checkbox
+                      <Switch
                         defaultChecked={this.props.defaults.hcWidenSearch}
                         name="hcWidenSearch"
                         onChange={e => this.props.changeInput(e)}
@@ -179,7 +179,7 @@ export class MosesOptionsForm extends React.Component {
                   <FormControlLabel
                     value="0"
                     control={
-                      <Checkbox
+                      <Switch
                         defaultChecked={this.props.defaults.balance}
                         name="balance"
                         onChange={e => this.props.changeInput(e)}

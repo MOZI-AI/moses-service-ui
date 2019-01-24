@@ -24,50 +24,48 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
           title="Enable integrated feature selection.  Feature selection is performed immediately before knob building (representation building), when creating a new deme."
         >
           <span
-            className="MuiButtonBase-root-128 MuiIconButton-root-122 MuiPrivateSwitchBase-root-118 MuiCheckbox-root-112 MuiCheckbox-colorSecondary-117"
-            onBlur={[Function]}
-            onContextMenu={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            onMouseDown={[Function]}
-            onMouseLeave={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            onTouchMove={[Function]}
-            onTouchStart={[Function]}
-            tabIndex={null}
+            className="MuiSwitch-root-112"
           >
             <span
-              className="MuiIconButton-label-127"
+              className="MuiButtonBase-root-131 MuiIconButton-root-125 MuiPrivateSwitchBase-root-121 MuiSwitch-switchBase-115 MuiSwitch-colorSecondary-118"
+              onBlur={[Function]}
+              onContextMenu={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={null}
             >
-              <svg
-                aria-hidden="true"
-                className="MuiSvgIcon-root-131"
-                focusable="false"
-                role="presentation"
-                viewBox="0 0 24 24"
+              <span
+                className="MuiIconButton-label-130"
               >
-                <path
-                  d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                <span
+                  className="MuiSwitch-icon-113"
                 />
-              </svg>
-              <input
-                className="MuiPrivateSwitchBase-input-121"
-                data-indeterminate={false}
-                defaultChecked={false}
-                name="enableFeatureSelection"
-                onChange={[Function]}
-                type="checkbox"
-                value="0"
+                <input
+                  className="MuiPrivateSwitchBase-input-124"
+                  defaultChecked={false}
+                  name="enableFeatureSelection"
+                  onChange={[Function]}
+                  type="checkbox"
+                  value="0"
+                />
+              </span>
+              <span
+                className="MuiTouchRipple-root-271"
               />
             </span>
             <span
-              className="MuiTouchRipple-root-268"
+              className="MuiSwitch-bar-120"
             />
           </span>
           <span
-            className="MuiTypography-root-140 MuiTypography-body1-149 MuiFormControlLabel-label-111"
+            className="MuiTypography-root-134 MuiTypography-body1-143 MuiFormControlLabel-label-111"
           >
             Enable feature selection
           </span>
@@ -89,50 +87,48 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
           title="Hillclimbing parameter (hc). If false,then deme search terminates when a local hilltop is found. If true, then the search radius is progressively widened, until another termination condition is met. "
         >
           <span
-            className="MuiButtonBase-root-128 MuiIconButton-root-122 MuiPrivateSwitchBase-root-118 MuiCheckbox-root-112 MuiCheckbox-colorSecondary-117"
-            onBlur={[Function]}
-            onContextMenu={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            onMouseDown={[Function]}
-            onMouseLeave={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            onTouchMove={[Function]}
-            onTouchStart={[Function]}
-            tabIndex={null}
+            className="MuiSwitch-root-112"
           >
             <span
-              className="MuiIconButton-label-127"
+              className="MuiButtonBase-root-131 MuiIconButton-root-125 MuiPrivateSwitchBase-root-121 MuiSwitch-switchBase-115 MuiSwitch-colorSecondary-118"
+              onBlur={[Function]}
+              onContextMenu={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={null}
             >
-              <svg
-                aria-hidden="true"
-                className="MuiSvgIcon-root-131"
-                focusable="false"
-                role="presentation"
-                viewBox="0 0 24 24"
+              <span
+                className="MuiIconButton-label-130"
               >
-                <path
-                  d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+                <span
+                  className="MuiSwitch-icon-113"
                 />
-              </svg>
-              <input
-                className="MuiPrivateSwitchBase-input-121"
-                data-indeterminate={false}
-                defaultChecked={false}
-                name="hcWidenSearch"
-                onChange={[Function]}
-                type="checkbox"
-                value="0"
+                <input
+                  className="MuiPrivateSwitchBase-input-124"
+                  defaultChecked={false}
+                  name="hcWidenSearch"
+                  onChange={[Function]}
+                  type="checkbox"
+                  value="0"
+                />
+              </span>
+              <span
+                className="MuiTouchRipple-root-271"
               />
             </span>
             <span
-              className="MuiTouchRipple-root-268"
+              className="MuiSwitch-bar-120"
             />
           </span>
           <span
-            className="MuiTypography-root-140 MuiTypography-body1-149 MuiFormControlLabel-label-111"
+            className="MuiTypography-root-134 MuiTypography-body1-143 MuiFormControlLabel-label-111"
           >
             hc Widen Search
           </span>
@@ -154,50 +150,48 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
           title="If the table has discrete output type (like bool or enum), balance the resulting ctable so all classes have the same weight."
         >
           <span
-            className="MuiButtonBase-root-128 MuiIconButton-root-122 MuiPrivateSwitchBase-root-118 MuiCheckbox-root-112 MuiCheckbox-colorSecondary-117 MuiPrivateSwitchBase-checked-119 MuiCheckbox-checked-113"
-            onBlur={[Function]}
-            onContextMenu={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            onMouseDown={[Function]}
-            onMouseLeave={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            onTouchMove={[Function]}
-            onTouchStart={[Function]}
-            tabIndex={null}
+            className="MuiSwitch-root-112"
           >
             <span
-              className="MuiIconButton-label-127"
+              className="MuiButtonBase-root-131 MuiIconButton-root-125 MuiPrivateSwitchBase-root-121 MuiSwitch-switchBase-115 MuiSwitch-colorSecondary-118 MuiPrivateSwitchBase-checked-122 MuiSwitch-checked-116"
+              onBlur={[Function]}
+              onContextMenu={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={null}
             >
-              <svg
-                aria-hidden="true"
-                className="MuiSvgIcon-root-131"
-                focusable="false"
-                role="presentation"
-                viewBox="0 0 24 24"
+              <span
+                className="MuiIconButton-label-130"
               >
-                <path
-                  d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                <span
+                  className="MuiSwitch-icon-113 MuiSwitch-iconChecked-114"
                 />
-              </svg>
-              <input
-                className="MuiPrivateSwitchBase-input-121"
-                data-indeterminate={false}
-                defaultChecked={true}
-                name="balance"
-                onChange={[Function]}
-                type="checkbox"
-                value="0"
+                <input
+                  className="MuiPrivateSwitchBase-input-124"
+                  defaultChecked={true}
+                  name="balance"
+                  onChange={[Function]}
+                  type="checkbox"
+                  value="0"
+                />
+              </span>
+              <span
+                className="MuiTouchRipple-root-271"
               />
             </span>
             <span
-              className="MuiTouchRipple-root-268"
+              className="MuiSwitch-bar-120"
             />
           </span>
           <span
-            className="MuiTypography-root-140 MuiTypography-body1-149 MuiFormControlLabel-label-111"
+            className="MuiTypography-root-134 MuiTypography-body1-143 MuiFormControlLabel-label-111"
           >
             Balance
           </span>
@@ -213,7 +207,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
       >
         <div
           aria-describedby={null}
-          className="MuiFormControl-root-176 MuiFormControl-marginDense-178 MuiFormControl-fullWidth-179"
+          className="MuiFormControl-root-170 MuiFormControl-marginDense-172 MuiFormControl-fullWidth-173"
           onMouseLeave={[Function]}
           onMouseOver={[Function]}
           onTouchEnd={[Function]}
@@ -221,18 +215,18 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
           title="Maximum number of fitness function evaluations."
         >
           <label
-            className="MuiFormLabel-root-191 MuiInputLabel-root-180 MuiInputLabel-formControl-185 MuiInputLabel-animated-188 MuiInputLabel-marginDense-186 MuiInputLabel-outlined-190"
+            className="MuiFormLabel-root-185 MuiInputLabel-root-174 MuiInputLabel-formControl-179 MuiInputLabel-animated-182 MuiInputLabel-marginDense-180 MuiInputLabel-outlined-184"
             data-shrink={false}
           >
             Maximum evals
           </label>
           <div
-            className="MuiInputBase-root-211 MuiOutlinedInput-root-198 MuiInputBase-fullWidth-220 MuiInputBase-formControl-212 MuiInputBase-marginDense-218"
+            className="MuiInputBase-root-205 MuiOutlinedInput-root-192 MuiInputBase-fullWidth-214 MuiInputBase-formControl-206 MuiInputBase-marginDense-212"
             onClick={[Function]}
           >
             <fieldset
               aria-hidden={true}
-              className="MuiPrivateNotchedOutline-root-228 MuiOutlinedInput-notchedOutline-205"
+              className="MuiPrivateNotchedOutline-root-222 MuiOutlinedInput-notchedOutline-199"
               style={
                 Object {
                   "paddingLeft": 8,
@@ -240,7 +234,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
               }
             >
               <legend
-                className="MuiPrivateNotchedOutline-legend-229"
+                className="MuiPrivateNotchedOutline-legend-223"
                 style={
                   Object {
                     "width": 0.01,
@@ -258,7 +252,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
             </fieldset>
             <input
               aria-invalid={false}
-              className="MuiInputBase-input-221 MuiOutlinedInput-input-206 MuiInputBase-inputMarginDense-222 MuiOutlinedInput-inputMarginDense-207"
+              className="MuiInputBase-input-215 MuiOutlinedInput-input-200 MuiInputBase-inputMarginDense-216 MuiOutlinedInput-inputMarginDense-201"
               defaultValue={1000}
               disabled={false}
               name="maximumEvals"
@@ -278,7 +272,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
       >
         <div
           aria-describedby={null}
-          className="MuiFormControl-root-176 MuiFormControl-marginDense-178 MuiFormControl-fullWidth-179"
+          className="MuiFormControl-root-170 MuiFormControl-marginDense-172 MuiFormControl-fullWidth-173"
           onMouseLeave={[Function]}
           onMouseOver={[Function]}
           onTouchEnd={[Function]}
@@ -286,18 +280,18 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
           title="The number of results to return,ordered according to a linear combination of score and complexity. If negative, then return all results."
         >
           <label
-            className="MuiFormLabel-root-191 MuiInputLabel-root-180 MuiInputLabel-formControl-185 MuiInputLabel-animated-188 MuiInputLabel-marginDense-186 MuiInputLabel-outlined-190"
+            className="MuiFormLabel-root-185 MuiInputLabel-root-174 MuiInputLabel-formControl-179 MuiInputLabel-animated-182 MuiInputLabel-marginDense-180 MuiInputLabel-outlined-184"
             data-shrink={false}
           >
             Result Count
           </label>
           <div
-            className="MuiInputBase-root-211 MuiOutlinedInput-root-198 MuiInputBase-fullWidth-220 MuiInputBase-formControl-212 MuiInputBase-marginDense-218"
+            className="MuiInputBase-root-205 MuiOutlinedInput-root-192 MuiInputBase-fullWidth-214 MuiInputBase-formControl-206 MuiInputBase-marginDense-212"
             onClick={[Function]}
           >
             <fieldset
               aria-hidden={true}
-              className="MuiPrivateNotchedOutline-root-228 MuiOutlinedInput-notchedOutline-205"
+              className="MuiPrivateNotchedOutline-root-222 MuiOutlinedInput-notchedOutline-199"
               style={
                 Object {
                   "paddingLeft": 8,
@@ -305,7 +299,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
               }
             >
               <legend
-                className="MuiPrivateNotchedOutline-legend-229"
+                className="MuiPrivateNotchedOutline-legend-223"
                 style={
                   Object {
                     "width": 0.01,
@@ -323,7 +317,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
             </fieldset>
             <input
               aria-invalid={false}
-              className="MuiInputBase-input-221 MuiOutlinedInput-input-206 MuiInputBase-inputMarginDense-222 MuiOutlinedInput-inputMarginDense-207"
+              className="MuiInputBase-input-215 MuiOutlinedInput-input-200 MuiInputBase-inputMarginDense-216 MuiOutlinedInput-inputMarginDense-201"
               defaultValue={100}
               disabled={false}
               name="resultCount"
@@ -343,7 +337,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
       >
         <div
           aria-describedby={null}
-          className="MuiFormControl-root-176 MuiFormControl-marginDense-178 MuiFormControl-fullWidth-179"
+          className="MuiFormControl-root-170 MuiFormControl-marginDense-172 MuiFormControl-fullWidth-173"
           onMouseLeave={[Function]}
           onMouseOver={[Function]}
           onTouchEnd={[Function]}
@@ -351,18 +345,18 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
           title="Number of jobs allocated for deme optimization."
         >
           <label
-            className="MuiFormLabel-root-191 MuiInputLabel-root-180 MuiInputLabel-formControl-185 MuiInputLabel-animated-188 MuiInputLabel-marginDense-186 MuiInputLabel-outlined-190"
+            className="MuiFormLabel-root-185 MuiInputLabel-root-174 MuiInputLabel-formControl-179 MuiInputLabel-animated-182 MuiInputLabel-marginDense-180 MuiInputLabel-outlined-184"
             data-shrink={false}
           >
             Number Of Threads
           </label>
           <div
-            className="MuiInputBase-root-211 MuiOutlinedInput-root-198 MuiInputBase-fullWidth-220 MuiInputBase-formControl-212 MuiInputBase-marginDense-218"
+            className="MuiInputBase-root-205 MuiOutlinedInput-root-192 MuiInputBase-fullWidth-214 MuiInputBase-formControl-206 MuiInputBase-marginDense-212"
             onClick={[Function]}
           >
             <fieldset
               aria-hidden={true}
-              className="MuiPrivateNotchedOutline-root-228 MuiOutlinedInput-notchedOutline-205"
+              className="MuiPrivateNotchedOutline-root-222 MuiOutlinedInput-notchedOutline-199"
               style={
                 Object {
                   "paddingLeft": 8,
@@ -370,7 +364,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
               }
             >
               <legend
-                className="MuiPrivateNotchedOutline-legend-229"
+                className="MuiPrivateNotchedOutline-legend-223"
                 style={
                   Object {
                     "width": 0.01,
@@ -388,7 +382,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
             </fieldset>
             <input
               aria-invalid={false}
-              className="MuiInputBase-input-221 MuiOutlinedInput-input-206 MuiInputBase-inputMarginDense-222 MuiOutlinedInput-inputMarginDense-207"
+              className="MuiInputBase-input-215 MuiOutlinedInput-input-200 MuiInputBase-inputMarginDense-216 MuiOutlinedInput-inputMarginDense-201"
               defaultValue={8}
               disabled={false}
               name="numberOfThreads"
@@ -412,7 +406,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
       >
         <legend
           aria-describedby={null}
-          className="MuiFormLabel-root-191"
+          className="MuiFormLabel-root-185"
           onBlur={[Function]}
           onFocus={[Function]}
           onMouseLeave={[Function]}
@@ -424,7 +418,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
           Reduct Knob Building Effort
         </legend>
         <div
-          className="MuiFormGroup-root-230"
+          className="MuiFormGroup-root-224"
           defaultValue={0}
           role="radiogroup"
           style={
@@ -438,7 +432,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
             className="MuiFormControlLabel-root-106"
           >
             <span
-              className="MuiButtonBase-root-128 MuiIconButton-root-122 MuiPrivateSwitchBase-root-118 MuiRadio-root-232 MuiRadio-colorSecondary-236"
+              className="MuiButtonBase-root-131 MuiIconButton-root-125 MuiPrivateSwitchBase-root-121 MuiRadio-root-226 MuiRadio-colorSecondary-230"
               onBlur={[Function]}
               onContextMenu={[Function]}
               onFocus={[Function]}
@@ -453,11 +447,11 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
               tabIndex={null}
             >
               <span
-                className="MuiIconButton-label-127"
+                className="MuiIconButton-label-130"
               >
                 <svg
                   aria-hidden="true"
-                  className="MuiSvgIcon-root-131"
+                  className="MuiSvgIcon-root-231"
                   focusable="false"
                   role="presentation"
                   viewBox="0 0 24 24"
@@ -468,7 +462,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                 </svg>
                 <input
                   checked={false}
-                  className="MuiPrivateSwitchBase-input-121"
+                  className="MuiPrivateSwitchBase-input-124"
                   name="reductKnobBuildingEffort"
                   onChange={[Function]}
                   type="radio"
@@ -476,11 +470,11 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                 />
               </span>
               <span
-                className="MuiTouchRipple-root-268"
+                className="MuiTouchRipple-root-271"
               />
             </span>
             <span
-              className="MuiTypography-root-140 MuiTypography-body1-149 MuiFormControlLabel-label-111"
+              className="MuiTypography-root-134 MuiTypography-body1-143 MuiFormControlLabel-label-111"
             >
               0
             </span>
@@ -489,7 +483,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
             className="MuiFormControlLabel-root-106"
           >
             <span
-              className="MuiButtonBase-root-128 MuiIconButton-root-122 MuiPrivateSwitchBase-root-118 MuiRadio-root-232 MuiRadio-colorSecondary-236"
+              className="MuiButtonBase-root-131 MuiIconButton-root-125 MuiPrivateSwitchBase-root-121 MuiRadio-root-226 MuiRadio-colorSecondary-230"
               onBlur={[Function]}
               onContextMenu={[Function]}
               onFocus={[Function]}
@@ -504,11 +498,11 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
               tabIndex={null}
             >
               <span
-                className="MuiIconButton-label-127"
+                className="MuiIconButton-label-130"
               >
                 <svg
                   aria-hidden="true"
-                  className="MuiSvgIcon-root-131"
+                  className="MuiSvgIcon-root-231"
                   focusable="false"
                   role="presentation"
                   viewBox="0 0 24 24"
@@ -519,7 +513,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                 </svg>
                 <input
                   checked={false}
-                  className="MuiPrivateSwitchBase-input-121"
+                  className="MuiPrivateSwitchBase-input-124"
                   name="reductKnobBuildingEffort"
                   onChange={[Function]}
                   type="radio"
@@ -527,11 +521,11 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                 />
               </span>
               <span
-                className="MuiTouchRipple-root-268"
+                className="MuiTouchRipple-root-271"
               />
             </span>
             <span
-              className="MuiTypography-root-140 MuiTypography-body1-149 MuiFormControlLabel-label-111"
+              className="MuiTypography-root-134 MuiTypography-body1-143 MuiFormControlLabel-label-111"
             >
               1
             </span>
@@ -540,7 +534,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
             className="MuiFormControlLabel-root-106"
           >
             <span
-              className="MuiButtonBase-root-128 MuiIconButton-root-122 MuiPrivateSwitchBase-root-118 MuiRadio-root-232 MuiRadio-colorSecondary-236"
+              className="MuiButtonBase-root-131 MuiIconButton-root-125 MuiPrivateSwitchBase-root-121 MuiRadio-root-226 MuiRadio-colorSecondary-230"
               onBlur={[Function]}
               onContextMenu={[Function]}
               onFocus={[Function]}
@@ -555,11 +549,11 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
               tabIndex={null}
             >
               <span
-                className="MuiIconButton-label-127"
+                className="MuiIconButton-label-130"
               >
                 <svg
                   aria-hidden="true"
-                  className="MuiSvgIcon-root-131"
+                  className="MuiSvgIcon-root-231"
                   focusable="false"
                   role="presentation"
                   viewBox="0 0 24 24"
@@ -570,7 +564,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                 </svg>
                 <input
                   checked={false}
-                  className="MuiPrivateSwitchBase-input-121"
+                  className="MuiPrivateSwitchBase-input-124"
                   name="reductKnobBuildingEffort"
                   onChange={[Function]}
                   type="radio"
@@ -578,11 +572,11 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                 />
               </span>
               <span
-                className="MuiTouchRipple-root-268"
+                className="MuiTouchRipple-root-271"
               />
             </span>
             <span
-              className="MuiTypography-root-140 MuiTypography-body1-149 MuiFormControlLabel-label-111"
+              className="MuiTypography-root-134 MuiTypography-body1-143 MuiFormControlLabel-label-111"
             >
               2
             </span>
@@ -591,7 +585,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
             className="MuiFormControlLabel-root-106"
           >
             <span
-              className="MuiButtonBase-root-128 MuiIconButton-root-122 MuiPrivateSwitchBase-root-118 MuiRadio-root-232 MuiRadio-colorSecondary-236"
+              className="MuiButtonBase-root-131 MuiIconButton-root-125 MuiPrivateSwitchBase-root-121 MuiRadio-root-226 MuiRadio-colorSecondary-230"
               onBlur={[Function]}
               onContextMenu={[Function]}
               onFocus={[Function]}
@@ -606,11 +600,11 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
               tabIndex={null}
             >
               <span
-                className="MuiIconButton-label-127"
+                className="MuiIconButton-label-130"
               >
                 <svg
                   aria-hidden="true"
-                  className="MuiSvgIcon-root-131"
+                  className="MuiSvgIcon-root-231"
                   focusable="false"
                   role="presentation"
                   viewBox="0 0 24 24"
@@ -621,7 +615,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                 </svg>
                 <input
                   checked={false}
-                  className="MuiPrivateSwitchBase-input-121"
+                  className="MuiPrivateSwitchBase-input-124"
                   name="reductKnobBuildingEffort"
                   onChange={[Function]}
                   type="radio"
@@ -629,11 +623,11 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
                 />
               </span>
               <span
-                className="MuiTouchRipple-root-268"
+                className="MuiTouchRipple-root-271"
               />
             </span>
             <span
-              className="MuiTypography-root-140 MuiTypography-body1-149 MuiFormControlLabel-label-111"
+              className="MuiTypography-root-134 MuiTypography-body1-143 MuiFormControlLabel-label-111"
             >
               3
             </span>
@@ -646,7 +640,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
       >
         <div
           aria-describedby={null}
-          className="MuiFormControl-root-176 MuiFormControl-marginDense-178 MuiFormControl-fullWidth-179"
+          className="MuiFormControl-root-170 MuiFormControl-marginDense-172 MuiFormControl-fullWidth-173"
           onMouseLeave={[Function]}
           onMouseOver={[Function]}
           onTouchEnd={[Function]}
@@ -654,18 +648,18 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
           title="Fix the ratio of the score to complexity, to be used as a penalty, when ranking the metapopulation for fitness. ."
         >
           <label
-            className="MuiFormLabel-root-191 MuiInputLabel-root-180 MuiInputLabel-formControl-185 MuiInputLabel-animated-188 MuiInputLabel-marginDense-186 MuiInputLabel-outlined-190"
+            className="MuiFormLabel-root-185 MuiInputLabel-root-174 MuiInputLabel-formControl-179 MuiInputLabel-animated-182 MuiInputLabel-marginDense-180 MuiInputLabel-outlined-184"
             data-shrink={false}
           >
             Complexity ratio
           </label>
           <div
-            className="MuiInputBase-root-211 MuiOutlinedInput-root-198 MuiInputBase-fullWidth-220 MuiInputBase-formControl-212 MuiInputBase-marginDense-218"
+            className="MuiInputBase-root-205 MuiOutlinedInput-root-192 MuiInputBase-fullWidth-214 MuiInputBase-formControl-206 MuiInputBase-marginDense-212"
             onClick={[Function]}
           >
             <fieldset
               aria-hidden={true}
-              className="MuiPrivateNotchedOutline-root-228 MuiOutlinedInput-notchedOutline-205"
+              className="MuiPrivateNotchedOutline-root-222 MuiOutlinedInput-notchedOutline-199"
               style={
                 Object {
                   "paddingLeft": 8,
@@ -673,7 +667,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
               }
             >
               <legend
-                className="MuiPrivateNotchedOutline-legend-229"
+                className="MuiPrivateNotchedOutline-legend-223"
                 style={
                   Object {
                     "width": 0.01,
@@ -691,7 +685,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
             </fieldset>
             <input
               aria-invalid={false}
-              className="MuiInputBase-input-221 MuiOutlinedInput-input-206 MuiInputBase-inputMarginDense-222 MuiOutlinedInput-inputMarginDense-207"
+              className="MuiInputBase-input-215 MuiOutlinedInput-input-200 MuiInputBase-inputMarginDense-216 MuiOutlinedInput-inputMarginDense-201"
               defaultValue={3}
               disabled={false}
               name="complexityRatio"
@@ -722,12 +716,12 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
         className="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
       >
         <legend
-          className="MuiFormLabel-root-191"
+          className="MuiFormLabel-root-185"
         >
           Additional parameters
         </legend>
         <div
-          className="MuiFormControl-root-176 MuiFormControl-marginDense-178"
+          className="MuiFormControl-root-170 MuiFormControl-marginDense-172"
           style={
             Object {
               "marginRight": "5px",
@@ -735,18 +729,18 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
           }
         >
           <label
-            className="MuiFormLabel-root-191 MuiInputLabel-root-180 MuiInputLabel-formControl-185 MuiInputLabel-animated-188 MuiInputLabel-marginDense-186 MuiInputLabel-outlined-190"
+            className="MuiFormLabel-root-185 MuiInputLabel-root-174 MuiInputLabel-formControl-179 MuiInputLabel-animated-182 MuiInputLabel-marginDense-180 MuiInputLabel-outlined-184"
             data-shrink={false}
           >
             Name
           </label>
           <div
-            className="MuiInputBase-root-211 MuiOutlinedInput-root-198 MuiInputBase-formControl-212 MuiInputBase-marginDense-218"
+            className="MuiInputBase-root-205 MuiOutlinedInput-root-192 MuiInputBase-formControl-206 MuiInputBase-marginDense-212"
             onClick={[Function]}
           >
             <fieldset
               aria-hidden={true}
-              className="MuiPrivateNotchedOutline-root-228 MuiOutlinedInput-notchedOutline-205"
+              className="MuiPrivateNotchedOutline-root-222 MuiOutlinedInput-notchedOutline-199"
               style={
                 Object {
                   "paddingLeft": 8,
@@ -754,7 +748,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
               }
             >
               <legend
-                className="MuiPrivateNotchedOutline-legend-229"
+                className="MuiPrivateNotchedOutline-legend-223"
                 style={
                   Object {
                     "width": 0.01,
@@ -772,7 +766,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
             </fieldset>
             <input
               aria-invalid={false}
-              className="MuiInputBase-input-221 MuiOutlinedInput-input-206 MuiInputBase-inputMarginDense-222 MuiOutlinedInput-inputMarginDense-207"
+              className="MuiInputBase-input-215 MuiOutlinedInput-input-200 MuiInputBase-inputMarginDense-216 MuiOutlinedInput-inputMarginDense-201"
               disabled={false}
               name="additionalParameterName"
               onBlur={[Function]}
@@ -786,7 +780,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
           </div>
         </div>
         <div
-          className="MuiFormControl-root-176 MuiFormControl-marginDense-178"
+          className="MuiFormControl-root-170 MuiFormControl-marginDense-172"
           style={
             Object {
               "marginRight": "5px",
@@ -794,18 +788,18 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
           }
         >
           <label
-            className="MuiFormLabel-root-191 MuiInputLabel-root-180 MuiInputLabel-formControl-185 MuiInputLabel-animated-188 MuiInputLabel-marginDense-186 MuiInputLabel-outlined-190"
+            className="MuiFormLabel-root-185 MuiInputLabel-root-174 MuiInputLabel-formControl-179 MuiInputLabel-animated-182 MuiInputLabel-marginDense-180 MuiInputLabel-outlined-184"
             data-shrink={false}
           >
             Value
           </label>
           <div
-            className="MuiInputBase-root-211 MuiOutlinedInput-root-198 MuiInputBase-formControl-212 MuiInputBase-marginDense-218"
+            className="MuiInputBase-root-205 MuiOutlinedInput-root-192 MuiInputBase-formControl-206 MuiInputBase-marginDense-212"
             onClick={[Function]}
           >
             <fieldset
               aria-hidden={true}
-              className="MuiPrivateNotchedOutline-root-228 MuiOutlinedInput-notchedOutline-205"
+              className="MuiPrivateNotchedOutline-root-222 MuiOutlinedInput-notchedOutline-199"
               style={
                 Object {
                   "paddingLeft": 8,
@@ -813,7 +807,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
               }
             >
               <legend
-                className="MuiPrivateNotchedOutline-legend-229"
+                className="MuiPrivateNotchedOutline-legend-223"
                 style={
                   Object {
                     "width": 0.01,
@@ -831,7 +825,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
             </fieldset>
             <input
               aria-invalid={false}
-              className="MuiInputBase-input-221 MuiOutlinedInput-input-206 MuiInputBase-inputMarginDense-222 MuiOutlinedInput-inputMarginDense-207"
+              className="MuiInputBase-input-215 MuiOutlinedInput-input-200 MuiInputBase-inputMarginDense-216 MuiOutlinedInput-inputMarginDense-201"
               disabled={false}
               onBlur={[Function]}
               onChange={[Function]}
@@ -844,7 +838,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
           </div>
         </div>
         <button
-          className="MuiButtonBase-root-128 MuiButtonBase-disabled-129 MuiButton-root-237 MuiButton-contained-248 MuiButton-raised-251 MuiButton-sizeLarge-261 MuiButton-disabled-257 addAdditionalParameter"
+          className="MuiButtonBase-root-131 MuiButtonBase-disabled-132 MuiButton-root-240 MuiButton-contained-251 MuiButton-raised-254 MuiButton-sizeLarge-264 MuiButton-disabled-260 addAdditionalParameter"
           disabled={true}
           onBlur={[Function]}
           onClick={[Function]}
@@ -867,11 +861,11 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
           type="button"
         >
           <span
-            className="MuiButton-label-238"
+            className="MuiButton-label-241"
           >
             <svg
               aria-hidden="true"
-              className="MuiSvgIcon-root-131"
+              className="MuiSvgIcon-root-231"
               focusable="false"
               role="presentation"
               viewBox="0 0 24 24"
@@ -891,7 +885,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
     </div>
   </form>
   <hr
-    className="MuiDivider-root-263"
+    className="MuiDivider-root-266"
     style={
       Object {
         "margin": "15px 0",
@@ -905,7 +899,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
       className="MuiGrid-item-2 MuiGrid-grid-xs-12-41"
     >
       <button
-        className="MuiButtonBase-root-128 MuiButton-root-237 MuiButton-contained-248 MuiButton-raised-251"
+        className="MuiButtonBase-root-131 MuiButton-root-240 MuiButton-contained-251 MuiButton-raised-254"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -923,11 +917,11 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
         type="button"
       >
         <span
-          className="MuiButton-label-238"
+          className="MuiButton-label-241"
         >
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-131"
+            className="MuiSvgIcon-root-231"
             focusable="false"
             role="presentation"
             viewBox="0 0 24 24"
@@ -943,11 +937,11 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
           Back
         </span>
         <span
-          className="MuiTouchRipple-root-268"
+          className="MuiTouchRipple-root-271"
         />
       </button>
       <button
-        className="MuiButtonBase-root-128 MuiButton-root-237 MuiButton-contained-248 MuiButton-containedPrimary-249 MuiButton-raised-251 MuiButton-raisedPrimary-252"
+        className="MuiButtonBase-root-131 MuiButton-root-240 MuiButton-contained-251 MuiButton-containedPrimary-252 MuiButton-raised-254 MuiButton-raisedPrimary-255"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -970,12 +964,12 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
         type="button"
       >
         <span
-          className="MuiButton-label-238"
+          className="MuiButton-label-241"
         >
           Next
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-131"
+            className="MuiSvgIcon-root-231"
             focusable="false"
             role="presentation"
             viewBox="0 0 24 24"
@@ -990,7 +984,7 @@ exports[`<MosesOptionsForm /> rendered correctly 1`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-268"
+          className="MuiTouchRipple-root-271"
         />
       </button>
     </div>
