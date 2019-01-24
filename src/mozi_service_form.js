@@ -149,8 +149,8 @@ export class MoziServiceForm extends React.Component {
     );
 
     const filter = new Filter();
-    filter.setScore(this.state.filter.name);
-    filter.setValue(this.state.filter.name ? this.state.filter.value : -1);
+    filter.setScore(this.state.filter.name || 'null');
+    filter.setValue(this.state.filter.name ? this.state.filter.value : '0');
 
     analysisParameters.setDataset(this.state.dataset);
     analysisParameters.setTargetFeature(this.state.targetFeature);
