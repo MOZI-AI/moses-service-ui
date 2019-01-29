@@ -6,9 +6,14 @@ export class MoziServiceResult extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Grid container>
-          <Grid xs={4} item />
-          <Grid xs={4} item style={{ textAlign: 'center', paddingTop: '10%' }}>
+        <Grid container justify={'center'}>
+          <Grid
+            xs={12}
+            sm={8}
+            md={4}
+            item
+            style={{ textAlign: 'center', paddingTop: '10%' }}
+          >
             <Card
               style={{
                 backgroundColor: '#deffde'

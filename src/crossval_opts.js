@@ -1,6 +1,5 @@
 import React from 'react';
-import { TextField, Divider, Grid, Button, Tooltip } from '@material-ui/core';
-import { ChevronRight, ChevronLeft } from '@material-ui/icons';
+import { TextField, Grid, Tooltip } from '@material-ui/core';
 import { checkRequired, checkMin, checkBetween } from './utils';
 
 export class CrossValidationOptionsForm extends React.Component {
@@ -15,8 +14,8 @@ export class CrossValidationOptionsForm extends React.Component {
     };
   }
 
-  isValid() {
-    return (
+  updateValidationStatus() {
+    this.props.setValidationStatus(
       Object.values(this.state.validationErrors).filter(v => v).length === 0
     );
   }
@@ -49,94 +48,69 @@ export class CrossValidationOptionsForm extends React.Component {
   }
 
   render() {
+    this.updateValidationStatus();
     return (
-      this.props.show && (
-        <div className="crossValidationOptionsFormWrapper">
-          <form>
-            <Grid container spacing={24}>
-              <Grid item xs={4}>
-                <Tooltip
-                  title="Number of folds for cross-validation"
-                  placement="top-start"
-                >
-                  <TextField
-                    label="Folds"
-                    placeholder="Folds"
-                    margin="dense"
-                    variant="outlined"
-                    name="folds"
-                    fullWidth
-                    defaultValue={this.props.defaults.folds}
-                    onChange={e => this.props.changeInput(e)}
-                    {...this.state.validationErrors.folds}
-                  />
-                </Tooltip>
-              </Grid>
-              <Grid item xs={4}>
-                <Tooltip
-                  title="Specifies how many times to run MOSES with a random seed value"
-                  placement="top-start"
-                >
-                  <TextField
-                    label="Number of seeds"
-                    placeholder="Number of seeds"
-                    margin="dense"
-                    variant="outlined"
-                    name="randomSeed"
-                    fullWidth
-                    defaultValue={this.props.defaults.randomSeed}
-                    onChange={e => this.props.changeInput(e)}
-                    {...this.state.validationErrors.randomSeed}
-                  />
-                </Tooltip>
-              </Grid>
-
-              <Grid item xs={4}>
-                <Tooltip
-                  title="The proportion of the dataset that should be included in the test splie"
-                  placement="top-start"
-                >
-                  <TextField
-                    label="Test size"
-                    placeholder="Test size"
-                    margin="dense"
-                    variant="outlined"
-                    name="testSize"
-                    fullWidth
-                    defaultValue={this.props.defaults.testSize}
-                    onChange={e => this.props.changeInput(e)}
-                    {...this.state.validationErrors.testSize}
-                  />
-                </Tooltip>
-              </Grid>
-            </Grid>
-          </form>
-          <Divider style={{ margin: '15px 0' }} />
-
+      <div className="crossValidationOptionsFormWrapper">
+        <form>
           <Grid container spacing={24}>
-            <Grid item xs={12}>
-              <Button
-                variant="contained"
-                onClick={e => this.props.back()}
-                disabled={!this.isValid()}
+            <Grid item xs={4}>
+              <Tooltip
+                title="Number of folds for cross-validation"
+                placement="top-start"
               >
-                <ChevronLeft />
-                Back
-              </Button>
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={e => this.props.next()}
-                disabled={!this.isValid()}
-                style={{ marginLeft: '5px' }}
+                <TextField
+                  label="Folds"
+                  placeholder="Folds"
+                  margin="dense"
+                  variant="outlined"
+                  name="folds"
+                  fullWidth
+                  defaultValue={this.props.defaults.folds}
+                  onChange={e => this.props.changeInput(e)}
+                  {...this.state.validationErrors.folds}
+                />
+              </Tooltip>
+            </Grid>
+            <Grid item xs={4}>
+              <Tooltip
+                title="Specifies how many times to run MOSES with a random seed value"
+                placement="top-start"
               >
-                Next
-                <ChevronRight />
-              </Button>
+                <TextField
+                  label="Number of seeds"
+                  placeholder="Number of seeds"
+                  margin="dense"
+                  variant="outlined"
+                  name="randomSeed"
+                  fullWidth
+                  defaultValue={this.props.defaults.randomSeed}
+                  onChange={e => this.props.changeInput(e)}
+                  {...this.state.validationErrors.randomSeed}
+                />
+              </Tooltip>
+            </Grid>
+
+            <Grid item xs={4}>
+              <Tooltip
+                title="The proportion of the dataset that should be included in the test splie"
+                placement="top-start"
+              >
+                <TextField
+                  label="Test size"
+                  placeholder="Test size"
+                  margin="dense"
+                  variant="outlined"
+                  name="testSize"
+                  fullWidth
+                  defaultValue={this.props.defaults.testSize}
+                  onChange={e => this.props.changeInput(e)}
+                  {...this.state.validationErrors.testSize}
+                />
+              </Tooltip>
             </Grid>
           </Grid>
-        </div>
-      )
+        </form>
+      </div>
     );
   }
 }

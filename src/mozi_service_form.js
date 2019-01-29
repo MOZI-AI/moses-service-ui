@@ -9,7 +9,8 @@ import {
   CrossValOptions,
   Filter
 } from './proto/moses_service_pb';
-import { Stepper, Step, StepLabel, Divider } from '@material-ui/core';
+import { Grid, Button, Divider } from '@material-ui/core';
+import { Check } from '@material-ui/icons';
 
 const Options = {
   DATASET: 0,
@@ -46,7 +47,13 @@ export class MoziServiceForm extends React.Component {
       targetFeature: 'case',
       filter: { name: '', value: '' },
       datasetFile: undefined,
-      currentStep: Options.DATASET
+      currentStep: Options.DATASET,
+      isValid: {
+        dataset: true,
+        mosesOptions: true,
+        crossValOptions: true,
+        targetFeatureAndFilters: true
+      }
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -58,12 +65,27 @@ export class MoziServiceForm extends React.Component {
     );
     this.handleFileUpload = this.handleFileUpload.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.changeStep = this.changeStep.bind(this);
     this.handleFilterChange = this.handleFilterChange.bind(this);
+    this.isValid = this.isValid.bind(this);
+    this.setValidationStatus = this.setValidationStatus.bind(this);
   }
 
-  changeStep(step) {
-    this.setState({ currentStep: step });
+  isValid() {
+    return Object.values(this.state.isValid).reduce(
+      (acc, val) => val && acc,
+      true
+    );
+  }
+
+  setValidationStatus(key, valid) {
+    if (this.state.isValid[key] !== valid) {
+      this.setState(state => {
+        const isValid = Object.assign({}, state.isValid);
+        isValid[key] = valid;
+
+        return { isValid: isValid };
+      });
+    }
   }
 
   handleFileUpload(file) {
@@ -131,7 +153,6 @@ export class MoziServiceForm extends React.Component {
   }
 
   handleSubmit() {
-    // if a request is being processed, do nothing and wait for it to finish
     if (this.props.busy) {
       return;
     }
@@ -163,21 +184,6 @@ export class MoziServiceForm extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Stepper activeStep={this.state.currentStep} style={{ color: 'red' }}>
-          <Step key={1}>
-            <StepLabel>Select dataset</StepLabel>
-          </Step>
-          <Step key={1}>
-            <StepLabel>Moses Options</StepLabel>
-          </Step>
-          <Step key={1}>
-            <StepLabel>Cross Validation Options</StepLabel>
-          </Step>
-          <Step key={1}>
-            <StepLabel>Target feature</StepLabel>
-          </Step>
-        </Stepper>
-
         {this.props.error && (
           <div
             style={{
@@ -190,15 +196,28 @@ export class MoziServiceForm extends React.Component {
             <p>{this.props.error}</p>
           </div>
         )}
-        <Divider style={{ marginBottom: '30px' }} />
+        <h3
+          style={{
+            color: this.state.isValid.dataset ? 'black' : 'red'
+          }}
+        >
+          Upload dataset
+        </h3>
         <DatasetUpload
-          show={this.state.currentStep === Options.DATASET}
           uploadedFile={this.state.datasetFile}
           handleFileUpload={this.handleFileUpload}
-          next={() => this.changeStep(Options.MOSES_OPTIONS)}
+          setValidationStatus={valid =>
+            this.setValidationStatus('dataset', valid)
+          }
         />
+        <h3
+          style={{
+            color: this.state.isValid.mosesOptions ? 'black' : 'red'
+          }}
+        >
+          Moses options
+        </h3>
         <MosesOptionsForm
-          show={this.state.currentStep === Options.MOSES_OPTIONS}
           defaults={this.state.mosesOpts}
           additionalParameters={this.state.additionalParameters}
           changeInput={event =>
@@ -206,20 +225,36 @@ export class MoziServiceForm extends React.Component {
           }
           addAdditionalParameter={this.handleAdditionalParametersAdded}
           removeAdditionalParameter={this.handleAdditionalParametersRemoved}
-          back={() => this.changeStep(Options.DATASET)}
-          next={() => this.changeStep(Options.CROSS_VALIDATION_OPTIONS)}
+          setValidationStatus={valid =>
+            this.setValidationStatus('mosesOptions', valid)
+          }
         />
+        <h3
+          style={{
+            color: this.state.isValid.crossValOptions ? 'black' : 'red'
+          }}
+        >
+          {' '}
+          Cross validation options{' '}
+        </h3>
         <CrossValidationOptionsForm
-          show={this.state.currentStep === Options.CROSS_VALIDATION_OPTIONS}
           defaults={this.state.crossValOptions}
           changeInput={event =>
             this.handleInputChange(Options.CROSS_VALIDATION_OPTIONS, event)
           }
-          back={() => this.changeStep(Options.MOSES_OPTIONS)}
-          next={() => this.changeStep(Options.TARGET_FEATURE)}
+          setValidationStatus={valid =>
+            this.setValidationStatus('crossValOptions', valid)
+          }
         />
+        <h3
+          style={{
+            color: this.state.isValid.targetFeatureAndFilters ? 'black' : 'red'
+          }}
+        >
+          Target feature & filters
+        </h3>
+
         <TargetFeatureForm
-          show={this.state.currentStep === Options.TARGET_FEATURE}
           defaults={{
             targetFeature: this.state.targetFeature,
             filter: this.state.filter
@@ -227,10 +262,27 @@ export class MoziServiceForm extends React.Component {
           changeInput={event =>
             this.handleInputChange(Options.TARGET_FEATURE, event)
           }
-          back={() => this.changeStep(Options.CROSS_VALIDATION_OPTIONS)}
-          submit={this.handleSubmit}
           handleFilterChange={this.handleFilterChange}
+          setValidationStatus={valid =>
+            this.setValidationStatus('targetFeatureAndFilters', valid)
+          }
         />
+        <Divider style={{ margin: '15px 0' }} />
+
+        <Grid container spacing={24}>
+          <Grid item xs={12}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => this.handleSubmit()}
+              disabled={this.props.busy || !this.isValid()}
+              style={{ marginLeft: '5px' }}
+            >
+              Submit
+              <Check />
+            </Button>
+          </Grid>
+        </Grid>
       </React.Fragment>
     );
   }
