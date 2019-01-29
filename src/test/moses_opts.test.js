@@ -23,7 +23,12 @@ const additionalParameters = { a: 1 };
 describe('<MosesOptionsForm />', () => {
   it('rendered correctly', () => {
     const tree = renderer
-      .create(<MosesOptionsForm defaults={mosesOpts} show="true" />)
+      .create(
+        <MosesOptionsForm
+          defaults={mosesOpts}
+          setValidationStatus={valid => null}
+        />
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -33,7 +38,7 @@ describe('<MosesOptionsForm />', () => {
       <MosesOptionsForm
         defaults={mosesOpts}
         additionalParameters={additionalParameters}
-        show="true"
+        setValidationStatus={valid => null}
       />
     );
     const name = wrapper
@@ -50,7 +55,10 @@ describe('<MosesOptionsForm />', () => {
 
   it('hides feature selection options when feature selection is disabled', () => {
     const wrapper = shallow(
-      <MosesOptionsForm defaults={mosesOpts} show="true" />
+      <MosesOptionsForm
+        defaults={mosesOpts}
+        setValidationStatus={valid => null}
+      />
     );
     expect(wrapper.find('div#featureSelectionAlgorithm').exists()).toBeFalsy();
     expect(
@@ -60,7 +68,10 @@ describe('<MosesOptionsForm />', () => {
 
   it('hides hcWidenSearch options when hcWidenSearch is off', () => {
     const wrapper = shallow(
-      <MosesOptionsForm defaults={mosesOpts} show="true" />
+      <MosesOptionsForm
+        defaults={mosesOpts}
+        setValidationStatus={valid => null}
+      />
     );
     expect(
       wrapper.find('Input[name="hcCrossoverMinNeighbors"]').exists()

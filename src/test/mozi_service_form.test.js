@@ -8,11 +8,4 @@ describe('<MoziServiceForm />', () => {
     const tree = renderer.create(<MoziServiceForm />).toJSON();
     expect(tree).toMatchSnapshot();
   });
-
-  it('shows dataset upload form on start', () => {
-    const wrapper = shallow(
-      <MoziServiceForm handleSubmit={() => {}} show="true" />
-    );
-    expect(wrapper.find('DatasetUpload').prop('show')).toBeTruthy();
-  });
 });

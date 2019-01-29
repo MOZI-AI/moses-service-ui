@@ -183,7 +183,7 @@ export class MoziServiceForm extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <div style={{ overflowX: 'hidden' }}>
         {this.props.error && (
           <div
             style={{
@@ -269,8 +269,8 @@ export class MoziServiceForm extends React.Component {
         />
         <Divider style={{ margin: '15px 0' }} />
 
-        <Grid container spacing={24}>
-          <Grid item xs={12}>
+        <Grid container>
+          <Grid item xs={12} style={{ textAlign: 'end' }}>
             <Button
               variant="contained"
               color="primary"
@@ -283,7 +283,7 @@ export class MoziServiceForm extends React.Component {
             </Button>
           </Grid>
         </Grid>
-      </React.Fragment>
+      </div>
     );
   }
 }

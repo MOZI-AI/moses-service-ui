@@ -62,59 +62,5 @@ exports[`<DatasetUpload /> rendered correctly 1`] = `
       Click here to select a dataset file, or drag and drop it over this text.
     </p>
   </div>
-  <div
-    className="MuiGrid-container-10 MuiGrid-spacing-xs-24-34"
-    style={
-      Object {
-        "justifyItems": "end",
-        "marginTop": "30px",
-      }
-    }
-  >
-    <div
-      className="MuiGrid-item-11 MuiGrid-grid-xs-12-50"
-    >
-      <button
-        className="MuiButtonBase-root-133 MuiButtonBase-disabled-134 MuiButton-root-107 MuiButton-contained-118 MuiButton-containedPrimary-119 MuiButton-raised-121 MuiButton-raisedPrimary-122 MuiButton-disabled-127"
-        disabled={true}
-        id="nextButton"
-        onBlur={[Function]}
-        onClick={[Function]}
-        onContextMenu={[Function]}
-        onFocus={[Function]}
-        onKeyDown={[Function]}
-        onKeyUp={[Function]}
-        onMouseDown={[Function]}
-        onMouseLeave={[Function]}
-        onMouseUp={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        tabIndex="-1"
-        type="button"
-      >
-        <span
-          className="MuiButton-label-108"
-        >
-          Next
-          <svg
-            aria-hidden="true"
-            className="MuiSvgIcon-root-1"
-            focusable="false"
-            role="presentation"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
-            />
-            <path
-              d="M0 0h24v24H0z"
-              fill="none"
-            />
-          </svg>
-        </span>
-      </button>
-    </div>
-  </div>
 </div>
 `;

@@ -13,9 +13,4 @@ describe('<DatasetUpload />', () => {
     const wrapper = shallow(<DatasetUpload show="true" />);
     expect(wrapper.find('div#fileDetails').exists()).toBeFalsy();
   });
-
-  it('starts with the next button disabled', () => {
-    const wrapper = shallow(<DatasetUpload show="true" />);
-    expect(wrapper.find('#nextButton').prop('disabled')).toBeTruthy();
-  });
 });

@@ -64,7 +64,7 @@ export class TargetFeatureForm extends React.Component {
     return (
       <React.Fragment>
         <form>
-          <Grid container spacing={24}>
+          <Grid container>
             <Grid item xs={12}>
               <Tooltip
                 title="The name of the target feature column in the dataset"

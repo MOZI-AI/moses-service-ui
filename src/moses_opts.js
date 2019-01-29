@@ -134,7 +134,7 @@ export class MosesOptionsForm extends React.Component {
       <div className="mosesOptionsFormWrapper">
         <form>
           <Grid container spacing={16}>
-            <Grid item xs={12} xm={6} md={4}>
+            <Grid item xs={12} sm={6} md={4}>
               <Tooltip
                 title="Enable integrated feature selection.  Feature selection is performed immediately before knob building (representation building), when creating a new deme."
                 placement="top-start"
@@ -154,7 +154,7 @@ export class MosesOptionsForm extends React.Component {
                 />
               </Tooltip>
             </Grid>
-            <Grid item xs={12} xm={6} md={4}>
+            <Grid item xs={12} sm={6} md={4}>
               <Tooltip
                 title="Hillclimbing parameter (hc). If false,then deme search terminates when a local hilltop is found. If true, then the search radius is progressively widened, until another termination condition is met. "
                 placement="top-start"
@@ -172,7 +172,7 @@ export class MosesOptionsForm extends React.Component {
                 />
               </Tooltip>
             </Grid>
-            <Grid item xs={12} xm={6} md={4}>
+            <Grid item xs={12} sm={6} md={4}>
               <Tooltip
                 title="If the table has discrete output type (like bool or enum), balance the resulting ctable so all classes have the same weight."
                 placement="top-start"
@@ -193,7 +193,7 @@ export class MosesOptionsForm extends React.Component {
           </Grid>
           {this.props.defaults.enableFeatureSelection && (
             <Grid container spacing={24}>
-              <Grid item xs={12} xm={6} md={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <Tooltip
                   title="Feature selection algorithm. Supported are:
                                         simple, for a fast maximun mutual information algo.
@@ -232,7 +232,7 @@ export class MosesOptionsForm extends React.Component {
                   <FormControlLabel value="hc" control={<Radio />} label="hc" />
                 </RadioGroup>
               </Grid>
-              <Grid item xs={12} xm={6} md={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <Tooltip
                   title="This option specifies the number of features to be selected out of the dataset.  A value of 0 disables feature selection"
                   placement="top-start"
@@ -256,7 +256,7 @@ export class MosesOptionsForm extends React.Component {
           )}
           {this.props.defaults.hcWidenSearch && (
             <Grid container spacing={24}>
-              <Grid item xs={12} xm={6} md={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <Tooltip
                   title="It also allows to control when crossover occurs instead of exhaustive search. If the neighborhood to explore has more than the given number (and at least 2 iterations has passed) then  crossover kicks in."
                   placement="top-start"
@@ -274,7 +274,7 @@ export class MosesOptionsForm extends React.Component {
                   />
                 </Tooltip>
               </Grid>
-              <Grid item xs={12} xm={6} md={4}>
+              <Grid item xs={12} sm={6} md={4}>
                 <Tooltip
                   title="Number of new candidates created by crossover during each iteration of hillclimbing."
                   placement="top-start"
@@ -295,7 +295,7 @@ export class MosesOptionsForm extends React.Component {
             </Grid>
           )}
           <Grid container spacing={24}>
-            <Grid item xs={12} xm={6} md={4}>
+            <Grid item xs={12} sm={6} md={4}>
               <Tooltip
                 title="Maximum number of fitness function evaluations."
                 placement="top-start"
@@ -313,7 +313,7 @@ export class MosesOptionsForm extends React.Component {
                 />
               </Tooltip>
             </Grid>
-            <Grid item xs={12} xm={6} md={4}>
+            <Grid item xs={12} sm={6} md={4}>
               <Tooltip
                 title="The number of results to return,ordered according to a linear combination of score and complexity. If negative, then return all results."
                 placement="top-start"
@@ -331,7 +331,7 @@ export class MosesOptionsForm extends React.Component {
                 />
               </Tooltip>
             </Grid>
-            <Grid item xs={12} xm={6} md={4}>
+            <Grid item xs={12} sm={6} md={4}>
               <Tooltip
                 title="Number of jobs allocated for deme optimization."
                 placement="top-start"
@@ -351,7 +351,7 @@ export class MosesOptionsForm extends React.Component {
             </Grid>
           </Grid>
           <Grid spacing={24} container>
-            <Grid item xs={12} xm={6} md={4}>
+            <Grid item xs={12} sm={6} md={4}>
               <Tooltip
                 title="Effort allocated for reduction during knob building, 0-3, 0 means minimum effort, 3 means maximum effort. Thebigger the effort the lower the dimension of the deme."
                 placement="top-start"
@@ -372,7 +372,7 @@ export class MosesOptionsForm extends React.Component {
                 <FormControlLabel value={'3'} control={<Radio />} label="3" />
               </RadioGroup>
             </Grid>
-            <Grid item xs={12} xm={6} md={4}>
+            <Grid item xs={12} sm={6} md={4}>
               <Tooltip
                 title="Fix the ratio of the score to complexity, to be used as a penalty, when ranking the metapopulation for fitness. ."
                 placement="top-start"

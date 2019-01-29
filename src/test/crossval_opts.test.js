@@ -13,7 +13,10 @@ describe('<CrossValidationOptionsForm />', () => {
   it('rendered correctly', () => {
     const tree = renderer
       .create(
-        <CrossValidationOptionsForm defaults={crossValOptions} show="true" />
+        <CrossValidationOptionsForm
+          defaults={crossValOptions}
+          setValidationStatus={valid => null}
+        />
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
@@ -24,7 +27,7 @@ describe('<CrossValidationOptionsForm />', () => {
       <CrossValidationOptionsForm
         defaults={crossValOptions}
         changeInput={() => {}}
-        show="true"
+        setValidationStatus={valid => null}
       />
     );
     expect(
@@ -49,7 +52,7 @@ describe('<CrossValidationOptionsForm />', () => {
       <CrossValidationOptionsForm
         defaults={crossValOptions}
         changeInput={() => {}}
-        show="true"
+        setValidationStatus={valid => null}
       />
     );
     expect(
