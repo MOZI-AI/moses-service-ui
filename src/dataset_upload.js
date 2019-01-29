@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import { CloudUpload, Check, ChevronRight } from '@material-ui/icons';
 import { Grid, Button } from '@material-ui/core';
 import { showNotification } from './utils';
+import fileSize from 'filesize';
 
 export class DatasetUpload extends React.Component {
   constructor(props) {
@@ -92,8 +93,7 @@ export class DatasetUpload extends React.Component {
             >
               {this.props.uploadedFile.name +
                 ' ( ' +
-                (this.props.uploadedFile.size / 1000000).toPrecision(2) +
-                ' MB )'}
+                fileSize(this.props.uploadedFile.size)}
             </div>
           )}
 
