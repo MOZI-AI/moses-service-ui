@@ -131,7 +131,7 @@ export class MosesOptionsForm extends React.Component {
     const additionalParameters = this.parseAdditionalParameters();
 
     return (
-      <div className="mosesOptionsFormWrapper">
+      <div className="mosesOptionsFormWrapper" style={{ width: '100%' }}>
         <form>
           <Grid container spacing={16}>
             <Grid item xs={12} sm={6} md={4}>

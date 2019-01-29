@@ -8,1791 +8,2010 @@ exports[`<MoziService /> renders correctly 1`] = `
     }
   }
 >
-  <h3
-    style={
-      Object {
-        "color": "black",
-      }
-    }
-  >
-    Upload dataset
-  </h3>
   <div
-    className="datasetUploadWrapper"
+    className="MuiPaper-root-4 MuiPaper-elevation1-7 MuiExpansionPanel-root-1 MuiExpansionPanel-expanded-2"
   >
     <div
-      className="dropzone"
+      aria-expanded={true}
+      className="MuiButtonBase-root-37 MuiExpansionPanelSummary-root-31 MuiExpansionPanelSummary-expanded-32"
       onBlur={[Function]}
       onClick={[Function]}
-      onDragEnter={[Function]}
-      onDragLeave={[Function]}
-      onDragOver={[Function]}
-      onDragStart={[Function]}
-      onDrop={[Function]}
+      onContextMenu={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
       style={
         Object {
-          "border": "dashed 1px #90D4FF",
-          "padding": "30px",
-          "textAlign": "center",
+          "color": "black",
         }
       }
-      tabIndex={0}
-    >
-      <input
-        autoComplete="off"
-        multiple={false}
-        name="dataset"
-        onChange={[Function]}
-        onClick={[Function]}
-        style={
-          Object {
-            "display": "none",
-          }
-        }
-        tabIndex={-1}
-        type="file"
-      />
-      <svg
-        aria-hidden="true"
-        className="MuiSvgIcon-root-1"
-        focusable="false"
-        role="presentation"
-        style={
-          Object {
-            "fontSize": "48px",
-          }
-        }
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M0 0h24v24H0z"
-          fill="none"
-        />
-        <path
-          d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"
-        />
-      </svg>
-      <p>
-        Click here to select a dataset file, or drag and drop it over this text.
-      </p>
-    </div>
-  </div>
-  <h3
-    style={
-      Object {
-        "color": "black",
-      }
-    }
-  >
-    Moses options
-  </h3>
-  <div
-    className="mosesOptionsFormWrapper"
-  >
-    <form>
-      <div
-        className="MuiGrid-container-10 MuiGrid-spacing-xs-16-33"
-      >
-        <div
-          className="MuiGrid-item-11 MuiGrid-grid-xs-12-50 MuiGrid-grid-sm-6-58 MuiGrid-grid-md-4-70"
-        >
-          <label
-            aria-describedby={null}
-            className="MuiFormControlLabel-root-115"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            onMouseLeave={[Function]}
-            onMouseOver={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            title="Enable integrated feature selection.  Feature selection is performed immediately before knob building (representation building), when creating a new deme."
-          >
-            <span
-              className="MuiSwitch-root-121"
-            >
-              <span
-                className="MuiButtonBase-root-140 MuiIconButton-root-134 MuiPrivateSwitchBase-root-130 MuiSwitch-switchBase-124 MuiSwitch-colorSecondary-127 MuiPrivateSwitchBase-checked-131 MuiSwitch-checked-125"
-                onBlur={[Function]}
-                onContextMenu={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchMove={[Function]}
-                onTouchStart={[Function]}
-                tabIndex={null}
-              >
-                <span
-                  className="MuiIconButton-label-139"
-                >
-                  <span
-                    className="MuiSwitch-icon-122 MuiSwitch-iconChecked-123"
-                  />
-                  <input
-                    className="MuiPrivateSwitchBase-input-133"
-                    defaultChecked={true}
-                    name="enableFeatureSelection"
-                    onChange={[Function]}
-                    type="checkbox"
-                    value="0"
-                  />
-                </span>
-                <span
-                  className="MuiTouchRipple-root-282"
-                />
-              </span>
-              <span
-                className="MuiSwitch-bar-129"
-              />
-            </span>
-            <span
-              className="MuiTypography-root-143 MuiTypography-body1-152 MuiFormControlLabel-label-120"
-            >
-              Enable feature selection
-            </span>
-          </label>
-        </div>
-        <div
-          className="MuiGrid-item-11 MuiGrid-grid-xs-12-50 MuiGrid-grid-sm-6-58 MuiGrid-grid-md-4-70"
-        >
-          <label
-            aria-describedby={null}
-            className="MuiFormControlLabel-root-115"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            onMouseLeave={[Function]}
-            onMouseOver={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            title="Hillclimbing parameter (hc). If false,then deme search terminates when a local hilltop is found. If true, then the search radius is progressively widened, until another termination condition is met. "
-          >
-            <span
-              className="MuiSwitch-root-121"
-            >
-              <span
-                className="MuiButtonBase-root-140 MuiIconButton-root-134 MuiPrivateSwitchBase-root-130 MuiSwitch-switchBase-124 MuiSwitch-colorSecondary-127 MuiPrivateSwitchBase-checked-131 MuiSwitch-checked-125"
-                onBlur={[Function]}
-                onContextMenu={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchMove={[Function]}
-                onTouchStart={[Function]}
-                tabIndex={null}
-              >
-                <span
-                  className="MuiIconButton-label-139"
-                >
-                  <span
-                    className="MuiSwitch-icon-122 MuiSwitch-iconChecked-123"
-                  />
-                  <input
-                    className="MuiPrivateSwitchBase-input-133"
-                    defaultChecked={true}
-                    name="hcWidenSearch"
-                    onChange={[Function]}
-                    type="checkbox"
-                    value="0"
-                  />
-                </span>
-                <span
-                  className="MuiTouchRipple-root-282"
-                />
-              </span>
-              <span
-                className="MuiSwitch-bar-129"
-              />
-            </span>
-            <span
-              className="MuiTypography-root-143 MuiTypography-body1-152 MuiFormControlLabel-label-120"
-            >
-              hc Widen Search
-            </span>
-          </label>
-        </div>
-        <div
-          className="MuiGrid-item-11 MuiGrid-grid-xs-12-50 MuiGrid-grid-sm-6-58 MuiGrid-grid-md-4-70"
-        >
-          <label
-            aria-describedby={null}
-            className="MuiFormControlLabel-root-115"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            onMouseLeave={[Function]}
-            onMouseOver={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            title="If the table has discrete output type (like bool or enum), balance the resulting ctable so all classes have the same weight."
-          >
-            <span
-              className="MuiSwitch-root-121"
-            >
-              <span
-                className="MuiButtonBase-root-140 MuiIconButton-root-134 MuiPrivateSwitchBase-root-130 MuiSwitch-switchBase-124 MuiSwitch-colorSecondary-127 MuiPrivateSwitchBase-checked-131 MuiSwitch-checked-125"
-                onBlur={[Function]}
-                onContextMenu={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchMove={[Function]}
-                onTouchStart={[Function]}
-                tabIndex={null}
-              >
-                <span
-                  className="MuiIconButton-label-139"
-                >
-                  <span
-                    className="MuiSwitch-icon-122 MuiSwitch-iconChecked-123"
-                  />
-                  <input
-                    className="MuiPrivateSwitchBase-input-133"
-                    defaultChecked={true}
-                    name="balance"
-                    onChange={[Function]}
-                    type="checkbox"
-                    value="0"
-                  />
-                </span>
-                <span
-                  className="MuiTouchRipple-root-282"
-                />
-              </span>
-              <span
-                className="MuiSwitch-bar-129"
-              />
-            </span>
-            <span
-              className="MuiTypography-root-143 MuiTypography-body1-152 MuiFormControlLabel-label-120"
-            >
-              Balance
-            </span>
-          </label>
-        </div>
-      </div>
-      <div
-        className="MuiGrid-container-10 MuiGrid-spacing-xs-24-34"
-      >
-        <div
-          className="MuiGrid-item-11 MuiGrid-grid-xs-12-50 MuiGrid-grid-sm-6-58 MuiGrid-grid-md-4-70"
-        >
-          <legend
-            aria-describedby={null}
-            className="MuiFormLabel-root-179"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            onMouseLeave={[Function]}
-            onMouseOver={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            title="Feature selection algorithm. Supported are: simple, for a fast maximun mutual information algo. inc, for incremental max-relevency, min-redundancy. smd, for stochastic mutual dependency, random, for uniform random dependency, hc for moses-hillclimbing."
-          >
-            Feature selection algorithm
-          </legend>
-          <div
-            className="MuiFormGroup-root-186"
-            defaultValue="simple"
-            role="radiogroup"
-            style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
-            }
-          >
-            <label
-              className="MuiFormControlLabel-root-115"
-            >
-              <span
-                className="MuiButtonBase-root-140 MuiIconButton-root-134 MuiPrivateSwitchBase-root-130 MuiRadio-root-188 MuiRadio-colorSecondary-192 MuiPrivateSwitchBase-checked-131 MuiRadio-checked-189"
-                onBlur={[Function]}
-                onContextMenu={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchMove={[Function]}
-                onTouchStart={[Function]}
-                tabIndex={null}
-              >
-                <span
-                  className="MuiIconButton-label-139"
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="MuiSvgIcon-root-1"
-                    focusable="false"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
-                    />
-                  </svg>
-                  <input
-                    checked={true}
-                    className="MuiPrivateSwitchBase-input-133"
-                    name="featureSelectionAlgorithm"
-                    onChange={[Function]}
-                    type="radio"
-                    value="simple"
-                  />
-                </span>
-                <span
-                  className="MuiTouchRipple-root-282"
-                />
-              </span>
-              <span
-                className="MuiTypography-root-143 MuiTypography-body1-152 MuiFormControlLabel-label-120"
-              >
-                simple
-              </span>
-            </label>
-            <label
-              className="MuiFormControlLabel-root-115"
-            >
-              <span
-                className="MuiButtonBase-root-140 MuiIconButton-root-134 MuiPrivateSwitchBase-root-130 MuiRadio-root-188 MuiRadio-colorSecondary-192"
-                onBlur={[Function]}
-                onContextMenu={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchMove={[Function]}
-                onTouchStart={[Function]}
-                tabIndex={null}
-              >
-                <span
-                  className="MuiIconButton-label-139"
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="MuiSvgIcon-root-1"
-                    focusable="false"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
-                    />
-                  </svg>
-                  <input
-                    checked={false}
-                    className="MuiPrivateSwitchBase-input-133"
-                    name="featureSelectionAlgorithm"
-                    onChange={[Function]}
-                    type="radio"
-                    value="inc"
-                  />
-                </span>
-                <span
-                  className="MuiTouchRipple-root-282"
-                />
-              </span>
-              <span
-                className="MuiTypography-root-143 MuiTypography-body1-152 MuiFormControlLabel-label-120"
-              >
-                inc
-              </span>
-            </label>
-            <label
-              className="MuiFormControlLabel-root-115"
-            >
-              <span
-                className="MuiButtonBase-root-140 MuiIconButton-root-134 MuiPrivateSwitchBase-root-130 MuiRadio-root-188 MuiRadio-colorSecondary-192"
-                onBlur={[Function]}
-                onContextMenu={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchMove={[Function]}
-                onTouchStart={[Function]}
-                tabIndex={null}
-              >
-                <span
-                  className="MuiIconButton-label-139"
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="MuiSvgIcon-root-1"
-                    focusable="false"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
-                    />
-                  </svg>
-                  <input
-                    checked={false}
-                    className="MuiPrivateSwitchBase-input-133"
-                    name="featureSelectionAlgorithm"
-                    onChange={[Function]}
-                    type="radio"
-                    value="smd"
-                  />
-                </span>
-                <span
-                  className="MuiTouchRipple-root-282"
-                />
-              </span>
-              <span
-                className="MuiTypography-root-143 MuiTypography-body1-152 MuiFormControlLabel-label-120"
-              >
-                smd
-              </span>
-            </label>
-            <label
-              className="MuiFormControlLabel-root-115"
-            >
-              <span
-                className="MuiButtonBase-root-140 MuiIconButton-root-134 MuiPrivateSwitchBase-root-130 MuiRadio-root-188 MuiRadio-colorSecondary-192"
-                onBlur={[Function]}
-                onContextMenu={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchMove={[Function]}
-                onTouchStart={[Function]}
-                tabIndex={null}
-              >
-                <span
-                  className="MuiIconButton-label-139"
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="MuiSvgIcon-root-1"
-                    focusable="false"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
-                    />
-                  </svg>
-                  <input
-                    checked={false}
-                    className="MuiPrivateSwitchBase-input-133"
-                    name="featureSelectionAlgorithm"
-                    onChange={[Function]}
-                    type="radio"
-                    value="hc"
-                  />
-                </span>
-                <span
-                  className="MuiTouchRipple-root-282"
-                />
-              </span>
-              <span
-                className="MuiTypography-root-143 MuiTypography-body1-152 MuiFormControlLabel-label-120"
-              >
-                hc
-              </span>
-            </label>
-          </div>
-        </div>
-        <div
-          className="MuiGrid-item-11 MuiGrid-grid-xs-12-50 MuiGrid-grid-sm-6-58 MuiGrid-grid-md-4-70"
-        >
-          <div
-            aria-describedby={null}
-            className="MuiFormControl-root-193 MuiFormControl-marginDense-195 MuiFormControl-fullWidth-196"
-            onMouseLeave={[Function]}
-            onMouseOver={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            title="This option specifies the number of features to be selected out of the dataset.  A value of 0 disables feature selection"
-          >
-            <label
-              className="MuiFormLabel-root-179 MuiInputLabel-root-197 MuiInputLabel-formControl-202 MuiInputLabel-animated-205 MuiInputLabel-marginDense-203 MuiInputLabel-outlined-207"
-              data-shrink={false}
-            >
-              Feature Selection Target Size
-            </label>
-            <div
-              className="MuiInputBase-root-221 MuiOutlinedInput-root-208 MuiInputBase-fullWidth-230 MuiInputBase-formControl-222 MuiInputBase-marginDense-228"
-              onClick={[Function]}
-            >
-              <fieldset
-                aria-hidden={true}
-                className="MuiPrivateNotchedOutline-root-238 MuiOutlinedInput-notchedOutline-215"
-                style={
-                  Object {
-                    "paddingLeft": 8,
-                  }
-                }
-              >
-                <legend
-                  className="MuiPrivateNotchedOutline-legend-239"
-                  style={
-                    Object {
-                      "width": 0.01,
-                    }
-                  }
-                >
-                  <span
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "&#8203;",
-                      }
-                    }
-                  />
-                </legend>
-              </fieldset>
-              <input
-                aria-invalid={false}
-                className="MuiInputBase-input-231 MuiOutlinedInput-input-216 MuiInputBase-inputMarginDense-232 MuiOutlinedInput-inputMarginDense-217"
-                defaultValue={4}
-                disabled={false}
-                name="featureSelectionTargetSize"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                placeholder="Feature Selection Target Size"
-                required={false}
-                type="text"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="MuiGrid-container-10 MuiGrid-spacing-xs-24-34"
-      >
-        <div
-          className="MuiGrid-item-11 MuiGrid-grid-xs-12-50 MuiGrid-grid-sm-6-58 MuiGrid-grid-md-4-70"
-        >
-          <div
-            aria-describedby={null}
-            className="MuiFormControl-root-193 MuiFormControl-marginDense-195 MuiFormControl-fullWidth-196"
-            onMouseLeave={[Function]}
-            onMouseOver={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            title="It also allows to control when crossover occurs instead of exhaustive search. If the neighborhood to explore has more than the given number (and at least 2 iterations has passed) then  crossover kicks in."
-          >
-            <label
-              className="MuiFormLabel-root-179 MuiInputLabel-root-197 MuiInputLabel-formControl-202 MuiInputLabel-animated-205 MuiInputLabel-marginDense-203 MuiInputLabel-outlined-207"
-              data-shrink={false}
-            >
-              hc Crossover Min Neighbors
-            </label>
-            <div
-              className="MuiInputBase-root-221 MuiOutlinedInput-root-208 MuiInputBase-fullWidth-230 MuiInputBase-formControl-222 MuiInputBase-marginDense-228"
-              onClick={[Function]}
-            >
-              <fieldset
-                aria-hidden={true}
-                className="MuiPrivateNotchedOutline-root-238 MuiOutlinedInput-notchedOutline-215"
-                style={
-                  Object {
-                    "paddingLeft": 8,
-                  }
-                }
-              >
-                <legend
-                  className="MuiPrivateNotchedOutline-legend-239"
-                  style={
-                    Object {
-                      "width": 0.01,
-                    }
-                  }
-                >
-                  <span
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "&#8203;",
-                      }
-                    }
-                  />
-                </legend>
-              </fieldset>
-              <input
-                aria-invalid={false}
-                className="MuiInputBase-input-231 MuiOutlinedInput-input-216 MuiInputBase-inputMarginDense-232 MuiOutlinedInput-inputMarginDense-217"
-                defaultValue={5000}
-                disabled={false}
-                name="hcCrossoverMinNeighbors"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                placeholder="hc Crossover Min Neighbors"
-                required={false}
-                type="text"
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          className="MuiGrid-item-11 MuiGrid-grid-xs-12-50 MuiGrid-grid-sm-6-58 MuiGrid-grid-md-4-70"
-        >
-          <div
-            aria-describedby={null}
-            className="MuiFormControl-root-193 MuiFormControl-marginDense-195 MuiFormControl-fullWidth-196"
-            onMouseLeave={[Function]}
-            onMouseOver={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            title="Number of new candidates created by crossover during each iteration of hillclimbing."
-          >
-            <label
-              className="MuiFormLabel-root-179 MuiInputLabel-root-197 MuiInputLabel-formControl-202 MuiInputLabel-animated-205 MuiInputLabel-marginDense-203 MuiInputLabel-outlined-207"
-              data-shrink={false}
-            >
-              hc Crossover Pop Size
-            </label>
-            <div
-              className="MuiInputBase-root-221 MuiOutlinedInput-root-208 MuiInputBase-fullWidth-230 MuiInputBase-formControl-222 MuiInputBase-marginDense-228"
-              onClick={[Function]}
-            >
-              <fieldset
-                aria-hidden={true}
-                className="MuiPrivateNotchedOutline-root-238 MuiOutlinedInput-notchedOutline-215"
-                style={
-                  Object {
-                    "paddingLeft": 8,
-                  }
-                }
-              >
-                <legend
-                  className="MuiPrivateNotchedOutline-legend-239"
-                  style={
-                    Object {
-                      "width": 0.01,
-                    }
-                  }
-                >
-                  <span
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "&#8203;",
-                      }
-                    }
-                  />
-                </legend>
-              </fieldset>
-              <input
-                aria-invalid={false}
-                className="MuiInputBase-input-231 MuiOutlinedInput-input-216 MuiInputBase-inputMarginDense-232 MuiOutlinedInput-inputMarginDense-217"
-                defaultValue={1000}
-                disabled={false}
-                name="hcCrossoverPopSize"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                placeholder="hc Crossover Pop Size"
-                required={false}
-                type="text"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="MuiGrid-container-10 MuiGrid-spacing-xs-24-34"
-      >
-        <div
-          className="MuiGrid-item-11 MuiGrid-grid-xs-12-50 MuiGrid-grid-sm-6-58 MuiGrid-grid-md-4-70"
-        >
-          <div
-            aria-describedby={null}
-            className="MuiFormControl-root-193 MuiFormControl-marginDense-195 MuiFormControl-fullWidth-196"
-            onMouseLeave={[Function]}
-            onMouseOver={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            title="Maximum number of fitness function evaluations."
-          >
-            <label
-              className="MuiFormLabel-root-179 MuiInputLabel-root-197 MuiInputLabel-formControl-202 MuiInputLabel-animated-205 MuiInputLabel-marginDense-203 MuiInputLabel-outlined-207"
-              data-shrink={false}
-            >
-              Maximum evals
-            </label>
-            <div
-              className="MuiInputBase-root-221 MuiOutlinedInput-root-208 MuiInputBase-fullWidth-230 MuiInputBase-formControl-222 MuiInputBase-marginDense-228"
-              onClick={[Function]}
-            >
-              <fieldset
-                aria-hidden={true}
-                className="MuiPrivateNotchedOutline-root-238 MuiOutlinedInput-notchedOutline-215"
-                style={
-                  Object {
-                    "paddingLeft": 8,
-                  }
-                }
-              >
-                <legend
-                  className="MuiPrivateNotchedOutline-legend-239"
-                  style={
-                    Object {
-                      "width": 0.01,
-                    }
-                  }
-                >
-                  <span
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "&#8203;",
-                      }
-                    }
-                  />
-                </legend>
-              </fieldset>
-              <input
-                aria-invalid={false}
-                className="MuiInputBase-input-231 MuiOutlinedInput-input-216 MuiInputBase-inputMarginDense-232 MuiOutlinedInput-inputMarginDense-217"
-                defaultValue={1000}
-                disabled={false}
-                name="maximumEvals"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                placeholder="Maximum evals"
-                required={false}
-                type="text"
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          className="MuiGrid-item-11 MuiGrid-grid-xs-12-50 MuiGrid-grid-sm-6-58 MuiGrid-grid-md-4-70"
-        >
-          <div
-            aria-describedby={null}
-            className="MuiFormControl-root-193 MuiFormControl-marginDense-195 MuiFormControl-fullWidth-196"
-            onMouseLeave={[Function]}
-            onMouseOver={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            title="The number of results to return,ordered according to a linear combination of score and complexity. If negative, then return all results."
-          >
-            <label
-              className="MuiFormLabel-root-179 MuiInputLabel-root-197 MuiInputLabel-formControl-202 MuiInputLabel-animated-205 MuiInputLabel-marginDense-203 MuiInputLabel-outlined-207"
-              data-shrink={false}
-            >
-              Result Count
-            </label>
-            <div
-              className="MuiInputBase-root-221 MuiOutlinedInput-root-208 MuiInputBase-fullWidth-230 MuiInputBase-formControl-222 MuiInputBase-marginDense-228"
-              onClick={[Function]}
-            >
-              <fieldset
-                aria-hidden={true}
-                className="MuiPrivateNotchedOutline-root-238 MuiOutlinedInput-notchedOutline-215"
-                style={
-                  Object {
-                    "paddingLeft": 8,
-                  }
-                }
-              >
-                <legend
-                  className="MuiPrivateNotchedOutline-legend-239"
-                  style={
-                    Object {
-                      "width": 0.01,
-                    }
-                  }
-                >
-                  <span
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "&#8203;",
-                      }
-                    }
-                  />
-                </legend>
-              </fieldset>
-              <input
-                aria-invalid={false}
-                className="MuiInputBase-input-231 MuiOutlinedInput-input-216 MuiInputBase-inputMarginDense-232 MuiOutlinedInput-inputMarginDense-217"
-                defaultValue={100}
-                disabled={false}
-                name="resultCount"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                placeholder="Result Count"
-                required={false}
-                type="text"
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          className="MuiGrid-item-11 MuiGrid-grid-xs-12-50 MuiGrid-grid-sm-6-58 MuiGrid-grid-md-4-70"
-        >
-          <div
-            aria-describedby={null}
-            className="MuiFormControl-root-193 MuiFormControl-marginDense-195 MuiFormControl-fullWidth-196"
-            onMouseLeave={[Function]}
-            onMouseOver={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            title="Number of jobs allocated for deme optimization."
-          >
-            <label
-              className="MuiFormLabel-root-179 MuiInputLabel-root-197 MuiInputLabel-formControl-202 MuiInputLabel-animated-205 MuiInputLabel-marginDense-203 MuiInputLabel-outlined-207"
-              data-shrink={false}
-            >
-              Number Of Threads
-            </label>
-            <div
-              className="MuiInputBase-root-221 MuiOutlinedInput-root-208 MuiInputBase-fullWidth-230 MuiInputBase-formControl-222 MuiInputBase-marginDense-228"
-              onClick={[Function]}
-            >
-              <fieldset
-                aria-hidden={true}
-                className="MuiPrivateNotchedOutline-root-238 MuiOutlinedInput-notchedOutline-215"
-                style={
-                  Object {
-                    "paddingLeft": 8,
-                  }
-                }
-              >
-                <legend
-                  className="MuiPrivateNotchedOutline-legend-239"
-                  style={
-                    Object {
-                      "width": 0.01,
-                    }
-                  }
-                >
-                  <span
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "&#8203;",
-                      }
-                    }
-                  />
-                </legend>
-              </fieldset>
-              <input
-                aria-invalid={false}
-                className="MuiInputBase-input-231 MuiOutlinedInput-input-216 MuiInputBase-inputMarginDense-232 MuiOutlinedInput-inputMarginDense-217"
-                defaultValue={8}
-                disabled={false}
-                name="numberOfThreads"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                placeholder="Number Of Threads"
-                required={false}
-                type="text"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="MuiGrid-container-10 MuiGrid-spacing-xs-24-34"
-      >
-        <div
-          className="MuiGrid-item-11 MuiGrid-grid-xs-12-50 MuiGrid-grid-sm-6-58 MuiGrid-grid-md-4-70"
-        >
-          <legend
-            aria-describedby={null}
-            className="MuiFormLabel-root-179"
-            onBlur={[Function]}
-            onFocus={[Function]}
-            onMouseLeave={[Function]}
-            onMouseOver={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            title="Effort allocated for reduction during knob building, 0-3, 0 means minimum effort, 3 means maximum effort. Thebigger the effort the lower the dimension of the deme."
-          >
-            Reduct Knob Building Effort
-          </legend>
-          <div
-            className="MuiFormGroup-root-186"
-            defaultValue="0"
-            role="radiogroup"
-            style={
-              Object {
-                "display": "flex",
-                "flexDirection": "row",
-              }
-            }
-          >
-            <label
-              className="MuiFormControlLabel-root-115"
-            >
-              <span
-                className="MuiButtonBase-root-140 MuiIconButton-root-134 MuiPrivateSwitchBase-root-130 MuiRadio-root-188 MuiRadio-colorSecondary-192 MuiPrivateSwitchBase-checked-131 MuiRadio-checked-189"
-                onBlur={[Function]}
-                onContextMenu={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchMove={[Function]}
-                onTouchStart={[Function]}
-                tabIndex={null}
-              >
-                <span
-                  className="MuiIconButton-label-139"
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="MuiSvgIcon-root-1"
-                    focusable="false"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
-                    />
-                  </svg>
-                  <input
-                    checked={true}
-                    className="MuiPrivateSwitchBase-input-133"
-                    name="reductKnobBuildingEffort"
-                    onChange={[Function]}
-                    type="radio"
-                    value="0"
-                  />
-                </span>
-                <span
-                  className="MuiTouchRipple-root-282"
-                />
-              </span>
-              <span
-                className="MuiTypography-root-143 MuiTypography-body1-152 MuiFormControlLabel-label-120"
-              >
-                0
-              </span>
-            </label>
-            <label
-              className="MuiFormControlLabel-root-115"
-            >
-              <span
-                className="MuiButtonBase-root-140 MuiIconButton-root-134 MuiPrivateSwitchBase-root-130 MuiRadio-root-188 MuiRadio-colorSecondary-192"
-                onBlur={[Function]}
-                onContextMenu={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchMove={[Function]}
-                onTouchStart={[Function]}
-                tabIndex={null}
-              >
-                <span
-                  className="MuiIconButton-label-139"
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="MuiSvgIcon-root-1"
-                    focusable="false"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
-                    />
-                  </svg>
-                  <input
-                    checked={false}
-                    className="MuiPrivateSwitchBase-input-133"
-                    name="reductKnobBuildingEffort"
-                    onChange={[Function]}
-                    type="radio"
-                    value="1"
-                  />
-                </span>
-                <span
-                  className="MuiTouchRipple-root-282"
-                />
-              </span>
-              <span
-                className="MuiTypography-root-143 MuiTypography-body1-152 MuiFormControlLabel-label-120"
-              >
-                1
-              </span>
-            </label>
-            <label
-              className="MuiFormControlLabel-root-115"
-            >
-              <span
-                className="MuiButtonBase-root-140 MuiIconButton-root-134 MuiPrivateSwitchBase-root-130 MuiRadio-root-188 MuiRadio-colorSecondary-192"
-                onBlur={[Function]}
-                onContextMenu={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchMove={[Function]}
-                onTouchStart={[Function]}
-                tabIndex={null}
-              >
-                <span
-                  className="MuiIconButton-label-139"
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="MuiSvgIcon-root-1"
-                    focusable="false"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
-                    />
-                  </svg>
-                  <input
-                    checked={false}
-                    className="MuiPrivateSwitchBase-input-133"
-                    name="reductKnobBuildingEffort"
-                    onChange={[Function]}
-                    type="radio"
-                    value="2"
-                  />
-                </span>
-                <span
-                  className="MuiTouchRipple-root-282"
-                />
-              </span>
-              <span
-                className="MuiTypography-root-143 MuiTypography-body1-152 MuiFormControlLabel-label-120"
-              >
-                2
-              </span>
-            </label>
-            <label
-              className="MuiFormControlLabel-root-115"
-            >
-              <span
-                className="MuiButtonBase-root-140 MuiIconButton-root-134 MuiPrivateSwitchBase-root-130 MuiRadio-root-188 MuiRadio-colorSecondary-192"
-                onBlur={[Function]}
-                onContextMenu={[Function]}
-                onFocus={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                onTouchEnd={[Function]}
-                onTouchMove={[Function]}
-                onTouchStart={[Function]}
-                tabIndex={null}
-              >
-                <span
-                  className="MuiIconButton-label-139"
-                >
-                  <svg
-                    aria-hidden="true"
-                    className="MuiSvgIcon-root-1"
-                    focusable="false"
-                    role="presentation"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
-                    />
-                  </svg>
-                  <input
-                    checked={false}
-                    className="MuiPrivateSwitchBase-input-133"
-                    name="reductKnobBuildingEffort"
-                    onChange={[Function]}
-                    type="radio"
-                    value="3"
-                  />
-                </span>
-                <span
-                  className="MuiTouchRipple-root-282"
-                />
-              </span>
-              <span
-                className="MuiTypography-root-143 MuiTypography-body1-152 MuiFormControlLabel-label-120"
-              >
-                3
-              </span>
-            </label>
-          </div>
-        </div>
-        <div
-          className="MuiGrid-item-11 MuiGrid-grid-xs-12-50 MuiGrid-grid-sm-6-58 MuiGrid-grid-md-4-70"
-        >
-          <div
-            aria-describedby={null}
-            className="MuiFormControl-root-193 MuiFormControl-marginDense-195 MuiFormControl-fullWidth-196"
-            onMouseLeave={[Function]}
-            onMouseOver={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            title="Fix the ratio of the score to complexity, to be used as a penalty, when ranking the metapopulation for fitness. ."
-          >
-            <label
-              className="MuiFormLabel-root-179 MuiInputLabel-root-197 MuiInputLabel-formControl-202 MuiInputLabel-animated-205 MuiInputLabel-marginDense-203 MuiInputLabel-outlined-207"
-              data-shrink={false}
-            >
-              Complexity ratio
-            </label>
-            <div
-              className="MuiInputBase-root-221 MuiOutlinedInput-root-208 MuiInputBase-fullWidth-230 MuiInputBase-formControl-222 MuiInputBase-marginDense-228"
-              onClick={[Function]}
-            >
-              <fieldset
-                aria-hidden={true}
-                className="MuiPrivateNotchedOutline-root-238 MuiOutlinedInput-notchedOutline-215"
-                style={
-                  Object {
-                    "paddingLeft": 8,
-                  }
-                }
-              >
-                <legend
-                  className="MuiPrivateNotchedOutline-legend-239"
-                  style={
-                    Object {
-                      "width": 0.01,
-                    }
-                  }
-                >
-                  <span
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "&#8203;",
-                      }
-                    }
-                  />
-                </legend>
-              </fieldset>
-              <input
-                aria-invalid={false}
-                className="MuiInputBase-input-231 MuiOutlinedInput-input-216 MuiInputBase-inputMarginDense-232 MuiOutlinedInput-inputMarginDense-217"
-                defaultValue={3}
-                disabled={false}
-                name="complexityRatio"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                placeholder="Complexity ratio"
-                required={false}
-                type="text"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </form>
-    <form
-      layout="inline"
-      style={
-        Object {
-          "marginTop": "10px",
-        }
-      }
+      tabIndex="0"
     >
       <div
-        className="MuiGrid-container-10 MuiGrid-spacing-xs-24-34"
+        className="MuiExpansionPanelSummary-content-35 MuiExpansionPanelSummary-expanded-32"
       >
-        <div
-          className="MuiGrid-item-11 MuiGrid-grid-xs-12-50"
-        >
-          <legend
-            className="MuiFormLabel-root-179"
-          >
-            Additional parameters
-          </legend>
-          <div
-            className="MuiFormControl-root-193 MuiFormControl-marginDense-195"
-            style={
-              Object {
-                "marginRight": "5px",
-              }
-            }
-          >
-            <label
-              className="MuiFormLabel-root-179 MuiInputLabel-root-197 MuiInputLabel-formControl-202 MuiInputLabel-animated-205 MuiInputLabel-marginDense-203 MuiInputLabel-outlined-207"
-              data-shrink={false}
-            >
-              Name
-            </label>
-            <div
-              className="MuiInputBase-root-221 MuiOutlinedInput-root-208 MuiInputBase-formControl-222 MuiInputBase-marginDense-228"
-              onClick={[Function]}
-            >
-              <fieldset
-                aria-hidden={true}
-                className="MuiPrivateNotchedOutline-root-238 MuiOutlinedInput-notchedOutline-215"
-                style={
-                  Object {
-                    "paddingLeft": 8,
-                  }
-                }
-              >
-                <legend
-                  className="MuiPrivateNotchedOutline-legend-239"
-                  style={
-                    Object {
-                      "width": 0.01,
-                    }
-                  }
-                >
-                  <span
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "&#8203;",
-                      }
-                    }
-                  />
-                </legend>
-              </fieldset>
-              <input
-                aria-invalid={false}
-                className="MuiInputBase-input-231 MuiOutlinedInput-input-216 MuiInputBase-inputMarginDense-232 MuiOutlinedInput-inputMarginDense-217"
-                disabled={false}
-                name="additionalParameterName"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                placeholder="Name"
-                required={false}
-                type="text"
-                value=""
-              />
-            </div>
-          </div>
-          <div
-            className="MuiFormControl-root-193 MuiFormControl-marginDense-195"
-            style={
-              Object {
-                "marginRight": "5px",
-              }
-            }
-          >
-            <label
-              className="MuiFormLabel-root-179 MuiInputLabel-root-197 MuiInputLabel-formControl-202 MuiInputLabel-animated-205 MuiInputLabel-marginDense-203 MuiInputLabel-outlined-207"
-              data-shrink={false}
-            >
-              Value
-            </label>
-            <div
-              className="MuiInputBase-root-221 MuiOutlinedInput-root-208 MuiInputBase-formControl-222 MuiInputBase-marginDense-228"
-              onClick={[Function]}
-            >
-              <fieldset
-                aria-hidden={true}
-                className="MuiPrivateNotchedOutline-root-238 MuiOutlinedInput-notchedOutline-215"
-                style={
-                  Object {
-                    "paddingLeft": 8,
-                  }
-                }
-              >
-                <legend
-                  className="MuiPrivateNotchedOutline-legend-239"
-                  style={
-                    Object {
-                      "width": 0.01,
-                    }
-                  }
-                >
-                  <span
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "&#8203;",
-                      }
-                    }
-                  />
-                </legend>
-              </fieldset>
-              <input
-                aria-invalid={false}
-                className="MuiInputBase-input-231 MuiOutlinedInput-input-216 MuiInputBase-inputMarginDense-232 MuiOutlinedInput-inputMarginDense-217"
-                disabled={false}
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                placeholder="Value"
-                required={false}
-                type="text"
-                value=""
-              />
-            </div>
-          </div>
-          <button
-            className="MuiButtonBase-root-140 MuiButtonBase-disabled-141 MuiButton-root-240 MuiButton-contained-251 MuiButton-raised-254 MuiButton-sizeLarge-264 MuiButton-disabled-260 addAdditionalParameter"
-            disabled={true}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onContextMenu={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            onMouseDown={[Function]}
-            onMouseLeave={[Function]}
-            onMouseUp={[Function]}
-            onTouchEnd={[Function]}
-            onTouchMove={[Function]}
-            onTouchStart={[Function]}
-            style={
-              Object {
-                "marginTop": "10px",
-              }
-            }
-            tabIndex="-1"
-            type="button"
-          >
-            <span
-              className="MuiButton-label-241"
-            >
-              <svg
-                aria-hidden="true"
-                className="MuiSvgIcon-root-1"
-                focusable="false"
-                role="presentation"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
-                />
-                <path
-                  d="M0 0h24v24H0z"
-                  fill="none"
-                />
-              </svg>
-               Add parameter
-            </span>
-          </button>
-        </div>
-      </div>
-    </form>
-  </div>
-  <h3
-    style={
-      Object {
-        "color": "black",
-      }
-    }
-  >
-     
-    Cross validation options
-     
-  </h3>
-  <div
-    className="crossValidationOptionsFormWrapper"
-  >
-    <form>
-      <div
-        className="MuiGrid-container-10 MuiGrid-spacing-xs-24-34"
-      >
-        <div
-          className="MuiGrid-item-11 MuiGrid-grid-xs-4-42"
-        >
-          <div
-            aria-describedby={null}
-            className="MuiFormControl-root-193 MuiFormControl-marginDense-195 MuiFormControl-fullWidth-196"
-            onMouseLeave={[Function]}
-            onMouseOver={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            title="Number of folds for cross-validation"
-          >
-            <label
-              className="MuiFormLabel-root-179 MuiInputLabel-root-197 MuiInputLabel-formControl-202 MuiInputLabel-animated-205 MuiInputLabel-marginDense-203 MuiInputLabel-outlined-207"
-              data-shrink={false}
-            >
-              Folds
-            </label>
-            <div
-              className="MuiInputBase-root-221 MuiOutlinedInput-root-208 MuiInputBase-fullWidth-230 MuiInputBase-formControl-222 MuiInputBase-marginDense-228"
-              onClick={[Function]}
-            >
-              <fieldset
-                aria-hidden={true}
-                className="MuiPrivateNotchedOutline-root-238 MuiOutlinedInput-notchedOutline-215"
-                style={
-                  Object {
-                    "paddingLeft": 8,
-                  }
-                }
-              >
-                <legend
-                  className="MuiPrivateNotchedOutline-legend-239"
-                  style={
-                    Object {
-                      "width": 0.01,
-                    }
-                  }
-                >
-                  <span
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "&#8203;",
-                      }
-                    }
-                  />
-                </legend>
-              </fieldset>
-              <input
-                aria-invalid={false}
-                className="MuiInputBase-input-231 MuiOutlinedInput-input-216 MuiInputBase-inputMarginDense-232 MuiOutlinedInput-inputMarginDense-217"
-                defaultValue={1}
-                disabled={false}
-                name="folds"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                placeholder="Folds"
-                required={false}
-                type="text"
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          className="MuiGrid-item-11 MuiGrid-grid-xs-4-42"
-        >
-          <div
-            aria-describedby={null}
-            className="MuiFormControl-root-193 MuiFormControl-marginDense-195 MuiFormControl-fullWidth-196"
-            onMouseLeave={[Function]}
-            onMouseOver={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            title="Specifies how many times to run MOSES with a random seed value"
-          >
-            <label
-              className="MuiFormLabel-root-179 MuiInputLabel-root-197 MuiInputLabel-formControl-202 MuiInputLabel-animated-205 MuiInputLabel-marginDense-203 MuiInputLabel-outlined-207"
-              data-shrink={false}
-            >
-              Number of seeds
-            </label>
-            <div
-              className="MuiInputBase-root-221 MuiOutlinedInput-root-208 MuiInputBase-fullWidth-230 MuiInputBase-formControl-222 MuiInputBase-marginDense-228"
-              onClick={[Function]}
-            >
-              <fieldset
-                aria-hidden={true}
-                className="MuiPrivateNotchedOutline-root-238 MuiOutlinedInput-notchedOutline-215"
-                style={
-                  Object {
-                    "paddingLeft": 8,
-                  }
-                }
-              >
-                <legend
-                  className="MuiPrivateNotchedOutline-legend-239"
-                  style={
-                    Object {
-                      "width": 0.01,
-                    }
-                  }
-                >
-                  <span
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "&#8203;",
-                      }
-                    }
-                  />
-                </legend>
-              </fieldset>
-              <input
-                aria-invalid={false}
-                className="MuiInputBase-input-231 MuiOutlinedInput-input-216 MuiInputBase-inputMarginDense-232 MuiOutlinedInput-inputMarginDense-217"
-                defaultValue={5}
-                disabled={false}
-                name="randomSeed"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                placeholder="Number of seeds"
-                required={false}
-                type="text"
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          className="MuiGrid-item-11 MuiGrid-grid-xs-4-42"
-        >
-          <div
-            aria-describedby={null}
-            className="MuiFormControl-root-193 MuiFormControl-marginDense-195 MuiFormControl-fullWidth-196"
-            onMouseLeave={[Function]}
-            onMouseOver={[Function]}
-            onTouchEnd={[Function]}
-            onTouchStart={[Function]}
-            title="The proportion of the dataset that should be included in the test splie"
-          >
-            <label
-              className="MuiFormLabel-root-179 MuiInputLabel-root-197 MuiInputLabel-formControl-202 MuiInputLabel-animated-205 MuiInputLabel-marginDense-203 MuiInputLabel-outlined-207"
-              data-shrink={false}
-            >
-              Test size
-            </label>
-            <div
-              className="MuiInputBase-root-221 MuiOutlinedInput-root-208 MuiInputBase-fullWidth-230 MuiInputBase-formControl-222 MuiInputBase-marginDense-228"
-              onClick={[Function]}
-            >
-              <fieldset
-                aria-hidden={true}
-                className="MuiPrivateNotchedOutline-root-238 MuiOutlinedInput-notchedOutline-215"
-                style={
-                  Object {
-                    "paddingLeft": 8,
-                  }
-                }
-              >
-                <legend
-                  className="MuiPrivateNotchedOutline-legend-239"
-                  style={
-                    Object {
-                      "width": 0.01,
-                    }
-                  }
-                >
-                  <span
-                    dangerouslySetInnerHTML={
-                      Object {
-                        "__html": "&#8203;",
-                      }
-                    }
-                  />
-                </legend>
-              </fieldset>
-              <input
-                aria-invalid={false}
-                className="MuiInputBase-input-231 MuiOutlinedInput-input-216 MuiInputBase-inputMarginDense-232 MuiOutlinedInput-inputMarginDense-217"
-                defaultValue={0.3}
-                disabled={false}
-                name="testSize"
-                onBlur={[Function]}
-                onChange={[Function]}
-                onFocus={[Function]}
-                placeholder="Test size"
-                required={false}
-                type="text"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </form>
-  </div>
-  <h3
-    style={
-      Object {
-        "color": "black",
-      }
-    }
-  >
-    Target feature & filters
-  </h3>
-  <form>
-    <div
-      className="MuiGrid-container-10"
-    >
-      <div
-        className="MuiGrid-item-11 MuiGrid-grid-xs-12-50"
-      >
-        <div
-          aria-describedby={null}
-          className="MuiFormControl-root-193 MuiFormControl-marginDense-195 MuiFormControl-fullWidth-196"
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onTouchEnd={[Function]}
-          onTouchStart={[Function]}
-          title="The name of the target feature column in the dataset"
-        >
-          <label
-            className="MuiFormLabel-root-179 MuiFormLabel-required-184 MuiInputLabel-required-201 MuiInputLabel-root-197 MuiInputLabel-formControl-202 MuiInputLabel-animated-205 MuiInputLabel-marginDense-203 MuiInputLabel-outlined-207"
-            data-shrink={false}
-          >
-            Target feature
-            <span
-              className="MuiFormLabel-asterisk-185"
-            >
-               *
-            </span>
-          </label>
-          <div
-            className="MuiInputBase-root-221 MuiOutlinedInput-root-208 MuiInputBase-fullWidth-230 MuiInputBase-formControl-222 MuiInputBase-marginDense-228"
-            onClick={[Function]}
-          >
-            <fieldset
-              aria-hidden={true}
-              className="MuiPrivateNotchedOutline-root-238 MuiOutlinedInput-notchedOutline-215"
-              style={
-                Object {
-                  "paddingLeft": 8,
-                }
-              }
-            >
-              <legend
-                className="MuiPrivateNotchedOutline-legend-239"
-                style={
-                  Object {
-                    "width": 0.01,
-                  }
-                }
-              >
-                <span
-                  dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "&#8203;",
-                    }
-                  }
-                />
-              </legend>
-            </fieldset>
-            <input
-              aria-invalid={false}
-              className="MuiInputBase-input-231 MuiOutlinedInput-input-216 MuiInputBase-inputMarginDense-232 MuiOutlinedInput-inputMarginDense-217"
-              defaultValue="case"
-              disabled={false}
-              name="targetFeature"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              placeholder="Target feature"
-              required={true}
-              type="text"
-            />
-          </div>
-        </div>
+        Upload Dataset
       </div>
     </div>
-    <p
-      className="MuiFormLabel-root-179"
+    <div
+      className="MuiCollapse-container-40 MuiCollapse-entered-41"
       style={
         Object {
-          "margin": "15px 0 10px 5px",
+          "minHeight": "0px",
         }
       }
     >
-      Filter
-    </p>
-    <div
-      className="MuiGrid-container-10 MuiGrid-spacing-xs-8-32"
-    >
       <div
-        className="MuiGrid-item-11"
+        className="MuiCollapse-wrapper-42"
       >
         <div
-          aria-describedby={null}
-          className="MuiFormControl-root-193"
-          onBlur={[Function]}
-          onFocus={[Function]}
-          onMouseLeave={[Function]}
-          onMouseOver={[Function]}
-          onTouchEnd={[Function]}
-          onTouchStart={[Function]}
-          title=""
+          className="MuiCollapse-wrapperInner-43"
         >
           <div
-            className="MuiInputBase-root-221 MuiOutlinedInput-root-208 MuiInputBase-formControl-222"
-            onClick={[Function]}
+            className="MuiExpansionPanelDetails-root-44"
           >
-            <fieldset
-              aria-hidden={true}
-              className="MuiPrivateNotchedOutline-root-238 MuiOutlinedInput-notchedOutline-215"
+            <div
+              className="datasetUploadWrapper"
               style={
                 Object {
-                  "paddingLeft": 8,
+                  "width": "100%",
                 }
               }
-            >
-              <legend
-                className="MuiPrivateNotchedOutline-legend-239"
-                style={
-                  Object {
-                    "width": 0.01,
-                  }
-                }
-              >
-                <span
-                  dangerouslySetInnerHTML={
-                    Object {
-                      "__html": "&#8203;",
-                    }
-                  }
-                />
-              </legend>
-            </fieldset>
-            <div
-              className="MuiSelect-root-266"
             >
               <div
-                aria-haspopup="true"
-                aria-pressed="false"
-                className="MuiSelect-select-267 MuiSelect-selectMenu-270 MuiSelect-outlined-269 MuiInputBase-input-231 MuiOutlinedInput-input-216"
+                className="dropzone"
                 onBlur={[Function]}
                 onClick={[Function]}
+                onDragEnter={[Function]}
+                onDragLeave={[Function]}
+                onDragOver={[Function]}
+                onDragStart={[Function]}
+                onDrop={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
-                role="button"
+                style={
+                  Object {
+                    "border": "dashed 1px #90D4FF",
+                    "padding": "30px",
+                    "textAlign": "center",
+                  }
+                }
                 tabIndex={0}
               >
-                <em>
-                  None
-                </em>
-              </div>
-              <input
-                id="outlined-age-simple"
-                type="hidden"
-                value=""
-              />
-              <svg
-                aria-hidden="true"
-                className="MuiSvgIcon-root-1 MuiSelect-icon-272"
-                focusable="false"
-                role="presentation"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M7 10l5 5 5-5z"
+                <input
+                  autoComplete="off"
+                  multiple={false}
+                  name="dataset"
+                  onChange={[Function]}
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "display": "none",
+                    }
+                  }
+                  tabIndex={-1}
+                  type="file"
                 />
-              </svg>
+                <svg
+                  aria-hidden="true"
+                  className="MuiSvgIcon-root-45"
+                  focusable="false"
+                  role="presentation"
+                  style={
+                    Object {
+                      "fontSize": "48px",
+                    }
+                  }
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                  <path
+                    d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"
+                  />
+                </svg>
+                <p>
+                  Click here to select a dataset file, or drag and drop it over this text.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      
     </div>
-  </form>
+  </div>
+  <div
+    className="MuiPaper-root-4 MuiPaper-elevation1-7 MuiExpansionPanel-root-1"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      aria-expanded={false}
+      className="MuiButtonBase-root-37 MuiExpansionPanelSummary-root-31"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onContextMenu={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={
+        Object {
+          "color": "black",
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        className="MuiExpansionPanelSummary-content-35"
+      >
+        Moses options
+      </div>
+    </div>
+    <div
+      aria-hidden="true"
+      className="MuiCollapse-container-40"
+      style={
+        Object {
+          "minHeight": "0px",
+        }
+      }
+    >
+      <div
+        className="MuiCollapse-wrapper-42"
+      >
+        <div
+          className="MuiCollapse-wrapperInner-43"
+        >
+          <div
+            className="MuiExpansionPanelDetails-root-44"
+          >
+            <div
+              className="mosesOptionsFormWrapper"
+              style={
+                Object {
+                  "width": "100%",
+                }
+              }
+            >
+              <form>
+                <div
+                  className="MuiGrid-container-54 MuiGrid-spacing-xs-16-77"
+                >
+                  <div
+                    className="MuiGrid-item-55 MuiGrid-grid-xs-12-94 MuiGrid-grid-sm-6-102 MuiGrid-grid-md-4-114"
+                  >
+                    <label
+                      aria-describedby={null}
+                      className="MuiFormControlLabel-root-159"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOver={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      title="Enable integrated feature selection.  Feature selection is performed immediately before knob building (representation building), when creating a new deme."
+                    >
+                      <span
+                        className="MuiSwitch-root-165"
+                      >
+                        <span
+                          className="MuiButtonBase-root-37 MuiIconButton-root-178 MuiPrivateSwitchBase-root-174 MuiSwitch-switchBase-168 MuiSwitch-colorSecondary-171 MuiPrivateSwitchBase-checked-175 MuiSwitch-checked-169"
+                          onBlur={[Function]}
+                          onContextMenu={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchMove={[Function]}
+                          onTouchStart={[Function]}
+                          tabIndex={null}
+                        >
+                          <span
+                            className="MuiIconButton-label-183"
+                          >
+                            <span
+                              className="MuiSwitch-icon-166 MuiSwitch-iconChecked-167"
+                            />
+                            <input
+                              className="MuiPrivateSwitchBase-input-177"
+                              defaultChecked={true}
+                              name="enableFeatureSelection"
+                              onChange={[Function]}
+                              type="checkbox"
+                              value="0"
+                            />
+                          </span>
+                          <span
+                            className="MuiTouchRipple-root-323"
+                          />
+                        </span>
+                        <span
+                          className="MuiSwitch-bar-173"
+                        />
+                      </span>
+                      <span
+                        className="MuiTypography-root-184 MuiTypography-body1-193 MuiFormControlLabel-label-164"
+                      >
+                        Enable feature selection
+                      </span>
+                    </label>
+                  </div>
+                  <div
+                    className="MuiGrid-item-55 MuiGrid-grid-xs-12-94 MuiGrid-grid-sm-6-102 MuiGrid-grid-md-4-114"
+                  >
+                    <label
+                      aria-describedby={null}
+                      className="MuiFormControlLabel-root-159"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOver={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      title="Hillclimbing parameter (hc). If false,then deme search terminates when a local hilltop is found. If true, then the search radius is progressively widened, until another termination condition is met. "
+                    >
+                      <span
+                        className="MuiSwitch-root-165"
+                      >
+                        <span
+                          className="MuiButtonBase-root-37 MuiIconButton-root-178 MuiPrivateSwitchBase-root-174 MuiSwitch-switchBase-168 MuiSwitch-colorSecondary-171 MuiPrivateSwitchBase-checked-175 MuiSwitch-checked-169"
+                          onBlur={[Function]}
+                          onContextMenu={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchMove={[Function]}
+                          onTouchStart={[Function]}
+                          tabIndex={null}
+                        >
+                          <span
+                            className="MuiIconButton-label-183"
+                          >
+                            <span
+                              className="MuiSwitch-icon-166 MuiSwitch-iconChecked-167"
+                            />
+                            <input
+                              className="MuiPrivateSwitchBase-input-177"
+                              defaultChecked={true}
+                              name="hcWidenSearch"
+                              onChange={[Function]}
+                              type="checkbox"
+                              value="0"
+                            />
+                          </span>
+                          <span
+                            className="MuiTouchRipple-root-323"
+                          />
+                        </span>
+                        <span
+                          className="MuiSwitch-bar-173"
+                        />
+                      </span>
+                      <span
+                        className="MuiTypography-root-184 MuiTypography-body1-193 MuiFormControlLabel-label-164"
+                      >
+                        hc Widen Search
+                      </span>
+                    </label>
+                  </div>
+                  <div
+                    className="MuiGrid-item-55 MuiGrid-grid-xs-12-94 MuiGrid-grid-sm-6-102 MuiGrid-grid-md-4-114"
+                  >
+                    <label
+                      aria-describedby={null}
+                      className="MuiFormControlLabel-root-159"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOver={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      title="If the table has discrete output type (like bool or enum), balance the resulting ctable so all classes have the same weight."
+                    >
+                      <span
+                        className="MuiSwitch-root-165"
+                      >
+                        <span
+                          className="MuiButtonBase-root-37 MuiIconButton-root-178 MuiPrivateSwitchBase-root-174 MuiSwitch-switchBase-168 MuiSwitch-colorSecondary-171 MuiPrivateSwitchBase-checked-175 MuiSwitch-checked-169"
+                          onBlur={[Function]}
+                          onContextMenu={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchMove={[Function]}
+                          onTouchStart={[Function]}
+                          tabIndex={null}
+                        >
+                          <span
+                            className="MuiIconButton-label-183"
+                          >
+                            <span
+                              className="MuiSwitch-icon-166 MuiSwitch-iconChecked-167"
+                            />
+                            <input
+                              className="MuiPrivateSwitchBase-input-177"
+                              defaultChecked={true}
+                              name="balance"
+                              onChange={[Function]}
+                              type="checkbox"
+                              value="0"
+                            />
+                          </span>
+                          <span
+                            className="MuiTouchRipple-root-323"
+                          />
+                        </span>
+                        <span
+                          className="MuiSwitch-bar-173"
+                        />
+                      </span>
+                      <span
+                        className="MuiTypography-root-184 MuiTypography-body1-193 MuiFormControlLabel-label-164"
+                      >
+                        Balance
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                <div
+                  className="MuiGrid-container-54 MuiGrid-spacing-xs-24-78"
+                >
+                  <div
+                    className="MuiGrid-item-55 MuiGrid-grid-xs-12-94 MuiGrid-grid-sm-6-102 MuiGrid-grid-md-4-114"
+                  >
+                    <legend
+                      aria-describedby={null}
+                      className="MuiFormLabel-root-220"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOver={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      title="Feature selection algorithm. Supported are: simple, for a fast maximun mutual information algo. inc, for incremental max-relevency, min-redundancy. smd, for stochastic mutual dependency, random, for uniform random dependency, hc for moses-hillclimbing."
+                    >
+                      Feature selection algorithm
+                    </legend>
+                    <div
+                      className="MuiFormGroup-root-227"
+                      defaultValue="simple"
+                      role="radiogroup"
+                      style={
+                        Object {
+                          "display": "flex",
+                          "flexDirection": "row",
+                        }
+                      }
+                    >
+                      <label
+                        className="MuiFormControlLabel-root-159"
+                      >
+                        <span
+                          className="MuiButtonBase-root-37 MuiIconButton-root-178 MuiPrivateSwitchBase-root-174 MuiRadio-root-229 MuiRadio-colorSecondary-233 MuiPrivateSwitchBase-checked-175 MuiRadio-checked-230"
+                          onBlur={[Function]}
+                          onContextMenu={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchMove={[Function]}
+                          onTouchStart={[Function]}
+                          tabIndex={null}
+                        >
+                          <span
+                            className="MuiIconButton-label-183"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              className="MuiSvgIcon-root-45"
+                              focusable="false"
+                              role="presentation"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                              />
+                            </svg>
+                            <input
+                              checked={true}
+                              className="MuiPrivateSwitchBase-input-177"
+                              name="featureSelectionAlgorithm"
+                              onChange={[Function]}
+                              type="radio"
+                              value="simple"
+                            />
+                          </span>
+                          <span
+                            className="MuiTouchRipple-root-323"
+                          />
+                        </span>
+                        <span
+                          className="MuiTypography-root-184 MuiTypography-body1-193 MuiFormControlLabel-label-164"
+                        >
+                          simple
+                        </span>
+                      </label>
+                      <label
+                        className="MuiFormControlLabel-root-159"
+                      >
+                        <span
+                          className="MuiButtonBase-root-37 MuiIconButton-root-178 MuiPrivateSwitchBase-root-174 MuiRadio-root-229 MuiRadio-colorSecondary-233"
+                          onBlur={[Function]}
+                          onContextMenu={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchMove={[Function]}
+                          onTouchStart={[Function]}
+                          tabIndex={null}
+                        >
+                          <span
+                            className="MuiIconButton-label-183"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              className="MuiSvgIcon-root-45"
+                              focusable="false"
+                              role="presentation"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                              />
+                            </svg>
+                            <input
+                              checked={false}
+                              className="MuiPrivateSwitchBase-input-177"
+                              name="featureSelectionAlgorithm"
+                              onChange={[Function]}
+                              type="radio"
+                              value="inc"
+                            />
+                          </span>
+                          <span
+                            className="MuiTouchRipple-root-323"
+                          />
+                        </span>
+                        <span
+                          className="MuiTypography-root-184 MuiTypography-body1-193 MuiFormControlLabel-label-164"
+                        >
+                          inc
+                        </span>
+                      </label>
+                      <label
+                        className="MuiFormControlLabel-root-159"
+                      >
+                        <span
+                          className="MuiButtonBase-root-37 MuiIconButton-root-178 MuiPrivateSwitchBase-root-174 MuiRadio-root-229 MuiRadio-colorSecondary-233"
+                          onBlur={[Function]}
+                          onContextMenu={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchMove={[Function]}
+                          onTouchStart={[Function]}
+                          tabIndex={null}
+                        >
+                          <span
+                            className="MuiIconButton-label-183"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              className="MuiSvgIcon-root-45"
+                              focusable="false"
+                              role="presentation"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                              />
+                            </svg>
+                            <input
+                              checked={false}
+                              className="MuiPrivateSwitchBase-input-177"
+                              name="featureSelectionAlgorithm"
+                              onChange={[Function]}
+                              type="radio"
+                              value="smd"
+                            />
+                          </span>
+                          <span
+                            className="MuiTouchRipple-root-323"
+                          />
+                        </span>
+                        <span
+                          className="MuiTypography-root-184 MuiTypography-body1-193 MuiFormControlLabel-label-164"
+                        >
+                          smd
+                        </span>
+                      </label>
+                      <label
+                        className="MuiFormControlLabel-root-159"
+                      >
+                        <span
+                          className="MuiButtonBase-root-37 MuiIconButton-root-178 MuiPrivateSwitchBase-root-174 MuiRadio-root-229 MuiRadio-colorSecondary-233"
+                          onBlur={[Function]}
+                          onContextMenu={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchMove={[Function]}
+                          onTouchStart={[Function]}
+                          tabIndex={null}
+                        >
+                          <span
+                            className="MuiIconButton-label-183"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              className="MuiSvgIcon-root-45"
+                              focusable="false"
+                              role="presentation"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                              />
+                            </svg>
+                            <input
+                              checked={false}
+                              className="MuiPrivateSwitchBase-input-177"
+                              name="featureSelectionAlgorithm"
+                              onChange={[Function]}
+                              type="radio"
+                              value="hc"
+                            />
+                          </span>
+                          <span
+                            className="MuiTouchRipple-root-323"
+                          />
+                        </span>
+                        <span
+                          className="MuiTypography-root-184 MuiTypography-body1-193 MuiFormControlLabel-label-164"
+                        >
+                          hc
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                  <div
+                    className="MuiGrid-item-55 MuiGrid-grid-xs-12-94 MuiGrid-grid-sm-6-102 MuiGrid-grid-md-4-114"
+                  >
+                    <div
+                      aria-describedby={null}
+                      className="MuiFormControl-root-234 MuiFormControl-marginDense-236 MuiFormControl-fullWidth-237"
+                      onMouseLeave={[Function]}
+                      onMouseOver={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      title="This option specifies the number of features to be selected out of the dataset.  A value of 0 disables feature selection"
+                    >
+                      <label
+                        className="MuiFormLabel-root-220 MuiInputLabel-root-238 MuiInputLabel-formControl-243 MuiInputLabel-animated-246 MuiInputLabel-marginDense-244 MuiInputLabel-outlined-248"
+                        data-shrink={false}
+                      >
+                        Feature Selection Target Size
+                      </label>
+                      <div
+                        className="MuiInputBase-root-262 MuiOutlinedInput-root-249 MuiInputBase-fullWidth-271 MuiInputBase-formControl-263 MuiInputBase-marginDense-269"
+                        onClick={[Function]}
+                      >
+                        <fieldset
+                          aria-hidden={true}
+                          className="MuiPrivateNotchedOutline-root-279 MuiOutlinedInput-notchedOutline-256"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="MuiPrivateNotchedOutline-legend-280"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                        <input
+                          aria-invalid={false}
+                          className="MuiInputBase-input-272 MuiOutlinedInput-input-257 MuiInputBase-inputMarginDense-273 MuiOutlinedInput-inputMarginDense-258"
+                          defaultValue={4}
+                          disabled={false}
+                          name="featureSelectionTargetSize"
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Feature Selection Target Size"
+                          required={false}
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="MuiGrid-container-54 MuiGrid-spacing-xs-24-78"
+                >
+                  <div
+                    className="MuiGrid-item-55 MuiGrid-grid-xs-12-94 MuiGrid-grid-sm-6-102 MuiGrid-grid-md-4-114"
+                  >
+                    <div
+                      aria-describedby={null}
+                      className="MuiFormControl-root-234 MuiFormControl-marginDense-236 MuiFormControl-fullWidth-237"
+                      onMouseLeave={[Function]}
+                      onMouseOver={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      title="It also allows to control when crossover occurs instead of exhaustive search. If the neighborhood to explore has more than the given number (and at least 2 iterations has passed) then  crossover kicks in."
+                    >
+                      <label
+                        className="MuiFormLabel-root-220 MuiInputLabel-root-238 MuiInputLabel-formControl-243 MuiInputLabel-animated-246 MuiInputLabel-marginDense-244 MuiInputLabel-outlined-248"
+                        data-shrink={false}
+                      >
+                        hc Crossover Min Neighbors
+                      </label>
+                      <div
+                        className="MuiInputBase-root-262 MuiOutlinedInput-root-249 MuiInputBase-fullWidth-271 MuiInputBase-formControl-263 MuiInputBase-marginDense-269"
+                        onClick={[Function]}
+                      >
+                        <fieldset
+                          aria-hidden={true}
+                          className="MuiPrivateNotchedOutline-root-279 MuiOutlinedInput-notchedOutline-256"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="MuiPrivateNotchedOutline-legend-280"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                        <input
+                          aria-invalid={false}
+                          className="MuiInputBase-input-272 MuiOutlinedInput-input-257 MuiInputBase-inputMarginDense-273 MuiOutlinedInput-inputMarginDense-258"
+                          defaultValue={5000}
+                          disabled={false}
+                          name="hcCrossoverMinNeighbors"
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="hc Crossover Min Neighbors"
+                          required={false}
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="MuiGrid-item-55 MuiGrid-grid-xs-12-94 MuiGrid-grid-sm-6-102 MuiGrid-grid-md-4-114"
+                  >
+                    <div
+                      aria-describedby={null}
+                      className="MuiFormControl-root-234 MuiFormControl-marginDense-236 MuiFormControl-fullWidth-237"
+                      onMouseLeave={[Function]}
+                      onMouseOver={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      title="Number of new candidates created by crossover during each iteration of hillclimbing."
+                    >
+                      <label
+                        className="MuiFormLabel-root-220 MuiInputLabel-root-238 MuiInputLabel-formControl-243 MuiInputLabel-animated-246 MuiInputLabel-marginDense-244 MuiInputLabel-outlined-248"
+                        data-shrink={false}
+                      >
+                        hc Crossover Pop Size
+                      </label>
+                      <div
+                        className="MuiInputBase-root-262 MuiOutlinedInput-root-249 MuiInputBase-fullWidth-271 MuiInputBase-formControl-263 MuiInputBase-marginDense-269"
+                        onClick={[Function]}
+                      >
+                        <fieldset
+                          aria-hidden={true}
+                          className="MuiPrivateNotchedOutline-root-279 MuiOutlinedInput-notchedOutline-256"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="MuiPrivateNotchedOutline-legend-280"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                        <input
+                          aria-invalid={false}
+                          className="MuiInputBase-input-272 MuiOutlinedInput-input-257 MuiInputBase-inputMarginDense-273 MuiOutlinedInput-inputMarginDense-258"
+                          defaultValue={1000}
+                          disabled={false}
+                          name="hcCrossoverPopSize"
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="hc Crossover Pop Size"
+                          required={false}
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="MuiGrid-container-54 MuiGrid-spacing-xs-24-78"
+                >
+                  <div
+                    className="MuiGrid-item-55 MuiGrid-grid-xs-12-94 MuiGrid-grid-sm-6-102 MuiGrid-grid-md-4-114"
+                  >
+                    <div
+                      aria-describedby={null}
+                      className="MuiFormControl-root-234 MuiFormControl-marginDense-236 MuiFormControl-fullWidth-237"
+                      onMouseLeave={[Function]}
+                      onMouseOver={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      title="Maximum number of fitness function evaluations."
+                    >
+                      <label
+                        className="MuiFormLabel-root-220 MuiInputLabel-root-238 MuiInputLabel-formControl-243 MuiInputLabel-animated-246 MuiInputLabel-marginDense-244 MuiInputLabel-outlined-248"
+                        data-shrink={false}
+                      >
+                        Maximum evals
+                      </label>
+                      <div
+                        className="MuiInputBase-root-262 MuiOutlinedInput-root-249 MuiInputBase-fullWidth-271 MuiInputBase-formControl-263 MuiInputBase-marginDense-269"
+                        onClick={[Function]}
+                      >
+                        <fieldset
+                          aria-hidden={true}
+                          className="MuiPrivateNotchedOutline-root-279 MuiOutlinedInput-notchedOutline-256"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="MuiPrivateNotchedOutline-legend-280"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                        <input
+                          aria-invalid={false}
+                          className="MuiInputBase-input-272 MuiOutlinedInput-input-257 MuiInputBase-inputMarginDense-273 MuiOutlinedInput-inputMarginDense-258"
+                          defaultValue={1000}
+                          disabled={false}
+                          name="maximumEvals"
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Maximum evals"
+                          required={false}
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="MuiGrid-item-55 MuiGrid-grid-xs-12-94 MuiGrid-grid-sm-6-102 MuiGrid-grid-md-4-114"
+                  >
+                    <div
+                      aria-describedby={null}
+                      className="MuiFormControl-root-234 MuiFormControl-marginDense-236 MuiFormControl-fullWidth-237"
+                      onMouseLeave={[Function]}
+                      onMouseOver={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      title="The number of results to return,ordered according to a linear combination of score and complexity. If negative, then return all results."
+                    >
+                      <label
+                        className="MuiFormLabel-root-220 MuiInputLabel-root-238 MuiInputLabel-formControl-243 MuiInputLabel-animated-246 MuiInputLabel-marginDense-244 MuiInputLabel-outlined-248"
+                        data-shrink={false}
+                      >
+                        Result Count
+                      </label>
+                      <div
+                        className="MuiInputBase-root-262 MuiOutlinedInput-root-249 MuiInputBase-fullWidth-271 MuiInputBase-formControl-263 MuiInputBase-marginDense-269"
+                        onClick={[Function]}
+                      >
+                        <fieldset
+                          aria-hidden={true}
+                          className="MuiPrivateNotchedOutline-root-279 MuiOutlinedInput-notchedOutline-256"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="MuiPrivateNotchedOutline-legend-280"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                        <input
+                          aria-invalid={false}
+                          className="MuiInputBase-input-272 MuiOutlinedInput-input-257 MuiInputBase-inputMarginDense-273 MuiOutlinedInput-inputMarginDense-258"
+                          defaultValue={100}
+                          disabled={false}
+                          name="resultCount"
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Result Count"
+                          required={false}
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="MuiGrid-item-55 MuiGrid-grid-xs-12-94 MuiGrid-grid-sm-6-102 MuiGrid-grid-md-4-114"
+                  >
+                    <div
+                      aria-describedby={null}
+                      className="MuiFormControl-root-234 MuiFormControl-marginDense-236 MuiFormControl-fullWidth-237"
+                      onMouseLeave={[Function]}
+                      onMouseOver={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      title="Number of jobs allocated for deme optimization."
+                    >
+                      <label
+                        className="MuiFormLabel-root-220 MuiInputLabel-root-238 MuiInputLabel-formControl-243 MuiInputLabel-animated-246 MuiInputLabel-marginDense-244 MuiInputLabel-outlined-248"
+                        data-shrink={false}
+                      >
+                        Number Of Threads
+                      </label>
+                      <div
+                        className="MuiInputBase-root-262 MuiOutlinedInput-root-249 MuiInputBase-fullWidth-271 MuiInputBase-formControl-263 MuiInputBase-marginDense-269"
+                        onClick={[Function]}
+                      >
+                        <fieldset
+                          aria-hidden={true}
+                          className="MuiPrivateNotchedOutline-root-279 MuiOutlinedInput-notchedOutline-256"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="MuiPrivateNotchedOutline-legend-280"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                        <input
+                          aria-invalid={false}
+                          className="MuiInputBase-input-272 MuiOutlinedInput-input-257 MuiInputBase-inputMarginDense-273 MuiOutlinedInput-inputMarginDense-258"
+                          defaultValue={8}
+                          disabled={false}
+                          name="numberOfThreads"
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Number Of Threads"
+                          required={false}
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="MuiGrid-container-54 MuiGrid-spacing-xs-24-78"
+                >
+                  <div
+                    className="MuiGrid-item-55 MuiGrid-grid-xs-12-94 MuiGrid-grid-sm-6-102 MuiGrid-grid-md-4-114"
+                  >
+                    <legend
+                      aria-describedby={null}
+                      className="MuiFormLabel-root-220"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOver={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      title="Effort allocated for reduction during knob building, 0-3, 0 means minimum effort, 3 means maximum effort. Thebigger the effort the lower the dimension of the deme."
+                    >
+                      Reduct Knob Building Effort
+                    </legend>
+                    <div
+                      className="MuiFormGroup-root-227"
+                      defaultValue="0"
+                      role="radiogroup"
+                      style={
+                        Object {
+                          "display": "flex",
+                          "flexDirection": "row",
+                        }
+                      }
+                    >
+                      <label
+                        className="MuiFormControlLabel-root-159"
+                      >
+                        <span
+                          className="MuiButtonBase-root-37 MuiIconButton-root-178 MuiPrivateSwitchBase-root-174 MuiRadio-root-229 MuiRadio-colorSecondary-233 MuiPrivateSwitchBase-checked-175 MuiRadio-checked-230"
+                          onBlur={[Function]}
+                          onContextMenu={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchMove={[Function]}
+                          onTouchStart={[Function]}
+                          tabIndex={null}
+                        >
+                          <span
+                            className="MuiIconButton-label-183"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              className="MuiSvgIcon-root-45"
+                              focusable="false"
+                              role="presentation"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                              />
+                            </svg>
+                            <input
+                              checked={true}
+                              className="MuiPrivateSwitchBase-input-177"
+                              name="reductKnobBuildingEffort"
+                              onChange={[Function]}
+                              type="radio"
+                              value="0"
+                            />
+                          </span>
+                          <span
+                            className="MuiTouchRipple-root-323"
+                          />
+                        </span>
+                        <span
+                          className="MuiTypography-root-184 MuiTypography-body1-193 MuiFormControlLabel-label-164"
+                        >
+                          0
+                        </span>
+                      </label>
+                      <label
+                        className="MuiFormControlLabel-root-159"
+                      >
+                        <span
+                          className="MuiButtonBase-root-37 MuiIconButton-root-178 MuiPrivateSwitchBase-root-174 MuiRadio-root-229 MuiRadio-colorSecondary-233"
+                          onBlur={[Function]}
+                          onContextMenu={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchMove={[Function]}
+                          onTouchStart={[Function]}
+                          tabIndex={null}
+                        >
+                          <span
+                            className="MuiIconButton-label-183"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              className="MuiSvgIcon-root-45"
+                              focusable="false"
+                              role="presentation"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                              />
+                            </svg>
+                            <input
+                              checked={false}
+                              className="MuiPrivateSwitchBase-input-177"
+                              name="reductKnobBuildingEffort"
+                              onChange={[Function]}
+                              type="radio"
+                              value="1"
+                            />
+                          </span>
+                          <span
+                            className="MuiTouchRipple-root-323"
+                          />
+                        </span>
+                        <span
+                          className="MuiTypography-root-184 MuiTypography-body1-193 MuiFormControlLabel-label-164"
+                        >
+                          1
+                        </span>
+                      </label>
+                      <label
+                        className="MuiFormControlLabel-root-159"
+                      >
+                        <span
+                          className="MuiButtonBase-root-37 MuiIconButton-root-178 MuiPrivateSwitchBase-root-174 MuiRadio-root-229 MuiRadio-colorSecondary-233"
+                          onBlur={[Function]}
+                          onContextMenu={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchMove={[Function]}
+                          onTouchStart={[Function]}
+                          tabIndex={null}
+                        >
+                          <span
+                            className="MuiIconButton-label-183"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              className="MuiSvgIcon-root-45"
+                              focusable="false"
+                              role="presentation"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                              />
+                            </svg>
+                            <input
+                              checked={false}
+                              className="MuiPrivateSwitchBase-input-177"
+                              name="reductKnobBuildingEffort"
+                              onChange={[Function]}
+                              type="radio"
+                              value="2"
+                            />
+                          </span>
+                          <span
+                            className="MuiTouchRipple-root-323"
+                          />
+                        </span>
+                        <span
+                          className="MuiTypography-root-184 MuiTypography-body1-193 MuiFormControlLabel-label-164"
+                        >
+                          2
+                        </span>
+                      </label>
+                      <label
+                        className="MuiFormControlLabel-root-159"
+                      >
+                        <span
+                          className="MuiButtonBase-root-37 MuiIconButton-root-178 MuiPrivateSwitchBase-root-174 MuiRadio-root-229 MuiRadio-colorSecondary-233"
+                          onBlur={[Function]}
+                          onContextMenu={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          onTouchEnd={[Function]}
+                          onTouchMove={[Function]}
+                          onTouchStart={[Function]}
+                          tabIndex={null}
+                        >
+                          <span
+                            className="MuiIconButton-label-183"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              className="MuiSvgIcon-root-45"
+                              focusable="false"
+                              role="presentation"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+                              />
+                            </svg>
+                            <input
+                              checked={false}
+                              className="MuiPrivateSwitchBase-input-177"
+                              name="reductKnobBuildingEffort"
+                              onChange={[Function]}
+                              type="radio"
+                              value="3"
+                            />
+                          </span>
+                          <span
+                            className="MuiTouchRipple-root-323"
+                          />
+                        </span>
+                        <span
+                          className="MuiTypography-root-184 MuiTypography-body1-193 MuiFormControlLabel-label-164"
+                        >
+                          3
+                        </span>
+                      </label>
+                    </div>
+                  </div>
+                  <div
+                    className="MuiGrid-item-55 MuiGrid-grid-xs-12-94 MuiGrid-grid-sm-6-102 MuiGrid-grid-md-4-114"
+                  >
+                    <div
+                      aria-describedby={null}
+                      className="MuiFormControl-root-234 MuiFormControl-marginDense-236 MuiFormControl-fullWidth-237"
+                      onMouseLeave={[Function]}
+                      onMouseOver={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      title="Fix the ratio of the score to complexity, to be used as a penalty, when ranking the metapopulation for fitness. ."
+                    >
+                      <label
+                        className="MuiFormLabel-root-220 MuiInputLabel-root-238 MuiInputLabel-formControl-243 MuiInputLabel-animated-246 MuiInputLabel-marginDense-244 MuiInputLabel-outlined-248"
+                        data-shrink={false}
+                      >
+                        Complexity ratio
+                      </label>
+                      <div
+                        className="MuiInputBase-root-262 MuiOutlinedInput-root-249 MuiInputBase-fullWidth-271 MuiInputBase-formControl-263 MuiInputBase-marginDense-269"
+                        onClick={[Function]}
+                      >
+                        <fieldset
+                          aria-hidden={true}
+                          className="MuiPrivateNotchedOutline-root-279 MuiOutlinedInput-notchedOutline-256"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="MuiPrivateNotchedOutline-legend-280"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                        <input
+                          aria-invalid={false}
+                          className="MuiInputBase-input-272 MuiOutlinedInput-input-257 MuiInputBase-inputMarginDense-273 MuiOutlinedInput-inputMarginDense-258"
+                          defaultValue={3}
+                          disabled={false}
+                          name="complexityRatio"
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Complexity ratio"
+                          required={false}
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <form
+                layout="inline"
+                style={
+                  Object {
+                    "marginTop": "10px",
+                  }
+                }
+              >
+                <div
+                  className="MuiGrid-container-54 MuiGrid-spacing-xs-24-78"
+                >
+                  <div
+                    className="MuiGrid-item-55 MuiGrid-grid-xs-12-94"
+                  >
+                    <legend
+                      className="MuiFormLabel-root-220"
+                    >
+                      Additional parameters
+                    </legend>
+                    <div
+                      className="MuiFormControl-root-234 MuiFormControl-marginDense-236"
+                      style={
+                        Object {
+                          "marginRight": "5px",
+                        }
+                      }
+                    >
+                      <label
+                        className="MuiFormLabel-root-220 MuiInputLabel-root-238 MuiInputLabel-formControl-243 MuiInputLabel-animated-246 MuiInputLabel-marginDense-244 MuiInputLabel-outlined-248"
+                        data-shrink={false}
+                      >
+                        Name
+                      </label>
+                      <div
+                        className="MuiInputBase-root-262 MuiOutlinedInput-root-249 MuiInputBase-formControl-263 MuiInputBase-marginDense-269"
+                        onClick={[Function]}
+                      >
+                        <fieldset
+                          aria-hidden={true}
+                          className="MuiPrivateNotchedOutline-root-279 MuiOutlinedInput-notchedOutline-256"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="MuiPrivateNotchedOutline-legend-280"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                        <input
+                          aria-invalid={false}
+                          className="MuiInputBase-input-272 MuiOutlinedInput-input-257 MuiInputBase-inputMarginDense-273 MuiOutlinedInput-inputMarginDense-258"
+                          disabled={false}
+                          name="additionalParameterName"
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Name"
+                          required={false}
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                    <div
+                      className="MuiFormControl-root-234 MuiFormControl-marginDense-236"
+                      style={
+                        Object {
+                          "marginRight": "5px",
+                        }
+                      }
+                    >
+                      <label
+                        className="MuiFormLabel-root-220 MuiInputLabel-root-238 MuiInputLabel-formControl-243 MuiInputLabel-animated-246 MuiInputLabel-marginDense-244 MuiInputLabel-outlined-248"
+                        data-shrink={false}
+                      >
+                        Value
+                      </label>
+                      <div
+                        className="MuiInputBase-root-262 MuiOutlinedInput-root-249 MuiInputBase-formControl-263 MuiInputBase-marginDense-269"
+                        onClick={[Function]}
+                      >
+                        <fieldset
+                          aria-hidden={true}
+                          className="MuiPrivateNotchedOutline-root-279 MuiOutlinedInput-notchedOutline-256"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="MuiPrivateNotchedOutline-legend-280"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                        <input
+                          aria-invalid={false}
+                          className="MuiInputBase-input-272 MuiOutlinedInput-input-257 MuiInputBase-inputMarginDense-273 MuiOutlinedInput-inputMarginDense-258"
+                          disabled={false}
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Value"
+                          required={false}
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                    <button
+                      className="MuiButtonBase-root-37 MuiButtonBase-disabled-38 MuiButton-root-281 MuiButton-contained-292 MuiButton-raised-295 MuiButton-sizeLarge-305 MuiButton-disabled-301 addAdditionalParameter"
+                      disabled={true}
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onContextMenu={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
+                      onKeyUp={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseUp={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchMove={[Function]}
+                      onTouchStart={[Function]}
+                      style={
+                        Object {
+                          "marginTop": "10px",
+                        }
+                      }
+                      tabIndex="-1"
+                      type="button"
+                    >
+                      <span
+                        className="MuiButton-label-282"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          className="MuiSvgIcon-root-45"
+                          focusable="false"
+                          role="presentation"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+                          />
+                          <path
+                            d="M0 0h24v24H0z"
+                            fill="none"
+                          />
+                        </svg>
+                         Add parameter
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="MuiPaper-root-4 MuiPaper-elevation1-7 MuiExpansionPanel-root-1"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      aria-expanded={false}
+      className="MuiButtonBase-root-37 MuiExpansionPanelSummary-root-31"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onContextMenu={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={
+        Object {
+          "color": "black",
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        className="MuiExpansionPanelSummary-content-35"
+      >
+        Cross validation options
+      </div>
+    </div>
+    <div
+      aria-hidden="true"
+      className="MuiCollapse-container-40"
+      style={
+        Object {
+          "minHeight": "0px",
+        }
+      }
+    >
+      <div
+        className="MuiCollapse-wrapper-42"
+      >
+        <div
+          className="MuiCollapse-wrapperInner-43"
+        >
+          <div
+            className="MuiExpansionPanelDetails-root-44"
+          >
+            <div
+              className="crossValidationOptionsFormWrapper"
+              style={
+                Object {
+                  "width": "100%",
+                }
+              }
+            >
+              <form>
+                <div
+                  className="MuiGrid-container-54 MuiGrid-spacing-xs-24-78"
+                >
+                  <div
+                    className="MuiGrid-item-55 MuiGrid-grid-xs-4-86"
+                  >
+                    <div
+                      aria-describedby={null}
+                      className="MuiFormControl-root-234 MuiFormControl-marginDense-236 MuiFormControl-fullWidth-237"
+                      onMouseLeave={[Function]}
+                      onMouseOver={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      title="Number of folds for cross-validation"
+                    >
+                      <label
+                        className="MuiFormLabel-root-220 MuiInputLabel-root-238 MuiInputLabel-formControl-243 MuiInputLabel-animated-246 MuiInputLabel-marginDense-244 MuiInputLabel-outlined-248"
+                        data-shrink={false}
+                      >
+                        Folds
+                      </label>
+                      <div
+                        className="MuiInputBase-root-262 MuiOutlinedInput-root-249 MuiInputBase-fullWidth-271 MuiInputBase-formControl-263 MuiInputBase-marginDense-269"
+                        onClick={[Function]}
+                      >
+                        <fieldset
+                          aria-hidden={true}
+                          className="MuiPrivateNotchedOutline-root-279 MuiOutlinedInput-notchedOutline-256"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="MuiPrivateNotchedOutline-legend-280"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                        <input
+                          aria-invalid={false}
+                          className="MuiInputBase-input-272 MuiOutlinedInput-input-257 MuiInputBase-inputMarginDense-273 MuiOutlinedInput-inputMarginDense-258"
+                          defaultValue={1}
+                          disabled={false}
+                          name="folds"
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Folds"
+                          required={false}
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="MuiGrid-item-55 MuiGrid-grid-xs-4-86"
+                  >
+                    <div
+                      aria-describedby={null}
+                      className="MuiFormControl-root-234 MuiFormControl-marginDense-236 MuiFormControl-fullWidth-237"
+                      onMouseLeave={[Function]}
+                      onMouseOver={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      title="Specifies how many times to run MOSES with a random seed value"
+                    >
+                      <label
+                        className="MuiFormLabel-root-220 MuiInputLabel-root-238 MuiInputLabel-formControl-243 MuiInputLabel-animated-246 MuiInputLabel-marginDense-244 MuiInputLabel-outlined-248"
+                        data-shrink={false}
+                      >
+                        Number of seeds
+                      </label>
+                      <div
+                        className="MuiInputBase-root-262 MuiOutlinedInput-root-249 MuiInputBase-fullWidth-271 MuiInputBase-formControl-263 MuiInputBase-marginDense-269"
+                        onClick={[Function]}
+                      >
+                        <fieldset
+                          aria-hidden={true}
+                          className="MuiPrivateNotchedOutline-root-279 MuiOutlinedInput-notchedOutline-256"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="MuiPrivateNotchedOutline-legend-280"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                        <input
+                          aria-invalid={false}
+                          className="MuiInputBase-input-272 MuiOutlinedInput-input-257 MuiInputBase-inputMarginDense-273 MuiOutlinedInput-inputMarginDense-258"
+                          defaultValue={5}
+                          disabled={false}
+                          name="randomSeed"
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Number of seeds"
+                          required={false}
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="MuiGrid-item-55 MuiGrid-grid-xs-4-86"
+                  >
+                    <div
+                      aria-describedby={null}
+                      className="MuiFormControl-root-234 MuiFormControl-marginDense-236 MuiFormControl-fullWidth-237"
+                      onMouseLeave={[Function]}
+                      onMouseOver={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      title="The proportion of the dataset that should be included in the test splie"
+                    >
+                      <label
+                        className="MuiFormLabel-root-220 MuiInputLabel-root-238 MuiInputLabel-formControl-243 MuiInputLabel-animated-246 MuiInputLabel-marginDense-244 MuiInputLabel-outlined-248"
+                        data-shrink={false}
+                      >
+                        Test size
+                      </label>
+                      <div
+                        className="MuiInputBase-root-262 MuiOutlinedInput-root-249 MuiInputBase-fullWidth-271 MuiInputBase-formControl-263 MuiInputBase-marginDense-269"
+                        onClick={[Function]}
+                      >
+                        <fieldset
+                          aria-hidden={true}
+                          className="MuiPrivateNotchedOutline-root-279 MuiOutlinedInput-notchedOutline-256"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="MuiPrivateNotchedOutline-legend-280"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                        <input
+                          aria-invalid={false}
+                          className="MuiInputBase-input-272 MuiOutlinedInput-input-257 MuiInputBase-inputMarginDense-273 MuiOutlinedInput-inputMarginDense-258"
+                          defaultValue={0.3}
+                          disabled={false}
+                          name="testSize"
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Test size"
+                          required={false}
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="MuiPaper-root-4 MuiPaper-elevation1-7 MuiExpansionPanel-root-1"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      aria-expanded={false}
+      className="MuiButtonBase-root-37 MuiExpansionPanelSummary-root-31"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onContextMenu={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      role="button"
+      style={
+        Object {
+          "color": "black",
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        className="MuiExpansionPanelSummary-content-35"
+      >
+        Target feature & filters
+      </div>
+    </div>
+    <div
+      aria-hidden="true"
+      className="MuiCollapse-container-40"
+      style={
+        Object {
+          "minHeight": "0px",
+        }
+      }
+    >
+      <div
+        className="MuiCollapse-wrapper-42"
+      >
+        <div
+          className="MuiCollapse-wrapperInner-43"
+        >
+          <div
+            className="MuiExpansionPanelDetails-root-44"
+          >
+            <div
+              style={
+                Object {
+                  "width": "100%",
+                }
+              }
+            >
+              <form>
+                <div
+                  className="MuiGrid-container-54"
+                >
+                  <div
+                    className="MuiGrid-item-55 MuiGrid-grid-xs-12-94"
+                  >
+                    <div
+                      aria-describedby={null}
+                      className="MuiFormControl-root-234 MuiFormControl-marginDense-236 MuiFormControl-fullWidth-237"
+                      onMouseLeave={[Function]}
+                      onMouseOver={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      title="The name of the target feature column in the dataset"
+                    >
+                      <label
+                        className="MuiFormLabel-root-220 MuiFormLabel-required-225 MuiInputLabel-required-242 MuiInputLabel-root-238 MuiInputLabel-formControl-243 MuiInputLabel-animated-246 MuiInputLabel-marginDense-244 MuiInputLabel-outlined-248"
+                        data-shrink={false}
+                      >
+                        Target feature
+                        <span
+                          className="MuiFormLabel-asterisk-226"
+                        >
+                           *
+                        </span>
+                      </label>
+                      <div
+                        className="MuiInputBase-root-262 MuiOutlinedInput-root-249 MuiInputBase-fullWidth-271 MuiInputBase-formControl-263 MuiInputBase-marginDense-269"
+                        onClick={[Function]}
+                      >
+                        <fieldset
+                          aria-hidden={true}
+                          className="MuiPrivateNotchedOutline-root-279 MuiOutlinedInput-notchedOutline-256"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="MuiPrivateNotchedOutline-legend-280"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                        <input
+                          aria-invalid={false}
+                          className="MuiInputBase-input-272 MuiOutlinedInput-input-257 MuiInputBase-inputMarginDense-273 MuiOutlinedInput-inputMarginDense-258"
+                          defaultValue="case"
+                          disabled={false}
+                          name="targetFeature"
+                          onBlur={[Function]}
+                          onChange={[Function]}
+                          onFocus={[Function]}
+                          placeholder="Target feature"
+                          required={true}
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p
+                  className="MuiFormLabel-root-220"
+                  style={
+                    Object {
+                      "margin": "15px 0 10px 5px",
+                    }
+                  }
+                >
+                  Filter
+                </p>
+                <div
+                  className="MuiGrid-container-54 MuiGrid-spacing-xs-8-76"
+                >
+                  <div
+                    className="MuiGrid-item-55"
+                  >
+                    <div
+                      aria-describedby={null}
+                      className="MuiFormControl-root-234"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseOver={[Function]}
+                      onTouchEnd={[Function]}
+                      onTouchStart={[Function]}
+                      title=""
+                    >
+                      <div
+                        className="MuiInputBase-root-262 MuiOutlinedInput-root-249 MuiInputBase-formControl-263"
+                        onClick={[Function]}
+                      >
+                        <fieldset
+                          aria-hidden={true}
+                          className="MuiPrivateNotchedOutline-root-279 MuiOutlinedInput-notchedOutline-256"
+                          style={
+                            Object {
+                              "paddingLeft": 8,
+                            }
+                          }
+                        >
+                          <legend
+                            className="MuiPrivateNotchedOutline-legend-280"
+                            style={
+                              Object {
+                                "width": 0.01,
+                              }
+                            }
+                          >
+                            <span
+                              dangerouslySetInnerHTML={
+                                Object {
+                                  "__html": "&#8203;",
+                                }
+                              }
+                            />
+                          </legend>
+                        </fieldset>
+                        <div
+                          className="MuiSelect-root-307"
+                        >
+                          <div
+                            aria-haspopup="true"
+                            aria-pressed="false"
+                            className="MuiSelect-select-308 MuiSelect-selectMenu-311 MuiSelect-outlined-310 MuiInputBase-input-272 MuiOutlinedInput-input-257"
+                            onBlur={[Function]}
+                            onClick={[Function]}
+                            onFocus={[Function]}
+                            onKeyDown={[Function]}
+                            role="button"
+                            tabIndex={0}
+                          >
+                            <em>
+                              None
+                            </em>
+                          </div>
+                          <input
+                            id="outlined-age-simple"
+                            type="hidden"
+                            value=""
+                          />
+                          <svg
+                            aria-hidden="true"
+                            className="MuiSvgIcon-root-45 MuiSelect-icon-313"
+                            focusable="false"
+                            role="presentation"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M7 10l5 5 5-5z"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <hr
-    className="MuiDivider-root-277"
+    className="MuiDivider-root-318"
     style={
       Object {
         "margin": "15px 0",
@@ -1800,10 +2019,10 @@ exports[`<MoziService /> renders correctly 1`] = `
     }
   />
   <div
-    className="MuiGrid-container-10"
+    className="MuiGrid-container-54"
   >
     <div
-      className="MuiGrid-item-11 MuiGrid-grid-xs-12-50"
+      className="MuiGrid-item-55 MuiGrid-grid-xs-12-94"
       style={
         Object {
           "textAlign": "end",
@@ -1811,7 +2030,7 @@ exports[`<MoziService /> renders correctly 1`] = `
       }
     >
       <button
-        className="MuiButtonBase-root-140 MuiButton-root-240 MuiButton-contained-251 MuiButton-containedPrimary-252 MuiButton-raised-254 MuiButton-raisedPrimary-255"
+        className="MuiButtonBase-root-37 MuiButton-root-281 MuiButton-contained-292 MuiButton-containedPrimary-293 MuiButton-raised-295 MuiButton-raisedPrimary-296"
         disabled={false}
         onBlur={[Function]}
         onClick={[Function]}
@@ -1834,12 +2053,12 @@ exports[`<MoziService /> renders correctly 1`] = `
         type="button"
       >
         <span
-          className="MuiButton-label-241"
+          className="MuiButton-label-282"
         >
           Submit
           <svg
             aria-hidden="true"
-            className="MuiSvgIcon-root-1"
+            className="MuiSvgIcon-root-45"
             focusable="false"
             role="presentation"
             viewBox="0 0 24 24"
@@ -1854,7 +2073,7 @@ exports[`<MoziService /> renders correctly 1`] = `
           </svg>
         </span>
         <span
-          className="MuiTouchRipple-root-282"
+          className="MuiTouchRipple-root-323"
         />
       </button>
     </div>

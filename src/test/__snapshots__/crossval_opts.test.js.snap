@@ -3,6 +3,11 @@
 exports[`<CrossValidationOptionsForm /> rendered correctly 1`] = `
 <div
   className="crossValidationOptionsFormWrapper"
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
 >
   <form>
     <div

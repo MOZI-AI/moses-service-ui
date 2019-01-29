@@ -3,6 +3,11 @@
 exports[`<DatasetUpload /> rendered correctly 1`] = `
 <div
   className="datasetUploadWrapper"
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
 >
   <div
     className="dropzone"

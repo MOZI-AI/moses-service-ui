@@ -50,7 +50,10 @@ export class CrossValidationOptionsForm extends React.Component {
   render() {
     this.updateValidationStatus();
     return (
-      <div className="crossValidationOptionsFormWrapper">
+      <div
+        className="crossValidationOptionsFormWrapper"
+        style={{ width: '100%' }}
+      >
         <form>
           <Grid container spacing={24}>
             <Grid item xs={4}>

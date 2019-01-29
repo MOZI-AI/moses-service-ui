@@ -9,7 +9,14 @@ import {
   CrossValOptions,
   Filter
 } from './proto/moses_service_pb';
-import { Grid, Button, Divider } from '@material-ui/core';
+import {
+  Grid,
+  Button,
+  Divider,
+  ExpansionPanel,
+  ExpansionPanelSummary,
+  ExpansionPanelDetails
+} from '@material-ui/core';
 import { Check } from '@material-ui/icons';
 
 const Options = {
@@ -196,77 +203,95 @@ export class MoziServiceForm extends React.Component {
             <p>{this.props.error}</p>
           </div>
         )}
-        <h3
-          style={{
-            color: this.state.isValid.dataset ? 'black' : 'red'
-          }}
-        >
-          Upload dataset
-        </h3>
-        <DatasetUpload
-          uploadedFile={this.state.datasetFile}
-          handleFileUpload={this.handleFileUpload}
-          setValidationStatus={valid =>
-            this.setValidationStatus('dataset', valid)
-          }
-        />
-        <h3
-          style={{
-            color: this.state.isValid.mosesOptions ? 'black' : 'red'
-          }}
-        >
-          Moses options
-        </h3>
-        <MosesOptionsForm
-          defaults={this.state.mosesOpts}
-          additionalParameters={this.state.additionalParameters}
-          changeInput={event =>
-            this.handleInputChange(Options.MOSES_OPTIONS, event)
-          }
-          addAdditionalParameter={this.handleAdditionalParametersAdded}
-          removeAdditionalParameter={this.handleAdditionalParametersRemoved}
-          setValidationStatus={valid =>
-            this.setValidationStatus('mosesOptions', valid)
-          }
-        />
-        <h3
-          style={{
-            color: this.state.isValid.crossValOptions ? 'black' : 'red'
-          }}
-        >
-          {' '}
-          Cross validation options{' '}
-        </h3>
-        <CrossValidationOptionsForm
-          defaults={this.state.crossValOptions}
-          changeInput={event =>
-            this.handleInputChange(Options.CROSS_VALIDATION_OPTIONS, event)
-          }
-          setValidationStatus={valid =>
-            this.setValidationStatus('crossValOptions', valid)
-          }
-        />
-        <h3
-          style={{
-            color: this.state.isValid.targetFeatureAndFilters ? 'black' : 'red'
-          }}
-        >
-          Target feature & filters
-        </h3>
 
-        <TargetFeatureForm
-          defaults={{
-            targetFeature: this.state.targetFeature,
-            filter: this.state.filter
-          }}
-          changeInput={event =>
-            this.handleInputChange(Options.TARGET_FEATURE, event)
-          }
-          handleFilterChange={this.handleFilterChange}
-          setValidationStatus={valid =>
-            this.setValidationStatus('targetFeatureAndFilters', valid)
-          }
-        />
+        <ExpansionPanel defaultExpanded={true}>
+          <ExpansionPanelSummary
+            style={{
+              color: this.state.isValid.dataset ? 'black' : 'red'
+            }}
+          >
+            Upload Dataset
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <DatasetUpload
+              uploadedFile={this.state.datasetFile}
+              handleFileUpload={this.handleFileUpload}
+              setValidationStatus={valid =>
+                this.setValidationStatus('dataset', valid)
+              }
+            />
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
+        <ExpansionPanel style={{ width: '100%' }}>
+          <ExpansionPanelSummary
+            style={{
+              color: this.state.isValid.mosesOptions ? 'black' : 'red'
+            }}
+          >
+            Moses options
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <MosesOptionsForm
+              defaults={this.state.mosesOpts}
+              additionalParameters={this.state.additionalParameters}
+              changeInput={event =>
+                this.handleInputChange(Options.MOSES_OPTIONS, event)
+              }
+              addAdditionalParameter={this.handleAdditionalParametersAdded}
+              removeAdditionalParameter={this.handleAdditionalParametersRemoved}
+              setValidationStatus={valid =>
+                this.setValidationStatus('mosesOptions', valid)
+              }
+            />
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
+        <ExpansionPanel style={{ width: '100%' }}>
+          <ExpansionPanelSummary
+            style={{
+              color: this.state.isValid.crossValOptions ? 'black' : 'red'
+            }}
+          >
+            Cross validation options
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <CrossValidationOptionsForm
+              defaults={this.state.crossValOptions}
+              changeInput={event =>
+                this.handleInputChange(Options.CROSS_VALIDATION_OPTIONS, event)
+              }
+              setValidationStatus={valid =>
+                this.setValidationStatus('crossValOptions', valid)
+              }
+            />
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
+        <ExpansionPanel style={{ width: '100%' }}>
+          <ExpansionPanelSummary
+            style={{
+              color: this.state.isValid.targetFeatureAndFilters
+                ? 'black'
+                : 'red'
+            }}
+          >
+            Target feature & filters
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <TargetFeatureForm
+              defaults={{
+                targetFeature: this.state.targetFeature,
+                filter: this.state.filter
+              }}
+              changeInput={event =>
+                this.handleInputChange(Options.TARGET_FEATURE, event)
+              }
+              handleFilterChange={this.handleFilterChange}
+              setValidationStatus={valid =>
+                this.setValidationStatus('targetFeatureAndFilters', valid)
+              }
+            />
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
+
         <Divider style={{ margin: '15px 0' }} />
 
         <Grid container>

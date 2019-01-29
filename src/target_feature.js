@@ -62,7 +62,7 @@ export class TargetFeatureForm extends React.Component {
   render() {
     this.updateValidationStatus();
     return (
-      <React.Fragment>
+      <div style={{ width: '100%' }}>
         <form>
           <Grid container>
             <Grid item xs={12}>
@@ -117,6 +117,7 @@ export class TargetFeatureForm extends React.Component {
             {this.props.defaults.filter.name && (
               <Grid item>
                 <TextField
+                  label="Value"
                   inputProps={{
                     ref: node => {
                       this.filterValue = node;
@@ -134,7 +135,7 @@ export class TargetFeatureForm extends React.Component {
             )}
           </Grid>
         </form>
-      </React.Fragment>
+      </div>
     );
   }
 }

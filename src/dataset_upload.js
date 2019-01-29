@@ -41,7 +41,7 @@ export class DatasetUpload extends React.Component {
     };
 
     return (
-      <div className="datasetUploadWrapper">
+      <div className="datasetUploadWrapper" style={{ width: '100%' }}>
         {this.state.notification &&
           showNotification(this.state.notification, () => {
             this.setState({ notification: null });

@@ -3,6 +3,11 @@
 exports[`<MosesOptionsForm /> rendered correctly 1`] = `
 <div
   className="mosesOptionsFormWrapper"
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
 >
   <form>
     <div
