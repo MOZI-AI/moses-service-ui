@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import red from '@material-ui/core/colors/red';
 
 export const SERVER_ADDRESS =
-  'https://f90f95eb.ngrok.io' || 'http://localhost:8080/';
+  process.env.SERVICE_ADDR || 'http://localhost:5001';
 
 // Parse moses options from options string to JSON
 export function parseMosesOptions(options) {
