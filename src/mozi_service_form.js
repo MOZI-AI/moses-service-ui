@@ -153,7 +153,7 @@ export class MoziServiceForm extends React.Component {
     filter.setValue(this.state.filter.name ? this.state.filter.value : '0');
 
     analysisParameters.setDataset(this.state.dataset);
-    analysisParameters.setTargetFeature(this.state.targetFeature);
+    analysisParameters.setTargetfeature(this.state.targetFeature);
     analysisParameters.setCrossvalopts(crossValOptions);
     analysisParameters.setFilter(filter);
 
