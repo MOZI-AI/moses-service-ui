@@ -9,5 +9,8 @@ The purpose of this application is to provide users with a convienient interface
 2. Go into the project folder and install dependencies \
 ``` cd moses-service-ui ``` \
 ``` npm i ``` 
-3. Run the project \
+3. Define SERVICE_ADDR enviroment variable. It should point to the server that runs the moses service. \
+```export SERVICE_ADDR=<ADDR>```
+
+4. Run the project \
 ``` npm start ``` 
