@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import red from '@material-ui/core/colors/red';
 
 export const SERVER_ADDRESS =
-  process.env.SERVICE_ADDR || 'http://localhost:5001';
+  `http://${process.env.SERVICE_ADDR}:7001` || 'http://localhost:7001';
 
 // Parse moses options from options string to JSON
 export function parseMosesOptions(options) {

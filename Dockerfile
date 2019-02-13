@@ -11,6 +11,6 @@ RUN npm run-script build
 
 #production environment
 FROM nginx:alpine
-COPY --from=builder /root/react/dist /usr/share/nginx/html
+COPY --from=builder /root/react/build /usr/share/nginx/html
 EXPOSE 8000
 CMD ["nginx", "-g", "daemon off;"]
