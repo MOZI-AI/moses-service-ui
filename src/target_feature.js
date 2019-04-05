@@ -128,6 +128,7 @@ export class TargetFeatureForm extends React.Component {
                         this.filterValue = node;
                       }
                     }}
+                    defaultValue={this.props.defaults.filter.value}
                     variant="outlined"
                     name="filterValue"
                     onChange={e =>

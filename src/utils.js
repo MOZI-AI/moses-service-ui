@@ -7,28 +7,29 @@ export const SERVER_ADDRESS =
   `http://${process.env.SERVICE_ADDR}:7001` || 'http://localhost:7001';
 
 // Parse moses options from options string to JSON
-export function parseMosesOptions(options) {
-  const splitString = options.split(' ');
+export function parseMosesOptions(mosesOptionString) {
   const mosesOptions = {};
   const additionalParameters = {};
 
-  for (let i = 0; i < splitString.length; i = i + 2) {
-    const mapping = MosesOptionsMapping.find(m => m[1] === splitString[i]);
-    // check if the string is a numeric value, if so convert it to number
-    // if not, assign original value
-    let value = isNaN(splitString[i + 1])
-      ? splitString[i + 1]
-      : +splitString[i + 1];
-    // check if the string is a boolean value and if so convert it to boolean
-    // if not, assign the original value
+  const optionsArray = mosesOptionString.trim().split(' ');
+  const optionKeys = optionsArray.filter((ele, i) => i % 2 === 0);
+
+  optionKeys.map((ele, i) => {
+    let value = optionsArray[i * 2 + 1];
+    value = isNaN(value) ? value : +value;
     value = value === 'true' || (value === 'false' ? false : value);
-    // check if the option is included in moses options, if so use the long moses option name, if not add it to additional parameters
-    if (mapping) {
-      mosesOptions[mapping[0]] = value;
-    } else {
-      additionalParameters[splitString[i]] = value;
-    }
-  }
+    const mapping = MosesOptionsMapping.find(m => m[1] === ele);
+    mapping
+      ? (mosesOptions[mapping[0]] = [
+          '--hc-widen-search',
+          '--enable-fs',
+          '--balance'
+        ].find(k => k === mapping[1])
+          ? value == true
+          : value)
+      : (additionalParameters[ele] = value);
+  });
+
   return {
     mosesOptions: mosesOptions,
     additionalParameters: additionalParameters

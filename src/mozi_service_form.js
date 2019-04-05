@@ -2,7 +2,7 @@ import React from 'react';
 import { MosesOptionsForm } from './moses_opts';
 import { CrossValidationOptionsForm } from './crossval_opts';
 import { DatasetUpload } from './dataset_upload';
-import { stringifyMosesOptions } from './utils';
+import { stringifyMosesOptions, parseMosesOptions } from './utils';
 import { TargetFeatureForm } from './target_feature';
 import {
   AnalysisParameters,
@@ -10,6 +10,8 @@ import {
   Filter
 } from './proto/moses_service_pb';
 import { Stepper, Step, StepLabel, Divider } from '@material-ui/core';
+import * as jsyaml from 'js-yaml';
+import FileUpload from './FileUpload';
 
 const Options = {
   DATASET: 0,
@@ -46,7 +48,8 @@ export class MoziServiceForm extends React.Component {
       targetFeature: 'case',
       filter: { name: '', value: '' },
       datasetFile: undefined,
-      currentStep: Options.DATASET
+      currentStep: Options.DATASET,
+      yamlParametersFile: undefined
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -60,20 +63,21 @@ export class MoziServiceForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.changeStep = this.changeStep.bind(this);
     this.handleFilterChange = this.handleFilterChange.bind(this);
+    this.importAnalysisParameters = this.importAnalysisParameters.bind(this);
   }
 
   changeStep(step) {
     this.setState({ currentStep: step });
   }
 
-  handleFileUpload(file) {
+  handleFileUpload(name, file) {
     const fileReader = new FileReader();
     fileReader.readAsDataURL(file);
     fileReader.onload = () => {
       let encoded = fileReader.result.replace(/^data:(.*;base64,)?/, '');
       encoded.length % 4 > 0 &&
         (encoded += '='.repeat(4 - (encoded.length % 4)));
-      this.setState({ dataset: encoded, datasetFile: file });
+      this.setState({ [name]: encoded, [name + 'File']: file });
     };
   }
 
@@ -160,6 +164,39 @@ export class MoziServiceForm extends React.Component {
     this.props.handleSubmit(analysisParameters);
   }
 
+  importAnalysisParameters(name, file) {
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(file);
+    fileReader.onload = () => {
+      const result = fileReader.result;
+      let encoded = result.replace(/^data:(.*;base64,)?/, '');
+      encoded.length % 4 > 0 &&
+        (encoded += '='.repeat(4 - (encoded.length % 4)));
+      const params = jsyaml.load(atob(encoded));
+      let stateUpdate = {
+        crossValOptions: {
+          folds: params.cross_val_opts.folds,
+          randomSeed: params.cross_val_opts.random_seed,
+          testSize: params.cross_val_opts.test_size
+        },
+        filter: {
+          name: params.filter.score,
+          value: params.filter.value
+        },
+        targetFeature: params.target_feature
+      };
+
+      stateUpdate = Object.assign(
+        {},
+        stateUpdate,
+        parseMosesOptions(params.moses_opts),
+        { yamlParametersFile: file }
+      );
+
+      this.setState(stateUpdate);
+    };
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -231,6 +268,25 @@ export class MoziServiceForm extends React.Component {
           submit={this.handleSubmit}
           handleFilterChange={this.handleFilterChange}
         />
+        {this.state.currentStep !== Options.DATASET && (
+          <div
+            style={{
+              marginTop: 30,
+              padding: '5px 15px 10px 15px',
+              backgroundColor: 'beige',
+              textAlign: 'center'
+            }}
+          >
+            <p>You may uplaod a YAML file to set values for moses paramters</p>
+            <FileUpload
+              handleFileUpload={this.importAnalysisParameters}
+              inputName="yamlParameters"
+              acceptedFileExtensions=".yaml"
+              uploadedFile={this.state.yamlParametersFile}
+              setValidationStatus={valid => console.log(valid)}
+            />
+          </div>
+        )}
       </React.Fragment>
     );
   }
