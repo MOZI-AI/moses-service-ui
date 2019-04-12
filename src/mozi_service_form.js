@@ -172,19 +172,22 @@ export class MoziServiceForm extends React.Component {
       let encoded = result.replace(/^data:(.*;base64,)?/, '');
       encoded.length % 4 > 0 &&
         (encoded += '='.repeat(4 - (encoded.length % 4)));
-      const params = jsyaml.load(atob(encoded));
+      const params = jsyaml.safeLoad(atob(encoded));
       let stateUpdate = {
         crossValOptions: {
           folds: params.cross_val_opts.folds,
           randomSeed: params.cross_val_opts.random_seed,
           testSize: params.cross_val_opts.test_size
         },
-        filter: {
-          name: params.filter.score,
-          value: params.filter.value
-        },
         targetFeature: params.target_feature
       };
+
+      if (params.filter) {
+        stateUpdate.filter = {
+          name: params.filter.score,
+          value: params.filter.value
+        };
+      }
 
       stateUpdate = Object.assign(
         {},
